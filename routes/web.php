@@ -1,0 +1,90 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\LoginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Web\AccomodationController;
+use App\Http\Controllers\Web\CategoryController;
+use App\Http\Controllers\Web\DifficultyLevelController;
+use App\Http\Controllers\Web\RolesController;
+use App\Http\Controllers\Web\ServiceRegionController;
+use App\Http\Controllers\Web\ServiceTypeController;
+use App\Http\Controllers\Web\UserController;
+
+Route::get('/', [LoginController::class, 'index'])->middleware('guest');
+
+Route::group(['prefix' => 'account'], function () {
+
+    Route::group(['middleware' => 'guest'], function () {
+        Route::get('login', [LoginController::class, 'index'])->name('account.login');
+        Route::get('register', [LoginController::class, 'register'])->name('account.register');
+        Route::post('process-register', [LoginController::class, 'processRegister'])->name('account.processRegister');
+        Route::post('authenticate', [LoginController::class, 'authenticate'])->name('account.authenticate');
+    });
+
+    Route::group(['middleware' => 'auth'], function () {
+
+        Route::get('logout', [LoginController::class, 'logout'])->name('account.logout');
+        Route::get('index', [DashboardController::class, 'index'])->name('account.dashboard');
+        // routes/web.php
+    });
+});
+
+Route::get('userprofile', [UserController::class, 'showuserprofile'])->name('userprofile');
+Route::get('Adduser',[UserController::class,'Adduser'])->name('Adduser');
+
+Route::get('roles', [RolesController::class,'ViewRoles'])->name('roles');
+Route::get('addroles', [RolesController::class,'viewAddRoles'])->name('addroles');
+Route::post('addroles', [RolesController::class, 'storeroles'])->name('roles.store');
+Route::get('/delete/{id}',[RolesController::class,'deleteroles']);
+Route::get('/roles/{id}',[RolesController::class,'ViewEditRoles'])->name('EditRoles');
+Route::post('/roles/{id}',[RolesController::class, 'EditRoles'])->name('EditRoles');
+Route::get('/roless/{id}',[RolesController::class,'activeRoles']);
+
+
+Route::prefix('DifficultyLevel')->name('DifficultyLevel.')->group(function () {
+    Route::get('/', [DifficultyLevelController::class, 'index'])->name('index');
+    Route::get('/create', [DifficultyLevelController::class, 'create'])->name('create');
+    Route::post('/', [DifficultyLevelController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [DifficultyLevelController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [DifficultyLevelController::class, 'update'])->name('update');
+    Route::get('/{id}', [DifficultyLevelController::class, 'delete'])->name('delete');
+});
+
+Route::prefix('Accomodation')->name('Accomodation.')->group(function () {
+    Route::get('/', [AccomodationController::class, 'index'])->name('index');
+    Route::get('/create', [AccomodationController::class, 'create'])->name('create');
+    Route::post('/', [AccomodationController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [AccomodationController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [AccomodationController::class, 'update'])->name('update');
+    Route::get('/{id}', [AccomodationController::class, 'delete'])->name('delete');
+});
+
+Route::prefix('Category')->name('Category.')->group(function () {
+    Route::get('/', [CategoryController::class, 'index'])->name('index');
+    Route::get('/create', [CategoryController::class, 'create'])->name('create');
+    Route::post('/', [CategoryController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [CategoryController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [CategoryController::class, 'update'])->name('update');
+    Route::get('/{id}', [CategoryController::class, 'delete'])->name('delete');
+});
+
+
+Route::prefix('ServiceType')->name('ServiceType.')->group(function () {
+    Route::get('/', [ServiceTypeController::class, 'index'])->name('index');
+    Route::get('/create', [ServiceTypeController::class, 'create'])->name('create');
+    Route::post('/', [ServiceTypeController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [ServiceTypeController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [ServiceTypeController::class, 'update'])->name('update');
+    Route::get('/{id}', [ServiceTypeController::class, 'delete'])->name('delete');
+});
+
+
+Route::prefix('ServiceRegion')->name('ServiceRegion.')->group(function () {
+    Route::get('/', [ServiceRegionController::class, 'index'])->name('index');
+    Route::get('/create', [ServiceRegionController::class, 'create'])->name('create');
+    Route::post('/', [ServiceRegionController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [ServiceRegionController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [ServiceRegionController::class, 'update'])->name('update');
+    Route::get('/{id}', [ServiceRegionController::class, 'delete'])->name('delete');
+});

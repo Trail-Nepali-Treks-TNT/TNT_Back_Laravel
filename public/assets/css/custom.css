@@ -1,0 +1,20 @@
+
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Make it overlay the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+    z-index: 9999; /* Ensure it is above other content */
+}
+
+    .preloader img {
+        width: 80px; /* Adjust size for a smaller loader */
+        height: 80px; /* Ensure aspect ratio is preserved if SVG */
+        max-width: 100%;
+        max-height: 100%;
+    }
