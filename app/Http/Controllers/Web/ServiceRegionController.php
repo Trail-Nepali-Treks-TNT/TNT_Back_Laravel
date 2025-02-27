@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\Holidays\ServiceRegionFAQ;
 use App\Repositories\MediaRepository;
 use App\Repositories\ServiceRegionFAQRepository;
 use App\Repositories\ServiceRegionRepository;

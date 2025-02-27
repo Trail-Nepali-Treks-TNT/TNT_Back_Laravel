@@ -22,6 +22,7 @@
 
   <link href="/assets/css/style.min.css" rel="stylesheet" />
   <link href="/assets/css/custom.css" rel="stylesheet" />
+  <link href="/assets/lib/select2/select2.min.css" rel="stylesheet" />
   <script src="/assets/lib/jquery/dist/jquery.min.js"></script>
   <script src="/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -49,6 +50,7 @@
   <script src="/assets/js/app.min.js"></script>
   <script src="/assets/js/app.init.js"></script>
   <script src="/assets/js/app-style-switcher.js"></script>
+  <script src="/assets/lib/select2/select2.min.js"></script>
 
   <!-- slimscrollbar scrollbar JavaScript -->
   <script src="/assets/js/perfect-scrollbar.jquery.min.js"></script>

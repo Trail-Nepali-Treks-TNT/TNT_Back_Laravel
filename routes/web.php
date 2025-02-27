@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Web\AccomodationController;
 use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\DifficultyLevelController;
+use App\Http\Controllers\Web\PackageDetailController;
 use App\Http\Controllers\Web\RolesController;
 use App\Http\Controllers\Web\ServiceRegionController;
 use App\Http\Controllers\Web\ServiceTypeController;
@@ -95,4 +96,10 @@ Route::prefix('ServiceRegion')->name('ServiceRegion.')->group(function () {
         // Route::delete('/{faq}', [ServiceRegionController::class, 'destroy'])->name('destroy');
         Route::get('/form/{faq?}', [ServiceRegionController::class, 'faqForm'])->name('form');
     });
+});
+
+Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
+    Route::get('/', [PackageDetailController::class, 'index'])->name('index');
+    Route::get('/create', [PackageDetailController::class, 'create'])->name('create');
+    Route::post('/', [PackageDetailController::class, 'store'])->name('store');
 });
