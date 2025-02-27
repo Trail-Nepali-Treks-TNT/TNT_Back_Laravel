@@ -21,4 +21,9 @@ class ServiceRegion extends AuditableModel
         'banner_file_detail_id',
         'dahboard_file_detail_id',
     ];
+
+    public function faqs()
+    {
+        return $this->hasMany(ServiceRegionFAQ::class);
+    }
 }

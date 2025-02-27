@@ -22,25 +22,16 @@
 
   <link href="/assets/css/style.min.css" rel="stylesheet" />
   <link href="/assets/css/custom.css" rel="stylesheet" />
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <script src="/assets/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-  <!-- ============================================================== -->
-  <!-- Preloader - style you can find in spinners.css -->
-  <!-- ============================================================== -->
+
   <div class="preloader">
     <img src="/assets/images/background/loader.svg" />
   </div>
-  <!-- ============================================================== -->
-  <!-- Main wrapper - style you can find in pages.scss -->
-  <!-- ============================================================== -->
+
   <div id="main-wrapper">
     @include('Layout.header')
 
@@ -54,16 +45,11 @@
 
   </div>
   <div class="chat-windows"></div>
-  <!-- ============================================================== -->
-  <!-- All Jquery -->
-  <!-- ============================================================== -->
-  <script src="/assets/lib/jquery/dist/jquery.min.js"></script>
-
-  <script src="/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- apps -->
   <script src="/assets/js/app.min.js"></script>
   <script src="/assets/js/app.init.js"></script>
   <script src="/assets/js/app-style-switcher.js"></script>
+
   <!-- slimscrollbar scrollbar JavaScript -->
   <script src="/assets/js/perfect-scrollbar.jquery.min.js"></script>
   <!--Wave Effects -->
@@ -73,6 +59,8 @@
   <!--Custom JavaScript -->
   <script src="/assets/js/feather.min.js"></script>
   <script src="/assets/js/custom.min.js"></script>
+  <script src="/assets/pagescripts/sharedMain.js"></script>  
+
   <script>
     $(".preloader").fadeOut();
     $("#to-recover").on("click", function() {

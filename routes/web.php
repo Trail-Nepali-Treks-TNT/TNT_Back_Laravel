@@ -87,4 +87,12 @@ Route::prefix('ServiceRegion')->name('ServiceRegion.')->group(function () {
     Route::get('/{id}/edit', [ServiceRegionController::class, 'edit'])->name('edit');
     Route::put('/{id}', [ServiceRegionController::class, 'update'])->name('update');
     Route::get('/{id}', [ServiceRegionController::class, 'delete'])->name('delete');
+
+    // FAQ Routes inside ServiceRegion
+    Route::prefix('{service_region}/faqs')->name('faqs.')->group(function () {
+        Route::post('/', [ServiceRegionController::class, 'storeFAQ'])->name('store');
+        Route::put('/{faq}', [ServiceRegionController::class, 'updatefaq'])->name('update');
+        // Route::delete('/{faq}', [ServiceRegionController::class, 'destroy'])->name('destroy');
+        Route::get('/form/{faq?}', [ServiceRegionController::class, 'faqForm'])->name('form');
+    });
 });

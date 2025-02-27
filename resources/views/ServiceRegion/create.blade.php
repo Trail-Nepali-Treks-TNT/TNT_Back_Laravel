@@ -9,12 +9,12 @@
                 <li class="breadcrumb-item">
                     <a href="javascript:void(0)">Home</a>
                 </li>
-                <!-- <li class="breadcrumb-item active">
-                    <a href="">Service Region</a>
+                <li class="breadcrumb-item active">
+                <a href="{{ route('ServiceRegion.index') }}">Service Region</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a href="javascript:void(0)">Create</a>
-                </li> -->
+                </li>
             </ol>
         </div>
     </div>
