@@ -102,4 +102,6 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     Route::get('/', [PackageDetailController::class, 'index'])->name('index');
     Route::get('/create', [PackageDetailController::class, 'create'])->name('create');
     Route::post('/', [PackageDetailController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
 });

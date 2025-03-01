@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PackageAccomodation extends AuditableModel
 {
     use HasFactory;
-    protected $table = 'package_accomodation';
+    protected $table = 'package_accomodations';
 
     protected $fillable = [
         'is_active',
@@ -19,7 +19,7 @@ class PackageAccomodation extends AuditableModel
     
     public function packages()
     {
-        return $this->belongsToMany(PackageDetail::class, 'package_accomodation', 'accomodation_id', 'package_details_id')
+        return $this->belongsToMany(PackageDetail::class, 'package_details', 'accomodation_id', 'package_details_id')
             ->withTimestamps();
     }
 }
