@@ -110,7 +110,18 @@
             </li>
           </ul>
         </li>
-
+        <li class="sidebar-item">
+          <a class="sidebar-link waves-dark" href="{{route('ServiceRegion.index')}}" aria-expanded="false">
+            <i class="mdi mdi-account-multiple"></i>
+            <span>Service Region</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link waves-dark" href="{{route('PackageDetail.index')}}" aria-expanded="false">
+            <i class="mdi mdi-account-multiple"></i>
+            <span>Package</span>
+          </a>
+        </li>
         <li class="sidebar-item">
           <a class="sidebar-link waves-dark" href="/roles" aria-expanded="false">
             <i class="mdi mdi-account-multiple"></i>

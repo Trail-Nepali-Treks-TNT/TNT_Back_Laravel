@@ -46,7 +46,7 @@
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $pkg->name }}</td>
-                            <td>{{ $pkg->description }}</td>
+                            <td>{{ $pkg->short_description }}</td>
                             <td></td>
                         </tr>
                         @endforeach

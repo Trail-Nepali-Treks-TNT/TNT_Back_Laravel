@@ -39,7 +39,7 @@
                                         @endforeach
                                     </select>
                                     @error('service_region_id')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                         @endforeach
                                     </select>
                                     @error('category_id')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" required>
                                     @error('name')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                     <label for="old_price">Old Prce</label>
                                     <input step="any" type="number" name="old_price" class="form-control" required>
                                     @error('old_price')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                     <label for="price">New Price</label>
                                     <input step="any" type="number" name="price" class="form-control" required>
                                     @error('price')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                                         @endforeach
                                     </select>
                                     @error('difficulty_level_id')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                                         @endforeach
                                     </select>
                                     @error('package_accommodation')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                     <label for="starting_point">Starting Point</label>
                                     <input type="text" name="starting_point" class="form-control" required>
                                     @error('starting_point')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                     <label for="availability">Availability</label>
                                     <input type="text" name="availability" class="form-control" required>
                                     @error('availability')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                     <label for="duration">Duration</label>
                                     <input type="text" name="duration" class="form-control" required>
                                     @error('duration')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                                     <label for="walking_per_day">Walking Per Day</label>
                                     <input type="text" name="walking_per_day" class="form-control" required>
                                     @error('walking_per_day')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
                                     <label for="total_distance">Total Distance</label>
                                     <input type="text" name="total_distance" class="form-control" required>
                                     @error('total_distance')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                     <label for="max_elevation">Max Elevation</label>
                                     <input type="text" name="max_elevation" class="form-control" required>
                                     @error('max_elevation')
-                                    <div class="text-red-500">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -184,18 +184,18 @@
                         <!-- Short Description Field -->
                         <div class="form-group mb-3">
                             <label for="short_description">Short Description</label>
-                            <textarea name="short_description" rows="3" class="form-control"></textarea>
+                            <textarea name="short_description" rows="3" class="form-control" required></textarea>
                             @error('short_description')
-                            <div class="text-red-500">{{ $message }}</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <!-- Description Field -->
                         <div class="form-group mb-3">
                             <label for="description">Description</label>
-                            <textarea name="description" rows="3" class="form-control"></textarea>
+                            <textarea name="description" rows="3" class="form-control" required></textarea>
                             @error('description')
-                            <div class="text-red-500">{{ $message }}</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
@@ -211,7 +211,6 @@
     $(document).ready(function() {
         $('#package_accommodation').select2({
             placeholder: "Select Accommodations",
-            allowClear: true
         });
     });
 </script>
