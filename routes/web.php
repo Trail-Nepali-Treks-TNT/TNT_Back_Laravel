@@ -32,15 +32,15 @@ Route::group(['prefix' => 'account'], function () {
 });
 
 Route::get('userprofile', [UserController::class, 'showuserprofile'])->name('userprofile');
-Route::get('Adduser',[UserController::class,'Adduser'])->name('Adduser');
+Route::get('Adduser', [UserController::class, 'Adduser'])->name('Adduser');
 
-Route::get('roles', [RolesController::class,'ViewRoles'])->name('roles');
-Route::get('addroles', [RolesController::class,'viewAddRoles'])->name('addroles');
+Route::get('roles', [RolesController::class, 'ViewRoles'])->name('roles');
+Route::get('addroles', [RolesController::class, 'viewAddRoles'])->name('addroles');
 Route::post('addroles', [RolesController::class, 'storeroles'])->name('roles.store');
-Route::get('/delete/{id}',[RolesController::class,'deleteroles']);
-Route::get('/roles/{id}',[RolesController::class,'ViewEditRoles'])->name('EditRoles');
-Route::post('/roles/{id}',[RolesController::class, 'EditRoles'])->name('EditRoles');
-Route::get('/roless/{id}',[RolesController::class,'activeRoles']);
+Route::get('/delete/{id}', [RolesController::class, 'deleteroles']);
+Route::get('/roles/{id}', [RolesController::class, 'ViewEditRoles'])->name('EditRoles');
+Route::post('/roles/{id}', [RolesController::class, 'EditRoles'])->name('EditRoles');
+Route::get('/roless/{id}', [RolesController::class, 'activeRoles']);
 
 
 Route::prefix('DifficultyLevel')->name('DifficultyLevel.')->group(function () {
@@ -102,4 +102,9 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     Route::get('/', [PackageDetailController::class, 'index'])->name('index');
     Route::get('/create', [PackageDetailController::class, 'create'])->name('create');
     Route::post('/', [PackageDetailController::class, 'store'])->name('store');
+});
+
+//Client Routes
+Route::get('/client', function () {
+    return view('client.home.index');
 });
