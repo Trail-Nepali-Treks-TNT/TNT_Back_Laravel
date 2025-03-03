@@ -119,6 +119,6 @@ Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {
 });
 
 //Client Routes
-Route::get('/client', function () {
+Route::get('/client', action: function () {
     return view('client.home.index');
 });
