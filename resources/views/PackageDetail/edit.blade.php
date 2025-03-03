@@ -30,8 +30,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-faq-tab" data-bs-toggle="pill" href="#faqSection" role="tab" aria-controls="pills-faq" aria-selected="false">
-                            FAQs
+                        <a class="nav-link" id="pills-itinerary-tab" data-bs-toggle="pill" href="#itinerarySection" role="tab" aria-controls="pills-itinerary" aria-selected="false">
+                            Itinerary
                         </a>
                     </li>
                 </ul>
@@ -232,10 +232,8 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="faqSection" role="tabpanel" aria-labelledby="pills-faq-tab">
-                        <div class="card card-body card-body--alternate mb-0">
+                    <div class="tab-pane fade" id="itinerarySection" role="tabpanel" aria-labelledby="pills-itinerary-tab">
 
-                        </div>
                     </div>
 
                 </div>

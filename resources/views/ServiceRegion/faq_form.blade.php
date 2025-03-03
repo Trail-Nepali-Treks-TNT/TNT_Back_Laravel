@@ -6,13 +6,13 @@
     <div class="mb-3">
         <label for="question" class="form-label">Question</label>
         <input type="text" class="form-control" name="question" id="question" value="{{ $faq->question ?? '' }}" required>
-        <div class="text-danger" id="question-error"></div> <!-- For custom error message -->
+        <div class="text-danger error-message" id="question-error"></div> <!-- For custom error message -->
     </div>
 
     <div class="mb-3">
         <label for="answer" class="form-label">Answer</label>
         <textarea class="form-control" name="answer" id="answer" rows="3" required>{{ $faq->answer ?? '' }}</textarea>
-        <div class="text-danger" id="answer-error"></div> <!-- For custom error message -->
+        <div class="text-danger error-message" id="answer-error"></div> <!-- For custom error message -->
     </div>
 
     {{-- Hidden input for the foreign key service_region_id --}}

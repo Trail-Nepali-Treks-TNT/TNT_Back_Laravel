@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Helpers\ApiResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Repositories\AccomodationRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\DifficultyLevelRepository;
+use App\Repositories\FileMappingRepository;
+use App\Repositories\MediaRepository;
 use App\Repositories\PackageAccomodationRepository;
 use App\Repositories\PackageDetailRepository;
 use App\Repositories\ServiceRegionRepository;
@@ -19,6 +22,8 @@ class PackageDetailController extends Controller
     protected $serviceRegionRepository;
     protected $categoryRepository;
     protected $accomodationRepository;
+    protected $mediaRepository;
+    protected $fileMappingRepository;
 
     public function __construct(
         PackageDetailRepository $packageDetailRepository,
@@ -27,6 +32,8 @@ class PackageDetailController extends Controller
         ServiceRegionRepository $serviceRegionRepository,
         CategoryRepository $categoryRepository,
         AccomodationRepository $accomodationRepository,
+        MediaRepository $mediaRepository,
+        FileMappingRepository $fileMappingRepository,
     ) {
         $this->packageDetailRepository = $packageDetailRepository;
         $this->packageAccomodationRepository = $packageAccomodationRepository;
@@ -34,6 +41,8 @@ class PackageDetailController extends Controller
         $this->serviceRegionRepository = $serviceRegionRepository;
         $this->categoryRepository = $categoryRepository;
         $this->accomodationRepository = $accomodationRepository;
+        $this->mediaRepository = $mediaRepository;
+        $this->fileMappingRepository = $fileMappingRepository;
     }
 
     public function index()
@@ -70,8 +79,8 @@ class PackageDetailController extends Controller
             'category_id'           => 'required|exists:category,id',
             'difficulty_level_id'   => 'required|exists:difficulty_levels,id',
             'service_region_id'     => 'required|exists:service_regions,id',
-            'package_accommodation' => 'required|array',  // Expect an array of values
-            'package_accommodation.*' => 'exists:accomodation,id' // Ensure each ID exists
+            'package_accommodation' => 'required|array',
+            'package_accommodation.*' => 'exists:accomodation,id'
         ]);
 
         $entity = [
@@ -93,7 +102,7 @@ class PackageDetailController extends Controller
 
         $package = $this->packageDetailRepository->create($entity);
         if (!empty($data['package_accommodation'])) {
-            $package->accomodation()->sync($data['package_accommodation']);
+            $this->packageDetailRepository->updateAccomodation($package->id, $data['package_accommodation']);
         }
         return redirect()->route('PackageDetail.index')->with('success', 'Package created successfully.');
     }
@@ -109,7 +118,8 @@ class PackageDetailController extends Controller
         return view('PackageDetail.edit', compact('packageDetail', 'difficultyLevels', 'serviceRegions', 'categories', 'accomodations'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $data = $request->validate([
             'name'                  => 'required|string|max:255',
             'short_description'     => 'required|string|max:500',
@@ -125,8 +135,8 @@ class PackageDetailController extends Controller
             'category_id'           => 'required|exists:category,id',
             'difficulty_level_id'   => 'required|exists:difficulty_levels,id',
             'service_region_id'     => 'required|exists:service_regions,id',
-            'package_accommodation' => 'required|array',  // Expect an array of values
-            'package_accommodation.*' => 'exists:accomodation,id' // Ensure each ID exists
+            'package_accommodation' => 'required|array',
+            'package_accommodation.*' => 'exists:accomodation,id'
         ]);
 
         $entity = [
@@ -145,9 +155,23 @@ class PackageDetailController extends Controller
             'difficulty_level_id' => $data['difficulty_level_id'],
             'service_region_id'   => $data['service_region_id']
         ];
-        $package = $this->packageDetailRepository->update($id, $entity);
+        $this->packageDetailRepository->update($id, $entity);
         if (!empty($data['package_accommodation'])) {
-            $package->accomodation()->sync($data['package_accommodation']);
+            $this->packageDetailRepository->updateAccomodation($id, $data['package_accommodation']);
+        }
+        return ApiResponseHelper::success(null, "Package updated successfully.");
+    }
+
+    public function Image($package_id)
+    {
+        $packageImages = $this->fileMappingRepository->getFiles($package_id, 'Package');
+        return view('PackageDetail.package_image', compact('packageImages'));
+    }
+
+    public function uploadImage($package_id, Request $request)
+    {
+        $ids = $this->mediaRepository->storeMultiple($request['files'], 'Package/{$package_id}');
+        foreach ($ids as $key => $value) {
         }
     }
 }
