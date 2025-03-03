@@ -40,7 +40,7 @@ class ServiceTypeController extends Controller
 
     public function edit($id)
     {
-        $serviceType = $this->serviceTypeRepository->findOrFail($id);
+        $ServiceType = $this->serviceTypeRepository->findOrFail($id);
         return view('ServiceType.edit', compact('ServiceType'));
     }
 

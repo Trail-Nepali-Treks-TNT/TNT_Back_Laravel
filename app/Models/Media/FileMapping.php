@@ -16,6 +16,7 @@ class FileMapping extends AuditableModel
         'is_deleted',
         'file_detail_id',
         'target_id',
+        'table',
     ];    
     //
 }

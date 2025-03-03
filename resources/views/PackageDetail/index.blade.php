@@ -47,7 +47,12 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $pkg->name }}</td>
                             <td>{{ $pkg->short_description }}</td>
-                            <td></td>
+                            <td>
+                                <a href="{{ route('PackageDetail.edit', $pkg->id) }}"
+                                    style="background-color:#6610f2; border-radius: .3rem; padding: .13rem .6rem; margin-right: .4rem;">
+                                    <i class="fa-regular fa-pen-to-square" style="color: white;"></i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

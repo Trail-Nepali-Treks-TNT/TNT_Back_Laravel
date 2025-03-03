@@ -45,3 +45,21 @@ ajaxCall = function (options) {
     }
     return new ajax(options);
 }
+
+var loadDropzoneWithCropper = function (containerId, paramName, PostUrl) {
+    Dropzone.autoDiscover = false;
+    $("#" + containerId).dropzone({
+        paramName: paramName, // The name that will be used to transfer the file
+        url: PostUrl,
+        maxFilesize: MAX_IMAGE_SIZE, // MB
+        maxFiles: MAX_UPLOAD_FILES,
+        parallelUploads: MAX_PARALLEL_FILES,
+        dictDefaultMessage: 'Drop files here to upload. ' + MAX_PARALLEL_FILES + ' files max for each upload.' + ' PNG or JPG no bigger than 800px wide and tall.',
+        autoProcessQueue: false,
+        autoDiscover: true,
+        addRemoveLinks: true,
+        init: function () {
+            Dropzone.forElement("#" + containerId);
+        },
+    });
+}

@@ -17,7 +17,6 @@ var EditServiceRegion = function () {
 
     handleFaqFormSubmit = function () {
         $("#submitfaqForm").on("click", function (e) {
-            debugger;
             e.preventDefault();
             var id = $("#faqAddUpdateForm #id").val();
             var actionUrl = `/ServiceRegion/${me.serviceRegionId}/faqs`;
@@ -34,25 +33,15 @@ var EditServiceRegion = function () {
                 data: data,
                 dataType: "json",
                 success: function (html) {
-                    debugger;
                     getfaqForm();
                 },
                 error: function (xhr) {
-                    debugger;
                     if (xhr.status === 422) {
                         var errors = xhr.responseJSON.errors;
-
-                        // Clear previous error messages
-                        $("#question-error").text("");
-                        $("#answer-error").text("");
-
-                        // Show error messages
-                        if (errors.question) {
-                            $("#question-error").text(errors.question[0]);
-                        }
-                        if (errors.answer) {
-                            $("#answer-error").text(errors.answer[0]);
-                        }
+                        $(".error-message").text("");
+                        $.each(errors, function (field, messages) {
+                            $("#" + field + "-error").text(messages[0]); // Assuming error elements follow the `id` pattern: field-error
+                        });
                     } else {
                         alert("An error occurred. Please try again.");
                     }
