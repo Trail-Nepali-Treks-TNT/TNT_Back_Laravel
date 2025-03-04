@@ -101,46 +101,47 @@ var EditPackageDetail = function () {
     };
 
     bindImageSubmit = function () {
-        $("#packageImageUpoadForm").on('submit', function (e) {
+        $("#packageImageUpoadForm").on("submit", function (e) {
             e.preventDefault();
             var form = $("#packageImageUpoadForm");
-            var token = $('input[name="__RequestVerificationToken"]').val();
+            var csrfToken = $('#packageImageUpoadForm input[name="_token"]').val();
             var checkedIds = [];
-            $('#packageImageUpoadForm input[name="DeleteImage"]:checked').each(function () {
-                checkedIds.push($(this).val());
-            });
+            $('#packageImageUpoadForm input[name="DeleteImage"]:checked').each(
+                function () {
+                    checkedIds.push($(this).val());
+                }
+            );
             var formData = new FormData(form.get(0));
-    
+
             var dropZoneContainer = "#packageImageContainer";
             var myDropzone = Dropzone.forElement(dropZoneContainer);
             var queuedFiles = myDropzone.getQueuedFiles();
-    
+
             if (queuedFiles.length > 0) {
                 for (var i = 0; i < queuedFiles.length; i++) {
-                    formData.append("Files", queuedFiles[i]);
+                    formData.append("files[]", queuedFiles[i]); // Append Dropzone files
                 }
             }
             if (checkedIds.length > 0) {
                 for (var d = 0; d < checkedIds.length; d++) {
-                    formData.append("DeletedFile", checkedIds[d]);
+                    formData.append("DeletedFile[]", checkedIds[d]);
                 }
             }
-    
+
             ajaxCall({
-                url: '/SuperAdmin/StaticPackage/UploadImages',
-                type: 'POST',
+                url: `/PackageDetail/${me.packageDetailId}/uploadImage`,
+                type: "POST",
                 processData: false,
                 contentType: false,
                 data: formData,
-                dataType: 'json',
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('RequestVerificationToken', token);
+                dataType: "json",
+                headers: {
+                    "X-CSRF-TOKEN": csrfToken // Attach CSRF token in the request headers
                 },
                 success: function (data) {
                     if (data.succeeded) {
                         showSuccessMessage(data.message, function () {
                             populateImageListView();
-                            //fetch image list
                         });
                         return;
                     }
@@ -148,26 +149,30 @@ var EditPackageDetail = function () {
                 },
             });
         });
-    }
+    };
+
+    populateImageListView = function () {
+        ajaxCall({
+            type: "GET",
+            url: `/PackageDetail/${me.packageDetailId}/Image`,
+            dataType: "html",
+            success: function (data) {
+                $("#packageImageSection").html(data);
+                loadDropzoneWithCropper(
+                    "packageImageContainer",
+                    "Files",
+                    "dummyURL"
+                );
+                bindImageSubmit();
+            },
+        });
+    };
 
     initImageSection = function () {
         $("#pills-image-tab").on("click", function (e) {
             e.preventDefault();
             if ($("#imageSection").children().length == 0) {
-                ajaxCall({
-                    type: "GET",
-                    url: `/PackageDetail/${me.packageDetailId}/Image`,
-                    dataType: "html",
-                    success: function (data) {
-                        $("#packageImageSection").html(data);
-                        loadDropzoneWithCropper(
-                            "packageImageContainer",
-                            "Files",
-                            "dummyURL"
-                        );
-                        bindImageSubmit();
-                    },
-                });
+                populateImageListView();
             }
         });
     };
@@ -179,5 +184,6 @@ var EditPackageDetail = function () {
         });
         submitDetailHandler();
         initItinerarySection();
+        initImageSection();
     };
 };

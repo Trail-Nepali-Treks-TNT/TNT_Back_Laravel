@@ -34,6 +34,11 @@
                             Itinerary
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-image-tab" data-bs-toggle="pill" href="#packageImageSection" role="tab" aria-controls="pills-image" aria-selected="false">
+                            Image
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content tabcontent-border mt-3" id="pills-tabContent">
 
@@ -233,6 +238,9 @@
                     </div>
 
                     <div class="tab-pane fade" id="itinerarySection" role="tabpanel" aria-labelledby="pills-itinerary-tab">
+
+                    </div>
+                    <div class="tab-pane fade" id="packageImageSection" role="tabpanel" aria-labelledby="pills-image-tab">
 
                     </div>
 

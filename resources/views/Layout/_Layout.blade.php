@@ -18,10 +18,11 @@
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/background/logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <!-- Custom CSS -->
-
   <link href="/assets/css/style.min.css" rel="stylesheet" />
   <link href="/assets/css/custom.css" rel="stylesheet" />
+  <link href="/assets/css/dropzone.css" rel="stylesheet" />
   <link href="/assets/lib/select2/select2.min.css" rel="stylesheet" />
   <script src="/assets/lib/jquery/dist/jquery.min.js"></script>
   <script src="/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -51,13 +52,13 @@
   <script src="/assets/js/app.init.js"></script>
   <script src="/assets/js/app-style-switcher.js"></script>
   <script src="/assets/lib/select2/select2.min.js"></script>
-
   <!-- slimscrollbar scrollbar JavaScript -->
   <script src="/assets/js/perfect-scrollbar.jquery.min.js"></script>
   <!--Wave Effects -->
   <script src="/assets/js/waves.js"></script>
   <!--Menu sidebar -->
   <script src="/assets/js/sidebarmenu.js"></script>
+  <script src="/assets/js/dropzone.js"></script>
   <!--Custom JavaScript -->
   <script src="/assets/js/feather.min.js"></script>
   <script src="/assets/js/custom.min.js"></script>

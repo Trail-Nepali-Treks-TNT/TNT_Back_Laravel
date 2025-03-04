@@ -104,7 +104,9 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     Route::post('/', [PackageDetailController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
     Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
-    Route::post('{id}/uploadImage', [PackageDetailController::class, 'update'])->name('uploadImage');
+
+    Route::get('{id}/Image', [PackageDetailController::class, 'Image'])->name('Image');
+    Route::post('{id}/uploadImage', [PackageDetailController::class, 'uploadImage'])->name('uploadImage');
 
     //Package Itinerary
     Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {

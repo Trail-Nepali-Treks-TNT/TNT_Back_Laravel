@@ -18,3 +18,8 @@
         max-width: 100%;
         max-height: 100%;
     }
+
+    .equal-size-image {
+        width: 180px;
+        height: 140px;
+    }

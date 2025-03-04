@@ -1,3 +1,6 @@
+var MAX_UPLOAD_FILES = 5;
+var MAX_IMAGE_SIZE = 10;
+var MAX_PARALLEL_FILES = 5;
 showPreLoader = function () {
     $(".preloader").fadeIn()
 }
