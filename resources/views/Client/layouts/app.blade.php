@@ -35,35 +35,23 @@
     <!-- Scripts and Styles -->
     @vite(['resources/css/client-styles/app.css', 'resources/js/app.js'])
 
-    <!-- Additional Styles -->
-    @stack('styles')
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-50">
-
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
-
-        <!-- Page Content -->
-        <main>
-            @yield('content')
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-white shadow mt-auto">
+    <!-- Page Heading -->
+    @if (isset($header))
+        <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-                &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+                {{ $header }}
             </div>
-        </footer>
-    </div>
-
+        </header>
+    @endif
+    <!-- Page Content -->
+    <main>
+        @yield('content')
+    </main>
+    <!-- Footer -->
+    @extends("Client.layouts.footer")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>
