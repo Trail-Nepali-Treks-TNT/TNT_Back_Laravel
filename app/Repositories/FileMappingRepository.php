@@ -15,7 +15,7 @@ class FileMappingRepository extends BaseRepository implements IFileMappingReposi
 
     public function getFiles($id, $table)
     {
-        $files = FileDetail::join('file_mapping', 'file_details.id', '=', 'file_mapping.file_detail_id')
+        $files = FileDetail::join('file_mapping', 'file_details.id', '=', 'file_mapping.file_details_id')
             ->where('file_mapping.target_id', $id)
             ->where('file_mapping.table', $table)
             ->where('file_mapping.is_deleted', false) // Exclude deleted records
@@ -26,5 +26,6 @@ class FileMappingRepository extends BaseRepository implements IFileMappingReposi
                 'file_mapping.target_id',
                 'file_mapping.id'
             ])->get();
+        return $files;
     }
 }

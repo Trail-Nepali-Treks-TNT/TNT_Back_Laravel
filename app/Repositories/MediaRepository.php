@@ -17,7 +17,7 @@ class MediaRepository extends BaseRepository implements IMediaRepository
         $ids = [];
 
         foreach ($files as $file) {
-            $ids[] = $this->storeSingle($files, $path);
+            $ids[] = $this->storeSingle($file, $path);
         }
         return $ids;
     }
@@ -27,7 +27,7 @@ class MediaRepository extends BaseRepository implements IMediaRepository
         $originalName = $file->getClientOriginalName();
         $extension    = $file->getClientOriginalExtension();
         $fileName     = time() . '_' . uniqid() . '.' . $extension;
-        $directory = 'images/{$path}';
+        $directory = 'images/' . $path;
         // Store the file in the "public/images" directory
         $fullPath = $file->storeAs($directory, $fileName, 'public');
 

@@ -170,8 +170,31 @@ class PackageDetailController extends Controller
 
     public function uploadImage($package_id, Request $request)
     {
-        $ids = $this->mediaRepository->storeMultiple($request['files'], 'Package/{$package_id}');
-        foreach ($ids as $key => $value) {
+        $validated = $request->validate([
+            'files.*' => 'file|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validate each uploaded file
+            'DeletedFile.*' => 'integer|exists:file_details,id', // Ensure deleted file IDs exist
+        ]);
+
+        if ($request->hasFile('files')) {
+            $storedFileIds = $this->mediaRepository->storeMultiple($request->file('files'), "Package/{$package_id}");
+            foreach ($storedFileIds as $fileId) {
+                $this->fileMappingRepository->create([
+                    'file_details_id' => $fileId,
+                    'target_id' => $package_id,
+                    'table' => 'Package',
+                    'is_active' => true,
+                    'is_deleted' => false
+                ]);
+            }
         }
+
+
+        // if ($request->has('DeletedFile')) {
+        //     FileDetail::whereIn('id', $request->DeletedFile)->update(['is_deleted' => true]);
+        //     FileMapping::whereIn('file_details_id', $request->DeletedFile)->update(['is_deleted' => true]);
+        // }
+
+        return ApiResponseHelper::success(null, "Images updated successfully.");
+
     }
 }

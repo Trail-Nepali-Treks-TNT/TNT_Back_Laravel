@@ -102,12 +102,14 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     Route::get('/', [PackageDetailController::class, 'index'])->name('index');
     Route::get('/create', [PackageDetailController::class, 'create'])->name('create');
     Route::post('/', [PackageDetailController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
+    Route::get('{id}/Image', [PackageDetailController::class, 'Image'])->name('Image');
+    Route::post('{id}/uploadImage', [PackageDetailController::class, 'uploadImage'])->name('uploadImage');
+    Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
+    Route::post('{id}/uploadImage', [PackageDetailController::class, 'update'])->name('uploadImage');
 });
-
-
-Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
-Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
-Route::post('{id}/uploadImage', [PackageDetailController::class, 'update'])->name('uploadImage');
 
 //Package Itinerary
 Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {

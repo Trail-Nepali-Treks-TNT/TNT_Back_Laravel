@@ -14,7 +14,7 @@ class FileMapping extends AuditableModel
     protected $fillable = [
         'is_active',
         'is_deleted',
-        'file_detail_id',
+        'file_details_id',
         'target_id',
         'table',
     ];    
