@@ -46,12 +46,16 @@
             </div>
         </header>
     @endif
+    <!-- Navigation -->
+    @include('Client.layouts.navbar.nav', ['navclass' => $heroContainerClassName])
+
     <!-- Page Content -->
     <main>
         @yield('content')
     </main>
     <!-- Footer -->
-    @extends("Client.layouts.footer")
+    <!-- Footer -->
+    @include("Client.layouts.footer")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>
