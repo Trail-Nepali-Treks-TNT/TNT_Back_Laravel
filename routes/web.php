@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\AccomodationController;
 use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\DifficultyLevelController;
 use App\Http\Controllers\Web\PackageDetailController;
+use App\Http\Controllers\Web\PackageFaqController;
 use App\Http\Controllers\Web\PackageItineraryController;
 use App\Http\Controllers\Web\RolesController;
 use App\Http\Controllers\Web\ServiceRegionController;
@@ -104,21 +105,29 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     Route::post('/', [PackageDetailController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
     Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
-    Route::get('{id}/Image', [PackageDetailController::class, 'Image'])->name('Image');
-    Route::post('{id}/uploadImage', [PackageDetailController::class, 'uploadImage'])->name('uploadImage');
+    Route::get('/{id}/Image', [PackageDetailController::class, 'Image'])->name('Image');
+    Route::post('/{id}/uploadImage', [PackageDetailController::class, 'uploadImage'])->name('uploadImage');
     Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
     Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
-    Route::post('{id}/uploadImage', [PackageDetailController::class, 'update'])->name('uploadImage');
+
+    //Package Itinerary
+    Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {
+        Route::get('/', [PackageItineraryController::class, 'index'])->name('index');
+        Route::post('/', [PackageItineraryController::class, 'store'])->name('store');
+        Route::put('/{id}', [PackageItineraryController::class, 'update'])->name('update');
+        // Route::delete('/{faq}', [ServiceRegionController::class, 'destroy'])->name('destroy');
+        Route::get('/form/{id?}', [PackageItineraryController::class, 'itineraryForm'])->name('form');
+    });
+
+    Route::prefix('{package_id}/faqs')->name('faqs.')->group(function () {
+        Route::get('/', [PackageFaqController::class, 'index'])->name('index');
+        Route::post('/', [PackageFaqController::class, 'store'])->name('store');
+        Route::put('/{faq}', [PackageFaqController::class, 'update'])->name('update');
+        Route::get('/faqForm/{faq?}', [PackageFaqController::class, 'faqForm'])->name('faqForm');
+    });
 });
 
-//Package Itinerary
-Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {
-    Route::get('/', [PackageItineraryController::class, 'index'])->name('index');
-    Route::post('/', [PackageItineraryController::class, 'store'])->name('store');
-    Route::put('/{faq}', [PackageItineraryController::class, 'update'])->name('update');
-    // Route::delete('/{faq}', [ServiceRegionController::class, 'destroy'])->name('destroy');
-    Route::get('/form/{faq?}', [PackageItineraryController::class, 'itineraryForm'])->name('form');
-});
+
 
 //Client Routes
 Route::get('/client', action: function () {

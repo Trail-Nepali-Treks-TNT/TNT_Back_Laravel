@@ -139,13 +139,11 @@ var EditPackageDetail = function () {
                     "X-CSRF-TOKEN": csrfToken // Attach CSRF token in the request headers
                 },
                 success: function (data) {
-                    if (data.succeeded) {
-                        showSuccessMessage(data.message, function () {
-                            populateImageListView();
-                        });
+                    if (data.success) {
+                        populateImageListView();
                         return;
                     }
-                    showErrorMessage(data.message);
+                    alert(data.message);
                 },
             });
         });
@@ -177,6 +175,76 @@ var EditPackageDetail = function () {
         });
     };
 
+    handleFaqFormSubmit = function () {
+        $("#submitfaqForm").on("click", function (e) {
+            e.preventDefault();
+            var id = $("#faqAddUpdateForm #id").val();
+            var actionUrl = `/PackageDetail/${me.packageDetailId}/faqs`;
+            var requestType = "POST";
+            if (id !== "0") {
+                actionUrl = `/PackageDetail/${me.packageDetailId}/faqs/${id}`;
+                requestType = "PUT";  // Use PUT for updating
+            }
+            var form = $("#faqAddUpdateForm")[0];
+            var data = $(form).serialize();
+            ajaxCall({
+                url: actionUrl,
+                type: requestType,
+                data: data,
+                dataType: "json",
+                success: function (html) {
+                    populatePackageFAQView();
+                },
+                error: function (xhr) {
+                    if (xhr.status === 422) {
+                        var errors = xhr.responseJSON.errors;
+                        $(".error-message").text("");
+                        $.each(errors, function (field, messages) {
+                            $("#" + field + "-error").text(messages[0]); // Assuming error elements follow the `id` pattern: field-error
+                        });
+                    } else {
+                        alert("An error occurred. Please try again.");
+                    }
+                },
+            });
+        });
+    };
+
+    getPackageFaqForm = function (id) {
+        var actionUrl = `/PackageDetail/${me.packageDetailId}/faqs/faqForm`;
+        if (id) actionUrl = actionUrl + `/${id}`;
+        ajaxCall({
+            url: actionUrl,
+            type: "GET",
+            success: function (html) {
+                $("#package_faq_form_container").html(html);
+                handleFaqFormSubmit();
+            },
+        });
+    };
+
+    populatePackageFAQView= function(){
+        ajaxCall({
+            type: "GET",
+            url: `/PackageDetail/${me.packageDetailId}/faqs`,
+            dataType: "html",
+            success: function (data) {
+                $("#faqSection").html(data);
+                handleFaqFormSubmit();
+            },
+        });
+    }
+
+
+    initFAQSection = function () {
+        $("#pills-package-faq-tab").on("click", function (e) {
+            e.preventDefault();
+            if ($("#faqSection").children().length == 0) {
+                populatePackageFAQView();
+            }
+        });
+    };
+
     this.init = function () {
         me.packageDetailId = $("#packageDetailId").val();
         $("#package_accommodation").select2({
@@ -185,5 +253,6 @@ var EditPackageDetail = function () {
         submitDetailHandler();
         initItinerarySection();
         initImageSection();
+        initFAQSection();
     };
 };

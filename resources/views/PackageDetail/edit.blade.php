@@ -38,6 +38,11 @@
                         <a class="nav-link" id="pills-image-tab" data-bs-toggle="pill" href="#packageImageSection" role="tab" aria-controls="pills-image" aria-selected="false">
                             Image
                         </a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-package-faq-tab" data-bs-toggle="pill" href="#faqSection" role="tab" aria-controls="pills-package-faq" aria-selected="false">
+                            FAQs
+                        </a>
                     </li>
                 </ul>
                 <div class="tab-content tabcontent-border mt-3" id="pills-tabContent">
@@ -61,9 +66,8 @@
                                                 </option>
                                                 @endforeach
                                             </select>
-                                            @error('service_region_id')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="service_region_id-error"></div>
+
                                         </div>
                                     </div>
 
@@ -78,9 +82,8 @@
                                                 </option>
                                                 @endforeach
                                             </select>
-                                            @error('category_id')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="category_id-error"></div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -91,27 +94,24 @@
                                         <div class="form-group mb-3">
                                             <label for="name">Name</label>
                                             <input type="text" name="name" class="form-control" value="{{ old('name', $packageDetail->name) }}" required>
-                                            @error('name')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="name-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group mb-3">
                                             <label for="old_price">Old Prce</label>
                                             <input step="any" type="number" name="old_price" class="form-control" value="{{ old('old_price', $packageDetail->old_price) }}" required>
-                                            @error('old_price')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="old_price-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group mb-3">
                                             <label for="price">New Price</label>
                                             <input step="any" type="number" name="price" class="form-control" value="{{ old('price', $packageDetail->price) }}" required>
-                                            @error('price')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="price-error"></div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -128,9 +128,8 @@
                                                 </option>
                                                 @endforeach
                                             </select>
-                                            @error('difficulty_level_id')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="difficulty_level_id-error"></div>
+
                                         </div>
                                     </div>
 
@@ -146,9 +145,8 @@
 
                                                 @endforeach
                                             </select>
-                                            @error('package_accommodation')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="package_accommodation-error"></div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -158,54 +156,47 @@
                                         <div class="form-group mb-3">
                                             <label for="starting_point">Starting Point</label>
                                             <input type="text" name="starting_point" class="form-control" value="{{ old('starting_point', $packageDetail->starting_point) }}" required>
-                                            @error('starting_point')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="starting_point-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
                                             <label for="availability">Availability</label>
                                             <input type="text" name="availability" class="form-control" value="{{ old('availability', $packageDetail->availability) }}" required>
-                                            @error('availability')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="availability-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
                                             <label for="duration">Duration</label>
                                             <input type="text" name="duration" class="form-control" value="{{ old('duration', $packageDetail->duration) }}" required>
-                                            @error('duration')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="duration-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
                                             <label for="walking_per_day">Walking Per Day</label>
                                             <input type="text" name="walking_per_day" class="form-control" value="{{ old('walking_per_day', $packageDetail->walking_per_day) }}" required>
-                                            @error('walking_per_day')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="walking_per_day-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
                                             <label for="total_distance">Total Distance</label>
                                             <input type="text" name="total_distance" class="form-control" value="{{ old('total_distance', $packageDetail->total_distance) }}" required>
-                                            @error('total_distance')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="total_distance-error"></div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
                                             <label for="max_elevation">Max Elevation</label>
                                             <input type="text" name="max_elevation" class="form-control" value="{{ old('max_elevation', $packageDetail->max_elevation) }}" required>
-                                            @error('max_elevation')
-                                            <div class="text-danger">{{ $message }}</div>
-                                            @enderror
+                                            <div class="text-danger error-message" id="max_elevation-error"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -216,9 +207,8 @@
                                     <textarea name="short_description" rows="3" class="form-control" required>
                                     {{ old('short_description', $packageDetail->short_description) }}
                                     </textarea>
-                                    @error('short_description')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                    <div class="text-danger error-message" id="short_description-error"></div>
+
                                 </div>
 
                                 <!-- Description Field -->
@@ -227,12 +217,10 @@
                                     <textarea name="description" rows="3" class="form-control" required>
                                     {{ old('description', $packageDetail->description) }}
                                     </textarea>
-                                    @error('description')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                    <div class="text-danger error-message" id="description-error"></div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>
                     </div>
@@ -241,6 +229,10 @@
 
                     </div>
                     <div class="tab-pane fade" id="packageImageSection" role="tabpanel" aria-labelledby="pills-image-tab">
+
+                    </div>                    
+                    
+                    <div class="tab-pane fade" id="faqSection" role="tabpanel" aria-labelledby="pills-package-faq-tab">
 
                     </div>
 

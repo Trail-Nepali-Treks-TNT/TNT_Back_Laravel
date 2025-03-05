@@ -153,20 +153,4 @@ class ServiceRegionController extends Controller
         ]);
         return response()->json(['faq' => $faqData], 200);
     }
-
-    // public function storefaq(Request $request, $id)
-    // {
-    //     // Validate regular fields, file inputs, and the service type selection.
-    //     $data = $request->validate([
-    //         'question'  => 'required|string',
-    //         'answer'    => 'required|string',
-    //         'service_region_id' => 'required|exists:service_regions,id',
-    //     ]);
-    //     if (hasValue($id))
-    //         $this->serviceRegionFAQRepository->update($id, $data);
-    //     else
-    //         $this->serviceRegionFAQRepository->create($data);
-
-    //     return redirect()->route('ServiceRegion.index')->with('success', 'Service Region deleted successfully.');
-    // }
 }
