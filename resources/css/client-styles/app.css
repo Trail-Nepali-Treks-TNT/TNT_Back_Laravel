@@ -47,28 +47,34 @@
 body,
 html {
     font-family: var(--font-inter);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
     background-color: #ffffff;
-    color: var(--gray-darkest);
-    scroll-behavior: smooth;
+    color: var(--grey-700);
+    font-weight: 400;
 }
 .tnt-container {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 @media (max-width: 1024px) {
     .tnt-container {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
 @media (max-width: 640px) {
     .tnt-container {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 .font-playfair {

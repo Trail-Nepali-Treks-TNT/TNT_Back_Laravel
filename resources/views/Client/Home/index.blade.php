@@ -7,7 +7,13 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <h1 class="text-2xl font-bold mb-4">Client Dashboard</h1>
-                    <p>Welcome to your client dashboard.</p>
+                    <h3>
+                        YOUR GATEWAY
+                        TO THE HIMALAYAS
+                    </h3>
+                    <p>Plan your Nepal adventure effortlessly with trekking, guides, transport, and tours all in one place.
+                        Customize, book,
+                        and enjoy an unforgettable journey.</p>
                 </div>
             </div>
         </div>
