@@ -32,15 +32,15 @@ Route::group(['prefix' => 'account'], function () {
 });
 
 Route::get('userprofile', [UserController::class, 'showuserprofile'])->name('userprofile');
-Route::get('Adduser',[UserController::class,'Adduser'])->name('Adduser');
+Route::get('Adduser', [UserController::class, 'Adduser'])->name('Adduser');
 
-Route::get('roles', [RolesController::class,'ViewRoles'])->name('roles');
-Route::get('addroles', [RolesController::class,'viewAddRoles'])->name('addroles');
+Route::get('roles', [RolesController::class, 'ViewRoles'])->name('roles');
+Route::get('addroles', [RolesController::class, 'viewAddRoles'])->name('addroles');
 Route::post('addroles', [RolesController::class, 'storeroles'])->name('roles.store');
-Route::get('/delete/{id}',[RolesController::class,'deleteroles']);
-Route::get('/roles/{id}',[RolesController::class,'ViewEditRoles'])->name('EditRoles');
-Route::post('/roles/{id}',[RolesController::class, 'EditRoles'])->name('EditRoles');
-Route::get('/roless/{id}',[RolesController::class,'activeRoles']);
+Route::get('/delete/{id}', [RolesController::class, 'deleteroles']);
+Route::get('/roles/{id}', [RolesController::class, 'ViewEditRoles'])->name('EditRoles');
+Route::post('/roles/{id}', [RolesController::class, 'EditRoles'])->name('EditRoles');
+Route::get('/roless/{id}', [RolesController::class, 'activeRoles']);
 
 
 Route::prefix('DifficultyLevel')->name('DifficultyLevel.')->group(function () {
@@ -104,16 +104,23 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     Route::post('/', [PackageDetailController::class, 'store'])->name('store');
     Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
     Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
-
     Route::get('{id}/Image', [PackageDetailController::class, 'Image'])->name('Image');
     Route::post('{id}/uploadImage', [PackageDetailController::class, 'uploadImage'])->name('uploadImage');
+    Route::get('/{id}/edit', [PackageDetailController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [PackageDetailController::class, 'update'])->name('update');
+    Route::post('{id}/uploadImage', [PackageDetailController::class, 'update'])->name('uploadImage');
+});
 
-    //Package Itinerary
-    Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {
-        Route::get('/', [PackageItineraryController::class, 'index'])->name('index');
-        Route::post('/', [PackageItineraryController::class, 'store'])->name('store');
-        Route::put('/{faq}', [PackageItineraryController::class, 'update'])->name('update');
-        // Route::delete('/{faq}', [ServiceRegionController::class, 'destroy'])->name('destroy');
-        Route::get('/form/{faq?}', [PackageItineraryController::class, 'itineraryForm'])->name('form');
-    });
+//Package Itinerary
+Route::prefix('{package_id}/itinerary')->name('itinerary.')->group(function () {
+    Route::get('/', [PackageItineraryController::class, 'index'])->name('index');
+    Route::post('/', [PackageItineraryController::class, 'store'])->name('store');
+    Route::put('/{faq}', [PackageItineraryController::class, 'update'])->name('update');
+    // Route::delete('/{faq}', [ServiceRegionController::class, 'destroy'])->name('destroy');
+    Route::get('/form/{faq?}', [PackageItineraryController::class, 'itineraryForm'])->name('form');
+});
+
+//Client Routes
+Route::get('/client', action: function () {
+    return view('client.home.index');
 });
