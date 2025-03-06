@@ -1,4 +1,3 @@
-{{-- resources/views/Client/dashboard.blade.php --}}
 @extends('Client.layouts.app')
 
 @section('content')
@@ -27,5 +26,4 @@
 
     //Hero section
     $heroContainerClassName = "home-hero-container"
-@endphp
 @endphp
