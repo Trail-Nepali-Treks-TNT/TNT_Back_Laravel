@@ -1,4 +1,4 @@
-<nav class="py-2 nav-top align-items-center d-none d-md-block">
+<nav class="py-2 nav-top align-items-center ">
     <div class="container-fluid tnt-container d-flex flex-wrap align-items-sm-center">
         <a href="/" class="d-flex align-items-center me-auto text-decoration-none text-white top-nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -36,7 +36,7 @@
                     +977-9838412058
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none d-md-block">
                 <a href="#" class="nav-link text-white px-2 top-nav-link">Currency: $USD</a>
             </li>
         </ul>
