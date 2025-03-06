@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Web\AccomodationController;
 use App\Http\Controllers\Web\CategoryController;
+use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\DifficultyLevelController;
 use App\Http\Controllers\Web\PackageDetailController;
 use App\Http\Controllers\Web\PackageFaqController;
@@ -127,7 +128,12 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     });
 });
 
-
+Route::prefix('client')
+    ->name('client.')
+    ->middleware('guest') // Apply 'guest' middleware to all routes
+    ->group(function () {
+        Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
+    });
 
 //Client Routes
 Route::get('/client', action: function () {

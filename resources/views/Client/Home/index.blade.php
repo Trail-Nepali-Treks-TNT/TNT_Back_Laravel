@@ -28,3 +28,4 @@
     //Hero section
     $heroContainerClassName = "home-hero-container"
 @endphp
+@endphp
