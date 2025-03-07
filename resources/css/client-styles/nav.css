@@ -12,18 +12,26 @@
     overflow: hidden;
     opacity: 0.9;
 }
-.home-hero-container::before {
-    content: '';
+.hero-overlay {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    background-color: color-mix(in oklab, #000000 20%, transparent);
-    opacity: 0.3; /* Adjust this value for the opacity of the image */
-    pointer-events: none; /* Ensure it doesn't interfere with other elements */
-    z-index: 1; /* Makes sure the overlay is above the image */
+    left: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
 }
+.hero-overlay-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 768px) {
     .home-hero-container {
         height: calc(100vh + 50px);
@@ -111,5 +119,157 @@
     .alert-offer {
         font-size: 0.875rem;
         line-height: 1.25rem;
+    }
+}
+.hero-section {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+.hero-section-container {
+    position: relative;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    color: #ffece4;
+    max-width: 45%;
+}
+
+.hero-section-title {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+.hero-section-detail {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+.search svg {
+    position: absolute;
+    left: 0.75rem;
+    height: 1rem;
+    width: 1rem;
+    color: var(--secondary-base);
+}
+
+.search-input {
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    font-size: 1.125rem;
+    color: var(--grey-700);
+    outline: none;
+    transition: border 0.2s ease-in-out;
+}
+
+.search-input::placeholder {
+    font-size: 0.875rem;
+    color: var(--grey-500);
+}
+
+@media (min-width: 768px) {
+    .search-input {
+        font-size: 0.875rem;
+    }
+}
+.search-input:focus {
+    border: 1px solid var(--secondary-base);
+}
+
+.search-btn {
+    position: absolute;
+    right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--grey-100);
+    white-space: nowrap;
+    background-color: var(--secondary-base);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
+    border: none;
+}
+
+.search-btn:hover {
+    background-color: var(--secondary-600);
+}
+.discover-button-text {
+    font-size: 0.875rem;
+}
+.discover-button svg {
+    width: 36px;
+    height: 36px;
+    animation: bounce 1s infinite;
+}
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7%);
+    }
+}
+@media (min-width: 768px) {
+    .hero-section-title {
+        font-size: 2.25rem;
+        margin-bottom: 1.75rem;
+    }
+    .hero-section-detail {
+        margin-bottom: 1.75rem;
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+    .search {
+        margin-bottom: 1.75rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section-title {
+        font-size: 64px;
+    }
+    .hero-section-detail {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 1200px) {
+    .hero-section-container {
+        max-width: 75%;
+    }
+}
+@media (max-width: 768px) {
+    .hero-section-container {
+        max-width: 95%;
     }
 }
