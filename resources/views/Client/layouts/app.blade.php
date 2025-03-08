@@ -73,6 +73,7 @@
     </button>
     @include("Client.layouts.navbar.regionnav")
     @include("Client.layouts.navbar.servicenav")
+    @include("Client.layouts.navbar.sidenav")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>
