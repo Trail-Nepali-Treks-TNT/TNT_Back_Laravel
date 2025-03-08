@@ -1,0 +1,135 @@
+{
+    "region": [
+        {
+            "name": "Everest Region",
+            "img": "https://images.unsplash.com/photo-1515245469645-19dbee02403e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Annapurna Region",
+            "img": "https://images.unsplash.com/photo-1711531120790-a3f0acdfb5a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Langtang Region ",
+            "img": "https://images.unsplash.com/photo-1578709896700-fff8e5fbda64?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Manaslu Region ",
+            "img": "https://images.unsplash.com/photo-1610912335893-b996d1743610?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Kathmandu Valley",
+            "img": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Pokhara ",
+            "img": "https://images.unsplash.com/photo-1610997686651-98492fd08108?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Chitwan National Park",
+            "img": "https://images.unsplash.com/photo-1643114635183-be619643e6dd?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Lumbini ",
+            "img": "https://images.unsplash.com/photo-1578235107258-f6e405a4ffc0?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Rara Lake",
+            "img": "https://images.unsplash.com/photo-1631873504687-3d72bd0475ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Koshi Tappu Wildlife Reserve",
+            "img": "https://plus.unsplash.com/premium_photo-1661832611972-b6ee1aba3581?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Kanchenjunga Region",
+            "img": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Mustang Region",
+            "img": "https://images.unsplash.com/photo-1540876508220-988a11575ed6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ],
+    "services": [
+        {
+            "category": "Trekking Holidays",
+            "items": [
+                { "name": "Everest Region", "link": "/trekking/everest" },
+                { "name": "Annapurna Region", "link": "/trekking/annapurna" },
+                { "name": "Langtang & Helambu Region", "link": "/trekking/langtang" },
+                { "name": "Manaslu Region", "link": "/trekking/manaslu" },
+                { "name": "Upper Mustang Region", "link": "/trekking/mustang" },
+                { "name": "Other Regions/Specialty Treks", "link": "/trekking/others" }
+            ]
+        },
+        {
+            "category": "Pilgrimage Holidays",
+            "items": [
+                { "name": "Swaminarayan Trail Tour", "link": "/pilgrimage/swaminarayan" },
+                { "name": "Baraha Chhetra Tour", "link": "/pilgrimage/baraha" },
+                { "name": "The Ramayana Circuit", "link": "/pilgrimage/ramayana" }
+            ]
+        },
+        {
+            "category": "Journeys of a Lifetime",
+            "items": [
+                { "name": "Kailash Mansarovar Yatra (Tibet)", "link": "/journeys/kailash" },
+                { "name": "Jyotirlinga Darshan Yatra (India)", "link": "/journeys/jyotirlinga" }
+            ]
+        },
+        {
+            "category": "Adventure Holidays",
+            "items": [
+                { "name": "Peak Expedition", "link": "/adventure/peak-expedition" },
+                { "name": "White Water Rafting", "link": "/adventure/rafting" },
+                { "name": "Bungee Jumping", "link": "/adventure/bungee" },
+                { "name": "Cycling Tour", "link": "/adventure/cycling" }
+            ]
+        },
+        {
+            "category": "Helicopter Tours",
+            "items": [
+                { "name": "Muktinath Trip", "link": "/helicopter/muktinath" },
+                { "name": "Kagbhusundi (Tilicho) Trip", "link": "/helicopter/tilicho" }
+            ]
+        },
+        {
+            "category": "Festival and Events Holidays",
+            "items": [
+                { "name": "Dashain", "link": "/festival/dashain" },
+                { "name": "Tihar", "link": "/festival/tihar" },
+                { "name": "Holi", "link": "/festival/holi" },
+                { "name": "Shivaratri", "link": "/festival/shivaratri" }
+            ]
+        },
+        {
+            "category": "National Park and Wildlife Holidays",
+            "items": [
+                { "name": "Sagarmatha National Park", "link": "/wildlife/sagarmatha" },
+                { "name": "Chitwan National Park", "link": "/wildlife/chitwan" },
+                { "name": "Langtang National Park", "link": "/wildlife/langtang" },
+                { "name": "Khaptad National Park", "link": "/wildlife/khaptad" },
+                { "name": "Rara National Park", "link": "/wildlife/rara" },
+                { "name": "Bardiya National Park", "link": "/wildlife/bardiya" },
+                { "name": "Shey Phoksundo National Park", "link": "/wildlife/shey-phoksundo" },
+                { "name": "Makalu Barun National Park", "link": "/wildlife/makalu" }
+            ]
+        },
+        {
+            "category": "Hiking (Day Hikes/Short Treks)",
+            "items": [
+                { "name": "Kathmandu Valley Hiking", "link": "/hiking/kathmandu-valley" },
+                { "name": "Sarangkot to Naudanda Hike", "link": "/hiking/sarangkot" },
+                { "name": "Australian Camp Hike", "link": "/hiking/australian-camp" },
+                { "name": "Sundarijal to Chisapani Hike", "link": "/hiking/sundarijal" },
+                { "name": "Dhulikhel to Namobuddha Hike", "link": "/hiking/dhulikhel" },
+                { "name": "Kalinchowk Trek", "link": "/hiking/kalinchowk" },
+                { "name": "Poon Hill Trek", "link": "/hiking/poon-hill" },
+                { "name": "Ghandruk Trek", "link": "/hiking/ghandruk" },
+                { "name": "Dhampus Trek", "link": "/hiking/dhampus" },
+                { "name": "Balthali Village Trek", "link": "/hiking/balthali" },
+                { "name": "Helambu Trek", "link": "/hiking/helambu" },
+                { "name": "Ranikot Hike", "link": "/hiking/ranikot" }
+            ]
+        }
+    ]
+}

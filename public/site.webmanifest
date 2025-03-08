@@ -1,0 +1,23 @@
+{
+    "name": "Trail Nepal Treks",
+    "short_name": "TNT",
+    "description": "Discover your gateway to the Himalayas with seamless Nepal adventure planning. From trekking and expert guides to transport and tours, customize and book your unforgettable journey today!",
+    "lang": "en",
+    "icons": [
+        {
+            "src": "/web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#00A8B6",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

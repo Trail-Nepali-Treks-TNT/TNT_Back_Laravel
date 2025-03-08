@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Dynamic SEO Tags -->
     <title>{{ $title ?? config('app.name', 'Trail Nepal Treks') }}</title>
     <meta name="description"
@@ -33,7 +39,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts and Styles -->
-    @vite(['resources/css/client-styles/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/client-styles/app.css', 'resources/js/client/app.js'])
 
 </head>
 
@@ -46,12 +52,27 @@
             </div>
         </header>
     @endif
+    <!-- Navigation -->
+    @include('Client.layouts.navbar.nav', ['navclass' => $heroContainerClassName])
+
     <!-- Page Content -->
     <main>
         @yield('content')
     </main>
     <!-- Footer -->
-    @extends("Client.layouts.footer")
+    <!-- Footer -->
+    @include("Client.layouts.footer")
+
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up size-5 text-white">
+            <path d="m5 12 7-7 7 7"></path>
+            <path d="M12 19V5"></path>
+        </svg>
+    </button>
+    @include("Client.layouts.navbar.regionnav")
+    @include("Client.layouts.navbar.servicenav")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>

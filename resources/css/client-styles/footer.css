@@ -16,7 +16,7 @@
     line-height: 1.75rem /* 28px */;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1)) /* #ffffff */;
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 300;
 }
 .footer-register-text {
