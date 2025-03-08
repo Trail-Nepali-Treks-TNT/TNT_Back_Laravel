@@ -17,8 +17,8 @@
                 </a>
             </li>
             <li>
-                <a data-bs-toggle="modal" href="#services"
-                    class="nav-link text-decoration-none flex align-items-center gap-1 text-white">
+                <a role="button" data-bs-toggle="modal" data-bs-target="#serviceTopNavModal"
+                    class="nav-link text-decoration-none flex align-items-center gap-1 text-white {{ ($activeClass ?? '') === 'service' ? 'active' : '' }}">
                     Services <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round"
