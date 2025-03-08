@@ -1,22 +1,23 @@
+@vite('resources/css/client-styles/home.css')
+
 @extends('Client.layouts.app')
 
 @section('content')
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h1 class="text-2xl font-bold mb-4">Client Dashboard</h1>
-                    <h3>
-                        YOUR GATEWAY
-                        TO THE HIMALAYAS
-                    </h3>
-                    <p>Plan your Nepal adventure effortlessly with trekking, guides, transport, and tours all in one place.
-                        Customize, book,
-                        and enjoy an unforgettable journey.</p>
-                </div>
+    <!-- Book early section -->
+    <section class="book-early-container tnt-container">
+        <div class="row">
+            <div class="col-12 col-lg-6 px-0">
+                <h2 class="font-playfair book-early-title">Book early and save big!</h2>
+                <p class="book-early-description mb-0">Grab Exclusive Early Bird Deals – Save Up to 30%! Book by January
+                    15th for
+                    amazing
+                    discounts on 2025 adventures.</p>
+            </div>
+            <div class="col-12 col-lg-6 d-flex align-items-end justify-content-center justify-content-md-end px-0">
+                <a href="" class="btn btn-explore">EXPLORE ALL OFFERS</a>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @php
