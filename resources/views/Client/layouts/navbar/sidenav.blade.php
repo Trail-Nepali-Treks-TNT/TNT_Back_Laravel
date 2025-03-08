@@ -5,12 +5,12 @@
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none tnt-logo">
                     <img src="assets/images/client/logo.svg" alt="Logo">
                 </a>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body side-nav-modal-body">
                 <ul class="nav flex-column gap-2 justify-content-center d-flex nav-bottom-links">
                     <li>
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#regionTopNavModal"
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#regionSideNavModal"
                             class="nav-link text-decoration-none d-flex align-items-center justify-content-between gap-1 text-white {{ ($activeClass ?? '') === 'region' ? 'active' : '' }}">
                             Region
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li>
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#serviceTopNavModal"
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#serviceSideNavModal"
                             class="nav-link text-decoration-none d-flex align-items-center justify-content-between gap-1 text-white {{ ($activeClass ?? '') === 'service' ? 'active' : '' }}">
                             Services <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
