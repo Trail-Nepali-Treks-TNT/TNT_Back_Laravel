@@ -3,7 +3,7 @@
     <div class="modal-dialog nav-modal">
         <div class="modal-content nav-modal-content">
             @include("Client.layouts.navbar.topnavbar", ['topnavclass' => "hidden-top-navbar"])
-            @include("Client.layouts.navbar.navheader")
+            @include("Client.layouts.navbar.navheader", ['activeClass' => "region"])
             <div class="container-fluid tnt-container py-3 d-flex gap-4 region-container">
                 <div class="nav-modal-title d-flex gap-1 flex-column">
                     <h3 class="font-playfair mb-0">Region</h3>

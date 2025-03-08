@@ -23,10 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
-    var myModal = new Modal(document.getElementById('regionTopNavModal'));
-    myModal.show();
-});
 
 //Region Nav modal swiper script
 var swiper = new Swiper('.region-nav-swiper', {
