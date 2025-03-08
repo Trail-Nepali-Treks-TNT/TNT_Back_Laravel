@@ -71,6 +71,7 @@
             <path d="M12 19V5"></path>
         </svg>
     </button>
+    @include("Client.layouts.navbar.regionnav")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>

@@ -164,6 +164,4 @@ $footerLinks = [
         <span id="footer-date" class="me-1">&copy; {{ date(format: 'Y') }} {{ config('app.name') }}.</span>Trail Nepal
         Treks. All rights reserved.
     </div>
-
-
 </footer>

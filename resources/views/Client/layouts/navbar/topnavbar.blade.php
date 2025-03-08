@@ -1,4 +1,4 @@
-<nav class="py-2 nav-top align-items-center ">
+<nav class="py-2 nav-top align-items-center {{ $topnavclass ?? "" }}">
     <div class="container-fluid tnt-container d-flex flex-wrap align-items-sm-center">
         <a href="/" class="d-flex align-items-center me-auto text-decoration-none text-white top-nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
