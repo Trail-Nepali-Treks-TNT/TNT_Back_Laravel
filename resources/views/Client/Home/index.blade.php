@@ -1,8 +1,7 @@
-@vite('resources/css/client-styles/home.css')
-
 @extends('Client.layouts.app')
 
 @section('content')
+    @vite('resources/css/client-styles/home.css')
     <!-- Book early section -->
     <section class="book-early-container tnt-container">
         <div class="row">
