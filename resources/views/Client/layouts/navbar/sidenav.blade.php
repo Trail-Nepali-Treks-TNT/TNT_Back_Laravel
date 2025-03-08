@@ -10,7 +10,7 @@
             <div class="modal-body side-nav-modal-body">
                 <ul class="nav flex-column gap-2 justify-content-center d-flex nav-bottom-links">
                     <li>
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#regionSideNavModal"
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#sidebarRegionModal"
                             class="nav-link text-decoration-none d-flex align-items-center justify-content-between gap-1 text-white {{ ($activeClass ?? '') === 'region' ? 'active' : '' }}">
                             Region
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -33,9 +33,9 @@
                                 <path d="m6 9 6 6 6-6"></path>
                             </svg></a>
                     </li>
-                    <li><a href="#" class="nav-link text-decoration-none text-white">About us</a></li>
-                    <li><a href="#" class="nav-link text-decoration-none text-white">Resources</a></li>
-                    <li><a href="#" class="nav-link text-decoration-none text-white">Contact</a></li>
+                    <li><a href="/" class="nav-link text-decoration-none text-white px-1">About us</a></li>
+                    <li><a href="/" class="nav-link text-decoration-none text-white">Resources</a></li>
+                    <li><a href="/" class="nav-link text-decoration-none text-white">Contact</a></li>
                 </ul>
             </div>
         </div>

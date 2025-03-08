@@ -75,6 +75,7 @@
     @include("Client.layouts.navbar.servicenav")
     @include("Client.layouts.navbar.sidenav")
     @include("Client.layouts.navbar.service-sidenav")
+    @include("Client.layouts.navbar.region-sidenav")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>
