@@ -354,3 +354,46 @@
 .tnt-region-slider-prev-btn {
     left: 0.75rem;
 }
+/* Top nav service list style */
+.nav-servicelist {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 30rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem;
+    margin: auto 1rem;
+    width: calc(100% - 256px);
+}
+.nav-servicelist .service-category {
+    width: -moz-max-content;
+    width: max-content;
+    margin-bottom: 30px;
+}
+.nav-servicelist .service-category h5 {
+    color: var(--primary-100);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.nav-servicelist .service-category ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.nav-servicelist .service-category ul li {
+    color: var(--grey-white);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.125rem;
+}
+.nav-servicelist .service-category ul li a {
+    border: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease-in;
+}
+.nav-servicelist .service-category ul li:hover a {
+    color: var(--grey-200r);
+    border-bottom-color: 1px solid var(--primary-100);
+}

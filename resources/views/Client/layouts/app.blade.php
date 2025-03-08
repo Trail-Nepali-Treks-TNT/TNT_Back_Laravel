@@ -72,6 +72,7 @@
         </svg>
     </button>
     @include("Client.layouts.navbar.regionnav")
+    @include("Client.layouts.navbar.servicenav")
     <!-- Additional Scripts -->
     @stack('scripts')
 </body>
