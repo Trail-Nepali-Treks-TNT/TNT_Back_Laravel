@@ -35,7 +35,9 @@ var swiper = new Swiper('.region-nav-swiper', {
         prevEl: '.tnt-region-slider-prev-btn'
     },
     breakpoints: {
-        1024: { slidesPerView: 5 }, // Desktop
+        2560: { slidesPerView: 7 }, // Desktop
+        1440: { slidesPerView: 6 }, // Desktop
+        1024: { slidesPerView: 4 }, // Desktop
         768: { slidesPerView: 3 }, // Tablets
         480: { slidesPerView: 1 } // Mobile
     }

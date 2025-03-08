@@ -1,5 +1,5 @@
-<div class="modal modal-nav fade" id="regionTopNavModal" tabindex="-1" aria-labelledby="regionTopNavModalLabel"
-    aria-hidden="true">
+<div class="modal modal-nav fade nav-modal-container" id="regionTopNavModal" tabindex="-1"
+    aria-labelledby="regionTopNavModalLabel" aria-hidden="true">
     <div class="modal-dialog nav-modal">
         <div class="modal-content nav-modal-content">
             @include("Client.layouts.navbar.topnavbar", ['topnavclass' => "hidden-top-navbar"])

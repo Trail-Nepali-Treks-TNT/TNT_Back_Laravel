@@ -1,6 +1,6 @@
 <div class="container-fluid tnt-container nav-bottom  py-3">
     <header class="w-100 d-flex align-items-center justify-content-between gap-2">
-        <a href="/" class="d-flex align-items-center text-dark text-decoration-none ">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none tnt-logo">
             <img src="assets/images/client/logo.svg" alt="Logo">
         </a>
         <ul class="nav flex-row gap-2 justify-content-center d-none d-md-flex nav-bottom-links">
