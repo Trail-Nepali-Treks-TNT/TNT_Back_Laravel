@@ -447,3 +447,49 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+.service-side-nav-modal-body {
+    flex: 1; /* Takes available space */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+.service-side-nav-modal-body .accordion .accordion-item {
+    background-color: transparent !important;
+}
+.service-side-nav-modal-body .accordion .accordion-header .accordion-button {
+    background-color: transparent !important;
+    color: var(--grey-white);
+    font-size: 14px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    border: none !important;
+}
+.service-side-nav-modal-body .accordion .accordion-header .accordion-button:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none;
+}
+.service-side-nav-modal-body .accordion-item {
+    border: none !important;
+}
+.service-side-nav-modal-body .accordion-body {
+    padding-top: 0px !important;
+}
+.service-side-nav-modal-body .accordion-body .list-group .list-group-item {
+    background-color: transparent !important;
+    border: none;
+    box-sizing: none !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.service-side-nav-modal-body .accordion-body .list-group .list-group-item:focus {
+    box-shadow: none !important;
+}
+
+.service-side-nav-modal-body .accordion-button::after {
+    filter: invert(1);
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem;
+}
+.service-side-nav-modal-body .accordion-button:not(.collapsed) {
+    box-shadow: none !important;
+}
