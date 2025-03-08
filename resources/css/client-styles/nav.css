@@ -416,3 +416,26 @@
         width: 8rem;
     }
 }
+/* Responsive sidebar style */
+.modal.tnt-responsive-sidebar .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 100%; /* Adjust as needed */
+    max-width: 300px;
+    height: 100%;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.modal.tnt-responsive-sidebar.show .modal-dialog {
+    transform: translateX(0);
+}
+.modal.modal.tnt-responsive-sidebar .modal-content {
+    background-color: var(--primary-500);
+    border: none !important;
+    border-radius: 0px !important;
+    height: 100%;
+}
+.side-nav-modal-body ul li a {
+    font-size: 0.875rem;
+}
