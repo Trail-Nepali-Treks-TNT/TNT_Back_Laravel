@@ -131,5 +131,165 @@
                 { "name": "Ranikot Hike", "link": "/hiking/ranikot" }
             ]
         }
+    ],
+    "earlyPackage": [
+        {
+            "id": 2,
+            "packageName": "Annapurna Basecamp Trek",
+            "shortDescription": "The Annapurna Base Camp Trek: A stunning journey through diverse terrain, beautiful villages, and stunning rhododendron forests, to the center of the massive Annapurna mountain range. An ideal blend of adventure and Himalayan peace!",
+            "expiryDate": "2025-06-05",
+            "isBestSeller": true,
+            "isPopular": false,
+            "discountedPricePerPerson": 1250,
+            "price": 1600,
+            "images": [
+                "/assets/images/annapurna-base-camp.png",
+                "/assets/images/mardi-himal.png",
+                "/assets/images/dhaulagiri.png"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 1,
+            "packageName": "Mardi Himal Trek",
+            "expiryDate": "2025-05-06",
+            "shortDescription": "Mardi Himal Trek presents an overwhelming and picturesque adventure...",
+            "isBestSeller": true,
+            "isPopular": true,
+            "discountedPricePerPerson": 1200,
+            "price": 1500,
+            "images": [
+                "/assets/images/mardi-himal.png",
+                "/assets/images/annapurna.png",
+                "/assets/images/annapurna-base-camp.png"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 3,
+            "packageName": "Annapurna Circuit Trek",
+            "shortDescription": "Experience diverse landscapes and cultures on this classic trek.",
+            "expiryDate": "2025-07-05",
+            "isBestSeller": false,
+            "isPopular": false,
+            "discountedPricePerPerson": 800,
+            "price": 1200,
+            "images": [
+                "https://cdn.pixabay.com/photo/2019/12/13/08/21/gokyo-ri-4692458_640.jpg",
+                "https://cdn.pixabay.com/photo/2021/07/08/03/55/mount-everest-6395759_640.jpg",
+                "https://cdn.pixabay.com/photo/2017/02/14/03/03/ama-dablam-2064522_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 7,
+            "packageName": "Kanchenjunga Base Camp Trek",
+            "shortDescription": "Explore the remote and stunning Kanchenjunga region.",
+            "expiryDate": "2025-12-31",
+            "isBestSeller": false,
+            "isPopular": true,
+            "discountedPricePerPerson": 1300,
+            "price": 1600,
+            "images": [
+                "https://cdn.pixabay.com/photo/2023/02/08/07/05/mountain-7775867_640.jpg",
+                "https://cdn.pixabay.com/photo/2022/10/13/13/50/nepal-7519157_640.jpg",
+                "https://cdn.pixabay.com/photo/2019/03/12/02/27/woman-4049918_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 8,
+            "packageName": "Upper Mustang Trek",
+            "shortDescription": "A unique trek through the ancient kingdom of Mustang.",
+            "expiryDate": "2025-06-03",
+            "isBestSeller": true,
+            "isPopular": true,
+            "discountedPricePerPerson": 1400,
+            "price": 1800,
+            "images": [
+                "https://cdn.pixabay.com/photo/2021/02/23/11/06/mountains-6043079_640.jpg",
+                "https://cdn.pixabay.com/photo/2015/07/08/12/18/nepal-836303_640.jpg",
+                "https://cdn.pixabay.com/photo/2022/04/29/16/23/nepal-7164044_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 9,
+            "packageName": "Tsum Valley Trek",
+            "shortDescription": "A trek to the hidden valley of Tsum, rich in culture and beauty.",
+            "expiryDate": "2025-05-01",
+            "isBestSeller": false,
+            "isPopular": true,
+            "discountedPricePerPerson": 950,
+            "price": 1200,
+            "images": [
+                "https://cdn.pixabay.com/photo/2016/04/05/11/04/nepal-1309205_640.jpg",
+                "https://cdn.pixabay.com/photo/2015/07/08/12/23/nepal-836309_640.jpg",
+                "https://cdn.pixabay.com/photo/2023/01/11/19/53/hiking-7712678_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 10,
+            "packageName": "Rara Lake Trek",
+            "shortDescription": "Discover the beauty of Rara Lake, the largest lake in Nepal.",
+            "expiryDate": "2025-06-18",
+            "isBestSeller": false,
+            "isPopular": false,
+            "discountedPricePerPerson": 800,
+            "price": 1000,
+            "images": [
+                "https://cdn.pixabay.com/photo/2018/05/11/11/11/nepal-3390257_640.jpg",
+                "https://cdn.pixabay.com/photo/2021/11/07/10/14/hike-6775216_640.jpg",
+                "https://cdn.pixabay.com/photo/2017/08/01/14/34/nepal-2565878_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 11,
+            "packageName": "Dolpo Trek",
+            "shortDescription": "An off-the-beaten-path trek in the remote Dolpo region.",
+            "expiryDate": "2025-04-09",
+            "isBestSeller": false,
+            "isPopular": false,
+            "discountedPricePerPerson": 1200,
+            "price": 1500,
+            "images": [
+                "https://cdn.pixabay.com/photo/2023/01/02/17/45/clear-water-7692600_640.jpg",
+                "https://cdn.pixabay.com/photo/2019/08/12/10/03/tourist-4400871_640.jpg",
+                "https://cdn.pixabay.com/photo/2017/03/22/14/42/trail-2165226_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 12,
+            "packageName": "Chitwan Jungle Safari",
+            "shortDescription": "Experience wildlife in Chitwan National Park.",
+            "expiryDate": "2025-10-01",
+            "isBestSeller": true,
+            "isPopular": true,
+            "discountedPricePerPerson": 500,
+            "price": 700,
+            "images": [
+                "https://cdn.pixabay.com/photo/2010/11/29/nepal-406_640.jpg",
+                "https://cdn.pixabay.com/photo/2022/08/10/02/01/mountains-7376192_640.jpg"
+            ],
+            "link": "/"
+        },
+        {
+            "id": 13,
+            "packageName": "Ghorepani Poon Hill Trek",
+            "shortDescription": "A popular trek known for its stunning sunrise views.",
+            "expiryDate": "2025-06-16",
+            "isBestSeller": true,
+            "isPopular": true,
+            "discountedPricePerPerson": 650,
+            "price": 850,
+            "images": [
+                "https://cdn.pixabay.com/photo/2015/10/03/19/45/nepal-970254_640.jpg",
+                "https://cdn.pixabay.com/photo/2016/05/29/20/54/nepal-1423815_640.jpg"
+            ],
+            "link": "/"
+        }
     ]
 }

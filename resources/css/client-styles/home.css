@@ -1,0 +1,51 @@
+.book-early-container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.book-early-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.book-early-description {
+    font-size: 0.875rem;
+}
+.book-early-container .btn-explore {
+    background-color: var(--grey-600);
+    font-size: 0.8rem;
+    padding: 12px 17px;
+    color: white;
+    font-weight: 200;
+    transition: 0.25s;
+}
+.book-early-container .btn-explore:hover {
+    color: var(--grey-white);
+    background-color: var(--grey-700);
+}
+@media (min-width: 768px) {
+    .book-early-container {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .book-early-title {
+        font-size: 1.875rem;
+    }
+    .book-early-description {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .book-early-title {
+        font-size: 2.25rem;
+    }
+}
+.tnt-package-slider-next-btn {
+    right: 0.5rem;
+}
+.tnt-package-slider-prev-btn {
+    left: 0.5rem;
+}
+.earlyCardSwiper .swiper-wrapper {
+    height: auto !important;
+    padding-bottom: 2px !important;
+}

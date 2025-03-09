@@ -1,29 +1,71 @@
 @extends('Client.layouts.app')
 
 @section('content')
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h1 class="text-2xl font-bold mb-4">Client Dashboard</h1>
-                    <h3>
-                        YOUR GATEWAY
-                        TO THE HIMALAYAS
-                    </h3>
-                    <p>Plan your Nepal adventure effortlessly with trekking, guides, transport, and tours all in one place.
-                        Customize, book,
-                        and enjoy an unforgettable journey.</p>
-                </div>
-            </div>
+@vite('resources/css/client-styles/home.css')
+<!-- Book early section -->
+<section class="book-early-container tnt-container">
+    <div class="row mx-0">
+        <div class="col-12 col-lg-6 px-0">
+            <h2 class="font-playfair book-early-title">Book early and save big!</h2>
+            <p class="book-early-description mb-0">Grab Exclusive Early Bird Deals – Save Up to 30%! Book by January
+                15th for
+                amazing
+                discounts on 2025 adventures.</p>
+        </div>
+        <div class="col-12 col-lg-6 d-flex align-items-end justify-content-center justify-content-md-end px-0">
+            <a href="" class="btn btn-explore">EXPLORE ALL OFFERS</a>
         </div>
     </div>
+</section>
+<!-- Packages -->
+<section class="tnt-container" style="margin-bottom: 20px;">
+    @php
+    // Load JSON file directly in the view
+    $jsonPath = resource_path('views/Client/data/data.json');
+    $jsonData = json_decode(file_get_contents($jsonPath), true);
+    $packages = $jsonData['earlyPackage'] ?? []; // Get the "region" array
+    @endphp
+    <div style="overflow: hidden;">
+
+        <div class="swiper earlyCardSwiper" id="earlyPackage">
+            <div class="swiper-wrapper">
+                @foreach ($packages as $index => $package)
+                <div class="swiper-slide">
+                    <x-package-card :images="$package['images']" title="{{$package['packageName']}}"
+                        description="{{ $package['shortDescription'] }}" expiryDate="{{ $package['expiryDate'] }}"
+                        price="{{ $package['price'] }}" discountedPrice="{{ $package['discountedPricePerPerson'] }}"
+                        discountPercentage="15" bestSeller="{{ $package['isBestSeller'] }}" popular="{{ $package['isPopular']}}" link="{{ $package['link'] }}" />
+                </div>
+                @endforeach
+            </div>
+            <button class="tnt-slider-btn tnt-package-slider-next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-arrow-right">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                </svg>
+            </button>
+            <button class="tnt-slider-btn tnt-package-slider-prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-arrow-left">
+                    <path d="m12 19-7-7 7-7"></path>
+                    <path d="M19 12H5"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+@vite('resources/js/client/home.js')
 @endsection
 
 @php
-    // Set SEO variables
-    $title = 'Trail Nepal Treks';
-    $description = 'Discover your gateway to the Himalayas with seamless Nepal adventure planning. From trekking and expert guides to transport and tours, customize and book your unforgettable journey today!';
+// Set SEO variables
+$title = 'Trail Nepal Treks';
+$description = 'Discover your gateway to the Himalayas with seamless Nepal adventure planning. From trekking and expert guides to transport and tours, customize and book your unforgettable journey today!';
 
-    //Hero section
-    $heroContainerClassName = "home-hero-container"
+//Hero section
+$heroContainerClassName = "home-hero-container"
 @endphp
