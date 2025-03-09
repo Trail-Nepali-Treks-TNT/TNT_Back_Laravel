@@ -1,5 +1,5 @@
+import Aos from 'aos';
 import 'bootstrap';
-import { Modal } from 'bootstrap';
 import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
