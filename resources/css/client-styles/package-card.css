@@ -8,6 +8,7 @@
 .package-card:hover {
     background-color: color-mix(in oklab, var(--primary-100) 20%, transparent);
 }
+
 .package-card img.cover {
     aspect-ratio: 1.6 / 1;
     max-width: 100%;
