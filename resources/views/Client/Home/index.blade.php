@@ -27,8 +27,8 @@
     @endphp
     <div style="overflow: hidden;">
 
-        <div class="swiper earlyCardSwiper">
-            <div class="swiper-wrapper" style="height: auto !important;">
+        <div class="swiper earlyCardSwiper" id="earlyPackage">
+            <div class="swiper-wrapper">
                 @foreach ($packages as $index => $package)
                 <div class="swiper-slide">
                     <x-package-card :images="$package['images']" title="{{$package['packageName']}}"
