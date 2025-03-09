@@ -1,4 +1,3 @@
-import Aos from 'aos';
 import 'bootstrap';
 import Swiper from 'swiper';
 import 'swiper/css';
