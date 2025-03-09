@@ -128,7 +128,8 @@ html {
     gap: 0.5rem;
     border: none;
     border-radius: 9999px; /* Full rounded */
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--grey-100);
+    opacity: 0.7;
     font-size: 0.875rem; /* Text-sm */
     font-weight: 500;
     white-space: nowrap;
@@ -139,7 +140,7 @@ html {
 }
 
 .tnt-slider-btn:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--grey-200);
 }
 
 .tnt-slider-btn:focus-visible {
@@ -149,4 +150,7 @@ html {
 .tnt-slider-btn:disabled {
     /* pointer-events: none; */
     opacity: 0.5;
+}
+.tnt-slider-btn.swiper-button-disabled:hover {
+    background-color: var(--grey-100);
 }
