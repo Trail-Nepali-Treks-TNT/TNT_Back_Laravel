@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const backToTopButton = document.getElementById('scrollToTop');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
+        if (window.scrollY > 640) {
             backToTopButton.classList.remove('hidden');
             backToTopButton.classList.add('d-flex');
         } else {

@@ -57,6 +57,26 @@
         </div>
     </div>
 </section>
+<!-- Highlighted Hero Package -->
+<section class="package-highlight">
+    <div class="package-highlight-image">
+        <div class="tnt-container package-highlight-content">
+            <div class="package-highlight-title font-playfair">
+                <h2>MT. EVEREST EXPEDITION (8848.86M) - SOUTH</h2>
+            </div>
+            <div class="package-highlight-description">
+                <p>Mt. Everest Expedition is a lifetime mountaineering experience that allows you to stand on the highest point in the world.</p>
+                <a href="#" class="text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M18 8L22 12L18 16"></path>
+                        <path d="M2 12H22"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+@include("Client.Home.destination")
 
 @vite('resources/js/client/home.js')
 @endsection
