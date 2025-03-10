@@ -81,4 +81,5 @@
             </div>
         </div>
     </div>
+    <x-news-letter></x-news-letter>
 </section>
