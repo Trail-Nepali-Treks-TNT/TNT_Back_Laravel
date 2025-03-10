@@ -127,14 +127,14 @@
 
 .newsletter-privacy {
     font-size: 0.75rem;
-    color: #555;
+    color: var(--grey-500);
 }
 
 .newsletter-privacy-link {
-    color: #555;
+    color: var(--grey-500);
     text-decoration: underline;
 }
 
 .newsletter-privacy-link:hover {
-    color: #333;
+    color: var(--grey-600);
 }
