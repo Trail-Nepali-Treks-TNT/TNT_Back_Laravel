@@ -76,6 +76,7 @@
         </div>
     </div>
 </section>
+@include("Client.Home.destination")
 
 @vite('resources/js/client/home.js')
 @endsection
