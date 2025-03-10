@@ -75,3 +75,119 @@
         font-size: 1.125rem;
     }
 }
+/* Destination collection style */
+.destination-collection {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.destination-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .destination-flex-container {
+        flex-wrap: nowrap;
+    }
+}
+
+.destination-flex-container-reverse {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-direction: row-reverse;
+}
+
+@media (min-width: 768px) {
+    .destination-flex-container-reverse {
+        flex-wrap: nowrap;
+    }
+}
+
+.destination-column {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .destination-column {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 1024px) {
+    .destination-column {
+        width: 50%;
+    }
+}
+
+.destination-card {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.destination-full-width {
+    width: 100%;
+}
+.destination-half-width {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .destination-half-width {
+        width: 50%;
+    }
+}
+
+.destination-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.destination-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+.destination-text-container {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: white;
+}
+
+.destination-text-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+@media (min-width: 640px) {
+    .destination-text-container h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .destination-text-container h2 {
+        font-size: 1.25rem;
+    }
+}
+
+.destination-text-container p {
+    font-size: 0.875rem;
+}
