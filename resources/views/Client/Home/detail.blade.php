@@ -58,8 +58,7 @@
             EARLY BIRD OFFER - Book now & save up to 20%
         </div>
         <div class="container-fluid container-95 nav-bottom d-none d-md-block">
-            <header
-                class="d-flex flex-wrap align-items-center justify-content-around justify-content-md-center justify-content-md-between pt-3 py-md-3 mb-0 mb-md-4">
+            <header class="d-flex flex-wrap align-items-center justify-content-around justify-content-md-center justify-content-md-between pt-3 py-md-3 mb-0 mb-md-4">
                 <a href="/"
                     class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none order-1 order-md-1">
                     <img src="/assets/images/client/logo-dark.svg" alt="Logo">
@@ -367,7 +366,7 @@
                                 </li>
                             </ol>
                         </nav>
-                        <h1>Everest Base Camp (EBC)</h1>
+                        <h1>{{ $packageDetail->name }} </h1>
                         <div class="photogrid">
                             <div class="parent">
                                 <div class="image1">

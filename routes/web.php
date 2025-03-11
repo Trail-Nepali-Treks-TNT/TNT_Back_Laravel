@@ -130,7 +130,6 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
 
 Route::prefix('client')
     ->name('client.')
-    ->middleware('guest') // Apply 'guest' middleware to all routes
     ->group(function () {
         Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
     });

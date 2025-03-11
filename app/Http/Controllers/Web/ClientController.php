@@ -17,6 +17,7 @@ class ClientController extends Controller
 
     public function detail($id)
     {
-        return view("client.home.detail");
+        $packageDetail = $this->packageDetailRepository->packageDetail($id);
+        return view("client.home.detail", compact('packageDetail'));
     }
 }
