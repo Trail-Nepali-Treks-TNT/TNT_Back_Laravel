@@ -21,25 +21,22 @@
                     <div class="swiper region-nav-swiper">
                         <div class="swiper-wrapper">
                             @php
-                                // Load JSON file directly in the view
-                                $jsonPath = resource_path('views/Client/data/data.json');
-                                $jsonData = json_decode(file_get_contents($jsonPath), true);
-                                $regions = $jsonData['region'] ?? []; // Get the "region" array
+                            $jsonPath = resource_path('views/Client/data/data.json');
+                            $jsonData = json_decode(file_get_contents($jsonPath), true);
+                            $regions = $jsonData['region'] ?? []; // Get the "region" array
                             @endphp
 
                             @foreach($regions as $region)
-                                <div class="swiper-slide">
-                                    <a href="/" class="text-decoration-none region-card">
-                                        <img class="region-img" alt="{{ $region['name'] }}" src="{{ $region['img'] }}" />
-                                        <span class="font-playfair text-white text-decoration-none region-card-title">
-                                            {{ $region['name'] }}
-                                        </span>
-                                    </a>
-                                </div>
+                            <div class="swiper-slide">
+                                <a href="/" class="text-decoration-none region-card">
+                                    <img class="region-img" alt="{{ $region['name'] }}" src="{{ $region['img'] }}" />
+                                    <span class="font-playfair text-white text-decoration-none region-card-title">
+                                        {{ $region['name'] }}
+                                    </span>
+                                </a>
+                            </div>
                             @endforeach
                         </div>
-
-                        <!-- Swiper Buttons -->
                         <button class="tnt-slider-btn tnt-region-slider-next-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -58,7 +55,6 @@
                             </svg>
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>

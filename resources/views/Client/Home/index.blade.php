@@ -27,7 +27,7 @@
     @endphp
     <div style="overflow: hidden;">
 
-        <div class="swiper earlyCardSwiper" id="earlyPackage">
+        <div class="swiper earlyCardSwiper position-relative" id="earlyPackage">
             <div class="swiper-wrapper">
                 @foreach ($packages as $index => $package)
                 <div class="swiper-slide">
