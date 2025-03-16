@@ -15,7 +15,19 @@ use App\Http\Controllers\Web\ServiceRegionController;
 use App\Http\Controllers\Web\ServiceTypeController;
 use App\Http\Controllers\Web\UserController;
 
-Route::get('/', [LoginController::class, 'index'])->middleware('guest');
+
+Route::prefix('client')
+    ->name('client.')
+    ->group(function () {
+        Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
+    });
+
+//Client Routes
+Route::get('/', action: function () {
+    return view('client.home.index');
+});
+
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 
 Route::group(['prefix' => 'account'], function () {
 
@@ -128,13 +140,4 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
     });
 });
 
-Route::prefix('client')
-    ->name('client.')
-    ->group(function () {
-        Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
-    });
 
-//Client Routes
-Route::get('/client', action: function () {
-    return view('client.home.index');
-});
