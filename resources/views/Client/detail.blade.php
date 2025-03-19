@@ -366,54 +366,41 @@
                                 </li>
                             </ol>
                         </nav>
-                        <h1>{{ $packageDetail->name }} </h1>
+                        <h1>{{ $packageDetail['name'] }} </h1>
                         <div class="photogrid">
                             <div class="parent">
-                                <div class="image1">
+                                @foreach($packageDetail['images'] as $key=>$value)
+                                @if($key <= 3)
+                                <div class="image{{$key+1}}">
                                     <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                                        <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        href="{{$value->file_url}}">
+                                        <img src="{{$value->file_url}}"
                                             alt="Image" />
                                     </a>
                                 </div>
-                                <div class="image2">
+                                @elseif($key == 4)
+                                <div class="image{{$key+1}}">
                                     <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                                        <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                            alt="Image" />
-                                    </a>
-                                </div>
-                                <div class="image3">
-                                    <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                                        <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                            alt="Image" />
-                                    </a>
-                                </div>
-                                <div class="image4">
-                                    <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                                        <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                            alt="Image" />
-                                    </a>
-                                </div>
-                                <div class="image5">
-                                    <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                                        <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        href="{{$value->file_url}}">
+                                        <img src="{{$value->file_url}}"
                                             alt="Image" />
                                     </a>
                                     <a data-fancybox="gallery"
                                         href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                        class="viewmore">View all (9) images</a>
+                                        class="viewmore">View all (9) images
+                                    </a>
                                 </div>
+                                @else
                                 <div class="imagehidden">
                                     <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                                        <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        href="{{$value->file_url}}">
+                                        <img src="{{$value->file_url}}"
                                             alt="Image" />
                                     </a>
                                 </div>
+                                @endif
+                                @endforeach
+
                             </div>
                         </div>
                     </div>
@@ -425,95 +412,11 @@
         <div class="container-fluid container-95 h-100">
             <div class="row">
                 <div class="col-12 col-md-7 col-xl-5 offset-0 offset-md-0 offset-xl-2 order-md-1 order-2">
-                    <p class="package-highlight">"Embark on a thrilling Everest Base Camp trek, a moderate to
-                        challenging adventure through the high Himalayas, featuring Sherpa culture, cozy tea house
-                        stays, and breathtaking views.</p>
+                    <p class="package-highlight">{{ $packageDetail['short_description'] }}</p>
                     <div class="package-description">
-                        <p>
-                            The <strong>Everest Base Camp Trek</strong> is one of the most iconic and rewarding journeys
-                            in the world, taking you deep into the heart of the high Himalayas. This trek offers a
-                            unique blend of natural beauty, cultural richness, and physical challenge, making it a dream
-                            destination for adventurers and nature enthusiasts alike.
-                        </p>
 
-                        <h5>What to Expect</h5>
-                        <ul>
-                            <li>
-                                <strong>Scenic Beauty</strong>: Trek through lush valleys, glacial rivers, and rugged
-                                trails while enjoying breathtaking views of some of the world’s highest peaks, including
-                                <strong>Mount Everest</strong>, <strong>Lhotse</strong>, <strong>Nuptse</strong>, and
-                                <strong>Ama Dablam</strong>.
-                            </li>
-                            <li>
-                                <strong>Sherpa Culture</strong>: Immerse yourself in the rich traditions of the Sherpa
-                                people, who have called the Khumbu region home for centuries. Visit ancient monasteries,
-                                prayer-flag-adorned villages, and learn about Tibetan Buddhism.
-                            </li>
-                            <li>
-                                <strong>Tea House Experience</strong>: Stay in cozy tea houses and lodges along the
-                                trail, where you’ll enjoy warm hospitality, hearty meals, and a chance to connect with
-                                fellow trekkers from around the world.
-                            </li>
-                            <li>
-                                <strong>Physical Challenge</strong>: This trek is graded as <strong>moderate to fairly
-                                    challenging</strong>, requiring a good level of fitness. You’ll walk 6-8 hours daily
-                                on rocky terrain and high-altitude trails, but the effort is rewarded with unforgettable
-                                experiences.
-                            </li>
-                        </ul>
-
-                        <h5>Why Choose This Trek?</h5>
-                        <ul>
-                            <li>
-                                <strong>Accessible Adventure</strong>: No prior trekking experience is required, making
-                                it suitable for first-time trekkers with a passion for adventure.
-                            </li>
-                            <li>
-                                <strong>Cultural Immersion</strong>: Witness vibrant Sherpa festivals like
-                                <strong>Losar</strong> (Tibetan New Year) and <strong>Mani Rimdu</strong>, and explore
-                                historic monasteries such as <strong>Tengboche</strong>.
-                            </li>
-                            <li>
-                                <strong>Eco-Friendly Travel</strong>: The trek promotes responsible tourism, with a
-                                focus on minimizing environmental impact and supporting local communities.
-                            </li>
-                        </ul>
-
-                        <h5>Best Time to Go</h5>
-                        <p>
-                            The ideal seasons for the Everest Base Camp Trek are:
-                        </p>
-                        <ul>
-                            <li>
-                                <strong>Spring (March to May)</strong>: Clear skies, blooming rhododendrons, and
-                                moderate temperatures.
-                            </li>
-                            <li>
-                                <strong>Autumn (September to November)</strong>: Stable weather, excellent visibility,
-                                and vibrant landscapes.
-                            </li>
-                        </ul>
-
-                        <h5>Who Can Do This Trek?</h5>
-                        <ul>
-                            <li>
-                                <strong>Fitness Level</strong>: You should be moderately fit, enjoy walking, and be
-                                prepared for high-altitude conditions. Regular exercise before the trek is recommended.
-                            </li>
-                            <li>
-                                <strong>Age</strong>: There’s no age limit—adventurers of all ages can undertake this
-                                journey with proper preparation and determination.
-                            </li>
-                        </ul>
-
-                        <h5>A Journey of a Lifetime</h5>
-                        <p>
-                            The Everest Base Camp Trek is more than just a physical challenge—it’s a journey that tests
-                            your limits, rewards your spirit, and leaves you with memories to last a lifetime. From the
-                            bustling streets of <strong>Kathmandu</strong> to the serene beauty of the Himalayas, every
-                            step of this adventure is filled with wonder and discovery.
-                        </p>
-                        <a href="#" class="readmore">Read more</a>
+                        {{ $packageDetail['description'] }}
+                        <!-- <a href="#" class="readmore">Read more</a> -->
                     </div>
                     <div class="package-numbers">
                         <div class="boxinfo">
@@ -531,7 +434,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Difficulty</strong>
-                                <span>Moderate to fairly challenging</span>
+                                <span>{{ $packageDetail['difficulty_name'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -540,7 +443,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Duration</strong>
-                                <span>12-15 days</span>
+                                <span>{{ $packageDetail['duration'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -549,7 +452,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Walking per day</strong>
-                                <span>5-6 hours</span>
+                                <span>{{ $packageDetail['walking_per_day'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -558,7 +461,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Starting point</strong>
-                                <span>Lukla</span>
+                                <span>{{ $packageDetail['starting_point'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -567,7 +470,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Accomodation</strong>
-                                <span>Tea House + Lodge <br />3 star (Kathmandu)</span>
+                                <span>{{ $packageDetail['accomodation_names'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -576,7 +479,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Avaibility</strong>
-                                <span>Autumn/Spring</span>
+                                <span>{{ $packageDetail['availability'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -585,7 +488,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Total distance</strong>
-                                <span>130-140 kilometers<br /> (80-87 miles)</span>
+                                <span>{{ $packageDetail['total_distance'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -594,7 +497,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Max Elevation</strong>
-                                <span>5,644m / 18,519ft</span>
+                                <span>{{ $packageDetail['max_elevation'] }}</span>
                             </div>
                         </div>
                     </div>
@@ -621,158 +524,23 @@
         </div>
     </section>
     <section class="itinerary">
-        <div id="map""></div>
+        <div id="map"></div>
         <div class="date-wise-detail">
             <h4>Tour itinerary
-                <small>Annapurna Circuit Trek & Tilicho Lake</small>
+                <!-- <small>Annapurna Circuit Trek & Tilicho Lake</small> -->
             </h4>
+            @foreach($packageDetail['itineraries'] as $key=>$value)
             <div class="day">
                 <div class="number">
-                    Day 1: Arrival in Kathmandu (1,400m)
+                    Day {{$value->day}}: {{$value->name}}
                 </div>
                 <div class="activity">
-                    Arrive in Nepal’s bustling capital, Kathmandu. Spend the day exploring historic sites like
-                    Swayambhunath and Durbar Square. Prepare for the trek with a briefing and gear check.
-                    <a href="#" class="readmore">Read more</a>
+                    {{$value->description}}
+                    <!-- <a href="#" class="readmore">Read more</a> -->
                 </div>
             </div>
-            <div class="day">
-                <div class="number">
-                    Day 2: Drive to Besisahar and then to Chame (2,710m)
-                </div>
-                <div class="activity">
-                    A scenic drive from Kathmandu to Besisahar, followed by a jeep ride to Chame. Enjoy the lush
-                    valleys, terraced fields, and distant views of the Annapurna range.
-                    <a href="#" class="readmore">Read more</a>
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 3: Trek to Pisang (3,300m)
-                </div>
-                <div class="activity">
-                    Start the trek with a gradual climb through pine forests, crossing suspension bridges over roaring
-                    rivers. Reach Pisang, offering breathtaking views of Annapurna II and IV.
-                    <a href="#" class="readmore">Read more</a>
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 4: Trek to Manang (3,540m)
-                </div>
-                <div class="activity">
-                    Follow the trail along the Marsyangdi River, passing villages like Ghyaru and Ngawal. Enjoy
-                    panoramic mountain views and acclimatize at the culturally rich village of Manang.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 5: Acclimatization in Manang
-                </div>
-                <div class="activity">
-                    A rest day to adapt to the altitude. Explore the town, visit the Gangapurna Lake, or hike to a
-                    nearby ridge for amazing vistas.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 6: Trek to Siri Kharka (4,060m)
-                </div>
-                <div class="activity">
-                    Leave the main Annapurna Circuit trail and head toward Tilicho Lake. Ascend through rugged terrain
-                    and witness spectacular landscapes.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 7: Trek to Tilicho Base Camp (4,200m)
-                </div>
-                <div class="activity">
-                    A short yet challenging trek along steep trails and narrow ridges. Arrive at Tilicho Base Camp,
-                    surrounded by towering peaks.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 7: Trek to Tilicho Base Camp (4,200m)
-                </div>
-                <div class="activity">
-                    A short yet challenging trek along steep trails and narrow ridges. Arrive at Tilicho Base Camp,
-                    surrounded by towering peaks.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 8: Visit Tilicho Lake (5,416m) and return to Siri Kharka
-                </div>
-                <div class="activity">
-                    Hike to Tilicho Lake, one of the world’s highest lakes, reflecting the majestic Annapurna range.
-                    Descend back to Siri Kharka after soaking in the stunning views.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 9: Trek to Yak Kharka (4,050m)
-                </div>
-                <div class="activity">
-                    Reconnect with the Annapurna Circuit trail and head to Yak Kharka. Walk through alpine meadows and
-                    watch for grazing yaks.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 10: Trek to Thorong Phedi (4,525m)
-                </div>
-                <div class="activity">
-                    A gradual ascent to Thorong Phedi, the last stop before the Thorong La Pass. Rest and prepare for
-                    the challenging pass crossing.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 11: Cross Thorong La Pass (5,416m) and descend to Muktinath (3,800m)
-                </div>
-                <div class="activity">
-                    The most strenuous yet rewarding day. Cross Thorong La Pass for breathtaking views. Descend to
-                    Muktinath, a sacred pilgrimage site for Hindus and Buddhists.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 12: Trek to Jomsom (2,720m)
-                </div>
-                <div class="activity">
-                    Trek downhill to Jomsom through Kagbeni, a charming village with Tibetan influences. Enjoy the windy
-                    trails of the Kali Gandaki valley.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 13: Fly to Pokhara (827m)
-                </div>
-                <div class="activity">
-                    Take a short flight to Pokhara, Nepal’s adventure capital. Relax by Phewa Lake or explore the city’s
-                    vibrant cafés and markets.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 14: Drive back to Kathmandu
-                </div>
-                <div class="activity">
-                    Return to Kathmandu via a scenic drive. Spend the evening shopping for souvenirs or reflecting on
-                    your trek’s unforgettable memories.
-                </div>
-            </div>
-            <div class="day">
-                <div class="number">
-                    Day 15: Departure
-                </div>
-                <div class="activity">
-                    Your journey concludes. Depart from Kathmandu with incredible experiences and cherished memories of
-                    the Annapurna Circuit and Tilicho Lake.
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </section>
     <section class="include-exclude">
@@ -918,169 +686,21 @@
                 <div class="offset-0 offset-xl-2 col-xl-7 offset-xl-4 col-xxl-5">
                     <h3>FAQs:</h3>
                     <div class="accordion accordion-flush mb-5" id="accordionPanelsFAQs">
+                        @foreach($packageDetail['faqs'] as $key=>$value)
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-1" aria-expanded="true" aria-controls="faqs-1">
-                                    <span class="numbering">001 </span> What is the best time to trek in the
-                                    Annapurna
-                                    Region?
+                                    data-bs-target="#faqs-{{$key}}" aria-expanded="true" aria-controls="faqs-{{$key}}">
+                                    <span class="numbering">{{$key+1}} </span> {{$value->question}}
                                 </button>
                             </h2>
-                            <div id="faqs-1" class="accordion-collapse collapse show">
+                            <div id="faqs-{{$key}}" class="accordion-collapse collapse {{$key == 0 ? 'show' : ''}} show">
                                 <div class="accordion-body">
-                                    The best time to trek in the Annapurna Region is during spring (March to May)
-                                    and
-                                    autumn (September to November). These seasons offer clear skies, stable weather,
-                                    and
-                                    breathtaking views of the mountains, along with blooming rhododendrons in
-                                    spring.
+                                    {{$value->question}}
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-2" aria-expanded="false" aria-controls="faqs-2">
-                                    <span class="numbering">002 </span> How difficult are treks in the Annapurna
-                                    Region?
-                                </button>
-                            </h2>
-                            <div id="faqs-2" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Trek difficulty varies. Short treks like Ghorepani Poon Hill are moderate, while
-                                    Annapurna Circuit and Base Camp treks are more challenging due to longer
-                                    durations
-                                    and high altitude.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-3" aria-expanded="false" aria-controls="faqs-3">
-                                    <span class="numbering">003 </span> Do I need permits for trekking in the
-                                    Annapurna
-                                    Region?
-                                </button>
-                            </h2>
-                            <div id="faqs-3" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Yes, you need an Annapurna Conservation Area Permit (ACAP) and a Trekkers’
-                                    Information Management System (TIMS) card. Solo trekkers may have additional
-                                    restrictions.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-4" aria-expanded="false" aria-controls="faqs-4">
-                                    <span class="numbering">004 </span> What is the average cost of trekking in the
-                                    Annapurna Region?
-                                </button>
-                            </h2>
-                            <div id="faqs-4" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Costs vary but range from $25–$50 per day, depending on accommodation, food, and
-                                    guide/porter services. A full trek can cost $300–$1,500.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-5" aria-expanded="false" aria-controls="faqs-5">
-                                    <span class="numbering">005 </span> How long do treks in the Annapurna Region
-                                    take?
-                                </button>
-                            </h2>
-                            <div id="faqs-5" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    It depends on the route. Short treks (like Poon Hill) take 3–5 days, Annapurna
-                                    Base
-                                    Camp takes 7–12 days, and the Annapurna Circuit takes 12–21 days.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-6" aria-expanded="false" aria-controls="faqs-6">
-                                    <span class="numbering">006 </span> Is altitude sickness a concern in the
-                                    Annapurna
-                                    Region?
-                                </button>
-                            </h2>
-                            <div id="faqs-6" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Yes, especially above 3,000m (Annapurna Base Camp, Thorong La Pass). Proper
-                                    acclimatization and hydration are essential to prevent AMS.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-7" aria-expanded="false" aria-controls="faqs-7">
-                                    <span class="numbering">007 </span> What should I pack for trekking in this
-                                    region?
-                                </button>
-                            </h2>
-                            <div id="faqs-7" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Essentials include layered clothing, sturdy boots, sleeping bag, trekking poles,
-                                    rain gear, first aid kit, water purification tablets, and snacks.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-8" aria-expanded="false" aria-controls="faqs-8">
-                                    <span class="numbering">008 </span> Are guides and porters necessary for
-                                    trekking in
-                                    the Annapurna
-                                    Region?
-                                </button>
-                            </h2>
-                            <div id="faqs-8" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Not mandatory, but highly recommended, especially for beginners. Some areas now
-                                    require at least a guide for solo trekkers.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-9" aria-expanded="false" aria-controls="faqs-9">
-                                    <span class="numbering">009 </span> Can beginners trek in the Annapurna Region?
-                                </button>
-                            </h2>
-                            <div id="faqs-9" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Yes, beginner-friendly treks include Ghorepani Poon Hill and Mardi Himal. Longer
-                                    treks require good fitness and preparation.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqs-10" aria-expanded="false" aria-controls="faqs-10">
-                                    <span class="numbering">010 </span> Is Wi-Fi or mobile network available on the
-                                    trekking trails?
-                                </button>
-                            </h2>
-                            <div id="faqs-10" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Available in most villages but patchy and slow. Wi-Fi may cost extra. Ncell and
-                                    NTC
-                                    networks work in some areas, but coverage is inconsistent.
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <button class="btn btn-show m-auto d-block">Show all questions</button>
                 </div>
@@ -1402,15 +1022,15 @@
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
             //
-        });    
+        });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const text = document.getElementById("text");
             const toggleBtn = document.getElementById("toggleBtn");
             let isExpanded = false;
 
-            toggleBtn.addEventListener("click", function (event) {
+            toggleBtn.addEventListener("click", function(event) {
                 event.preventDefault();
                 isExpanded = !isExpanded;
 
@@ -1430,8 +1050,7 @@
                 new ol.layer.Tile({
                     source: new ol.source.OSM(),
                     className: 'ol_bw'
-                },
-                ),
+                }, ),
             ],
             view: new ol.View({
                 center: ol.proj.fromLonLat([84.021507, 28.2900006]),
