@@ -33,7 +33,7 @@
                     </button>
                 </div>
                 <div class="discover-button">
-                    <a href="#earlyPackage" class="d-flex flex-column gap-1 align-items-center justify-content-center">
+                    <a href="#package-target-id" class="d-flex flex-column gap-1 align-items-center justify-content-center">
                         <div class="text-white text-decoration-underline mb-2 discover-button-text">Discover more</div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

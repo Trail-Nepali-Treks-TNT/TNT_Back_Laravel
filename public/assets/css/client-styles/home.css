@@ -1,5 +1,5 @@
 .book-early-container {
-    margin-top: 1.5rem;
+    margin-top: 3.5rem;
     margin-bottom: 1.5rem;
 }
 .book-early-title {
@@ -23,7 +23,7 @@
 }
 @media (min-width: 768px) {
     .book-early-container {
-        margin-top: 3rem;
+        margin-top: 7rem;
         margin-bottom: 3rem;
     }
     .book-early-title {
@@ -54,20 +54,15 @@
 
 .package-highlight {
     background-color: var(--primary-600);
-    margin-top: 1.5rem;
+    margin-top: 3.5rem;
     height: 90vh;
 }
 
 @media (min-width: 768px) {
     .package-highlight {
+        margin-top: 7rem;
         padding-top: 2rem; /* Equivalent to md:py-8 */
         padding-bottom: 2rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .package-highlight {
-        margin-top: 2rem; /* Equivalent to lg:mt-8 */
     }
 }
 

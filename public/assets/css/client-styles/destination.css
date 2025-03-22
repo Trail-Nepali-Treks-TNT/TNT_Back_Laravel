@@ -1,14 +1,14 @@
 .destination {
     background-color: var(--grey-100);
     color: var(--grey-700);
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 @media (min-width: 1024px) {
     .destination {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
     }
 }
 .destination-filter-container {

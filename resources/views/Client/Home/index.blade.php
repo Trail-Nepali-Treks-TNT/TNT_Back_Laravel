@@ -17,9 +17,10 @@
             <a href="" class="btn btn-explore">EXPLORE ALL OFFERS</a>
         </div>
     </div>
+    <div id="package-target-id"></div>
 </section>
 <!-- Packages -->
-<section class="tnt-container" style="margin-bottom: 20px;">
+<section class="tnt-container">
     @php
     // Load JSON file directly in the view
     $jsonPath = resource_path('views/Client/data/data.json');
@@ -27,7 +28,6 @@
     $packages = $jsonData['earlyPackage'] ?? []; // Get the "region" array
     @endphp
     <div style="overflow: hidden;">
-
         <div class="position-relative earlyCardSwiper swiper" id="earlyPackage">
             <div class="swiper-wrapper">
                 @foreach ($packages as $index => $package)

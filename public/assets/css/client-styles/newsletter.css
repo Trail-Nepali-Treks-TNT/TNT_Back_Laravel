@@ -52,6 +52,11 @@
     flex-direction: column;
     gap: 0.5rem;
 }
+@media (min-width: 768px) {
+    .newsletter-form {
+        max-width: 32rem;
+    }
+}
 
 .newsletter-label {
     font-size: 1.25rem;
