@@ -35,12 +35,11 @@
                 <div class="discover-button">
                     <a href="#package-target-id" class="d-flex flex-column gap-1 align-items-center justify-content-center">
                         <div class="text-white text-decoration-underline mb-2 discover-button-text">Discover more</div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-circle-arrow-down text-white">
                             <circle cx="12" cy="12" r="10" />
-                            <path d="M12 8v8" />
-                            <path d="m8 12 4 4 4-4" />
+                            <path d="M12 6v10l-4-4m4 4l4-4" />
                         </svg>
                     </a>
                 </div>
