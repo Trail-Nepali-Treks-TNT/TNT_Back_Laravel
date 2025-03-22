@@ -71,7 +71,7 @@
 }
 .package-card .package-card-detail {
     padding: 0.625rem 0.9375rem;
-    height: 150px;
+    height: 176px;
 }
 .package-card .package-card-title {
     font-size: 1.25rem;
@@ -85,7 +85,7 @@
 }
 .package-card-description {
     margin-top: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--grey-500);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -98,7 +98,7 @@
 }
 .package-card-price .actual-price {
     color: var(--grey-400);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     float: left;
     width: 100%;
 }
@@ -113,7 +113,7 @@
 }
 .package-card-price .current-price {
     color: var(--grey-700);
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 500;
 }
 .package-card-price .current-price span {
