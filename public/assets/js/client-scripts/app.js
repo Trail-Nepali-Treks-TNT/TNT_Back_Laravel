@@ -1,8 +1,8 @@
-import 'bootstrap';
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+// // import 'bootstrap';
+// import Swiper from 'swiper';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import { Navigation } from 'swiper/modules';
 
 //Scroll to top button click
 document.addEventListener('DOMContentLoaded', function () {
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Region Nav modal swiper script
 var swiper = new Swiper('.region-nav-swiper', {
-    modules: [Navigation],
     slidesPerView: 4, // Show 3 cards at a time
     spaceBetween: 16, // Space between slides
     loop: false, // Enable infinite loop

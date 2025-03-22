@@ -33,7 +33,7 @@
                                 <path d="m6 9 6 6 6-6"></path>
                             </svg></a>
                     </li>
-                    <li><a href="/" class="nav-link text-decoration-none text-white px-1">About us</a></li>
+                    <li><a href="/" class="nav-link text-decoration-none text-white">About us</a></li>
                     <li><a href="/" class="nav-link text-decoration-none text-white">Resources</a></li>
                     <li><a href="/" class="nav-link text-decoration-none text-white">Contact</a></li>
                 </ul>

@@ -1,4 +1,5 @@
-@vite('resources/css/client-styles/footer.css')
+<link rel="stylesheet" href="{{ asset('assets/css/client-styles/footer.css') }}">
+
 <?php
 $footerLinks = [
     "about" => [
@@ -138,21 +139,21 @@ $footerLinks = [
                     <div class="z-10 w-100 w-md-75">
                         <div class="row row-cols-1 row-cols-md-3 g-4">
                             <?php foreach ($footerLinks as $title => $links): ?>
-                            <div class="col">
-                                <h3 class="footer-link-header text-pink mb-2 fw-semibold text-capitalize">
-                                    <?= htmlspecialchars($title) ?>
-                                </h3>
-                                <ul class="list-unstyled">
-                                    <?php    foreach ($links as $text => $url): ?>
-                                    <li class="mb-2">
-                                        <a class="text-decoration-none transition footer-link"
-                                            href="<?= htmlspecialchars($url) ?>">
-                                            <?= htmlspecialchars($text) ?>
-                                        </a>
-                                    </li>
-                                    <?php    endforeach; ?>
-                                </ul>
-                            </div>
+                                <div class="col">
+                                    <h3 class="footer-link-header text-pink mb-2 fw-semibold text-capitalize">
+                                        <?= htmlspecialchars($title) ?>
+                                    </h3>
+                                    <ul class="list-unstyled">
+                                        <?php foreach ($links as $text => $url): ?>
+                                            <li class="mb-2">
+                                                <a class="text-decoration-none transition footer-link"
+                                                    href="<?= htmlspecialchars($url) ?>">
+                                                    <?= htmlspecialchars($text) ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
                             <?php endforeach; ?>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-@vite('resources/css/client-styles/destination.css')
+<link rel="stylesheet" href="{{ asset('assets/css/client-styles/destination.css') }}">
 
 <section class="destination tnt-container">
     <div class="destination-filter-container">

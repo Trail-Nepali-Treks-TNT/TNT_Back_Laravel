@@ -16,7 +16,8 @@ $expiry = \Carbon\Carbon::parse($expiryDate);
 $duration = $currentDate->diffInDays($expiry);
 @endphp
 
-@vite('resources/css/client-styles/package-card.css')
+<link rel="stylesheet" href="{{ asset('assets/css/client-styles/package-card.css') }}">
+
 <div class="package-card shadow-sm rounded" data-aos="fade-up">
     <div class="package-card-img-container position-relative">
         <div class="package-card-badge-container">
@@ -88,4 +89,4 @@ $duration = $currentDate->diffInDays($expiry);
         @endif
     </div>
 </div>
-@vite('resources/js/client/package-card.js')
+<script src="{{ asset('assets/js/client-scripts/package-card.js') }}"></script>

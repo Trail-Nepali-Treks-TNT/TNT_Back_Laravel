@@ -1,4 +1,4 @@
-@vite('resources/css/client-styles/nav.css')
+<link rel="stylesheet" href="{{ asset('assets/css/client-styles/nav.css') }}">
 
 @if(isset($navclass))
 <div class="{{ $navclass }}">

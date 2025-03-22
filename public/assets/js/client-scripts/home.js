@@ -1,12 +1,6 @@
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-
 document.addEventListener('DOMContentLoaded', () => {
     //Card list items
     new Swiper('.earlyCardSwiper', {
-        modules: [Navigation],
         spaceBetween: 16,
         centeredSlides: false,
         breakpoints: {

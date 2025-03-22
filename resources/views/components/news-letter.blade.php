@@ -1,4 +1,4 @@
-@vite('resources/css/client-styles/newsletter.css')
+<link rel="stylesheet" href="{{ asset('assets/css/client-styles/newsletter.css') }}">
 
 <div class="newsletter-container">
     <div class="newsletter-content">

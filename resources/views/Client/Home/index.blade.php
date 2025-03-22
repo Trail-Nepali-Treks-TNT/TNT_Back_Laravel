@@ -1,12 +1,13 @@
 @extends('Client.layouts.app')
 
 @section('content')
-@vite('resources/css/client-styles/home.css')
+<link rel="stylesheet" href="{{ asset('assets/css/client-styles/home.css') }}">
+
 <!-- Book early section -->
 <section class="book-early-container tnt-container">
     <div class="row mx-0">
         <div class="col-12 col-lg-6 px-0">
-            <h2 class="font-playfair book-early-title">Book early and save big!</h2>
+            <h2 class="book-early-title font-playfair">Book early and save big!</h2>
             <p class="book-early-description mb-0">Grab Exclusive Early Bird Deals – Save Up to 30%! Book by January
                 15th for
                 amazing
@@ -27,7 +28,7 @@
     @endphp
     <div style="overflow: hidden;">
 
-        <div class="swiper earlyCardSwiper position-relative" id="earlyPackage">
+        <div class="position-relative earlyCardSwiper swiper" id="earlyPackage">
             <div class="swiper-wrapper">
                 @foreach ($packages as $index => $package)
                 <div class="swiper-slide">
@@ -38,7 +39,7 @@
                 </div>
                 @endforeach
             </div>
-            <button class="tnt-slider-btn tnt-package-slider-next-btn">
+            <button class="tnt-package-slider-next-btn tnt-slider-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" class="lucide lucide-arrow-right">
@@ -46,7 +47,7 @@
                     <path d="m12 5 7 7-7 7"></path>
                 </svg>
             </button>
-            <button class="tnt-slider-btn tnt-package-slider-prev-btn">
+            <button class="tnt-package-slider-prev-btn tnt-slider-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" class="lucide lucide-arrow-left">
@@ -60,8 +61,8 @@
 <!-- Highlighted Hero Package -->
 <section class="package-highlight">
     <div class="package-highlight-image">
-        <div class="tnt-container package-highlight-content">
-            <div class="package-highlight-title font-playfair">
+        <div class="package-highlight-content tnt-container">
+            <div class="font-playfair package-highlight-title">
                 <h2>MT. EVEREST EXPEDITION (8848.86M) - SOUTH</h2>
             </div>
             <div class="package-highlight-description">
@@ -77,8 +78,9 @@
     </div>
 </section>
 @include("Client.Home.destination")
+<script src="{{ asset('assets/js/client-scripts/home.js') }}"></script>
 
-@vite('resources/js/client/home.js')
+
 @endsection
 
 @php
