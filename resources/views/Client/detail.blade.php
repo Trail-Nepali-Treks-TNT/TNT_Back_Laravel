@@ -371,42 +371,42 @@
                             <div class="parent">
                                 @foreach($packageDetail['images'] as $key=>$value)
                                 @if($key <= 3)
-                                <div class="image{{$key+1}}">
+                                    <div class="image{{$key+1}}">
                                     <a data-fancybox="gallery"
                                         href="{{$value->file_url}}">
                                         <img src="{{$value->file_url}}"
                                             alt="Image" />
                                     </a>
-                                </div>
-                                @elseif($key == 4)
-                                <div class="image{{$key+1}}">
-                                    <a data-fancybox="gallery"
-                                        href="{{$value->file_url}}">
-                                        <img src="{{$value->file_url}}"
-                                            alt="Image" />
-                                    </a>
-                                    <a data-fancybox="gallery"
-                                        href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                        class="viewmore">View all (9) images
-                                    </a>
-                                </div>
-                                @else
-                                <div class="imagehidden">
-                                    <a data-fancybox="gallery"
-                                        href="{{$value->file_url}}">
-                                        <img src="{{$value->file_url}}"
-                                            alt="Image" />
-                                    </a>
-                                </div>
-                                @endif
-                                @endforeach
-
                             </div>
+                            @elseif($key == 4)
+                            <div class="image{{$key+1}}">
+                                <a data-fancybox="gallery"
+                                    href="{{$value->file_url}}">
+                                    <img src="{{$value->file_url}}"
+                                        alt="Image" />
+                                </a>
+                                <a data-fancybox="gallery"
+                                    href="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="viewmore">View all (9) images
+                                </a>
+                            </div>
+                            @else
+                            <div class="imagehidden">
+                                <a data-fancybox="gallery"
+                                    href="{{$value->file_url}}">
+                                    <img src="{{$value->file_url}}"
+                                        alt="Image" />
+                                </a>
+                            </div>
+                            @endif
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+    </div>
+    </header>
     </div>
     <section class="package-intro">
         <div class="container-fluid container-95 h-100">
@@ -425,7 +425,7 @@
                             </div>
                             <div class="text-container">
                                 <strong>Group size</strong>
-                                <span>Max 12 pax</span>
+                                <span>{{ $packageDetail['group_size'] }}</span>
                             </div>
                         </div>
                         <div class="boxinfo">
@@ -556,124 +556,33 @@
                     <div class="include">
                         <h5>Include</h5>
                         <ul>
+                            @foreach($packageDetail['included'] as $key=>$value)
                             <li>
-                                <strong>Airport pick-up & drop</strong>
-                                <p>Airport to hotel transfer and return (pick-up and drop).</p>
+                                <strong>{{$value->name}}</strong>
+                                <p>{{$value->description}}</p>
                             </li>
-                            <li>
-                                <strong>Accommodation in Kathmandu</strong>
-                                <p>3 nights in a shared twin bedroom at a 3-star hotel in Kathmandu on a bed and
-                                    breakfast
-                                    plan.
-                                </p>
-                            </li>
-                            <li>
-                                <strong>Accommodation in Pokhara</strong>
-                                <p>1 night in a shared twin bedroom at a 3-star hotel in Pokhara on a bed and breakfast
-                                    plan.
-                                </p>
-                            </li>
-                            <li>
-                                <strong>Welcome dinner</strong>
-                                <p>One welcome dinner at a tourist-standard restaurant in Kathmandu with the office’s
-                                    staff.
-                                </p>
-                            </li>
-                            <li>
-                                <strong>Accommodation:</strong>
-                                <p>Tea house or lodge accommodation during the trek. 3-star deluxe hotel in Kathmandu
-                                    (unless otherwise specified).</p>
-                            </li>
-
-                            <li>
-                                <strong>Meals:</strong>
-                                <p>Standard breakfast, lunch, and three-course dinner during the trek. Tea or coffee
-                                    with each meal.</p>
-                            </li>
-
-                            <li>
-                                <strong>Trekking Crew:</strong>
-                                <p>English-speaking trekking guide (Sirdar or Headman). Porters to carry luggage (1
-                                    porter for every 2 trekkers).</p>
-                            </li>
-
-                            <li>
-                                <strong>Transportation:</strong>
-                                <p>Airport transfers in Kathmandu (hotel to airport and back). Domestic flight from
-                                    Kathmandu to Lukla (starting point of the trek).</p>
-                            </li>
-
-                            <li>
-                                <strong>Permits and Fees:</strong>
-                                <p>All necessary trekking permits and fees.</p>
-                            </li>
-                            <li>
-                                <strong>Support:</strong>
-                                <p>Assistance with menu selection and meal arrangements during the trek. Porter to book
-                                    lodges ahead of the group each day.</p>
-                            </li>
+                            @endforeach
+<!--                             
                             <li class="seeall">
                                 <a href="#">See all (15) +</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
                 <div class="col-3 col-sm-12 col-md-6 col-lg-3 offset-1 offset-sm-0 offset-md-0 offset-lg-1">
                     <div class="exclude">
-                        <h5>Include</h5>
+                        <h5>Excluded</h5>
                         <ul>
+                        @foreach($packageDetail['not_included'] as $key=>$value)
                             <li>
-                                <strong>Airport pick-up & drop</strong>
-                                <p>Airport to hotel transfer and return (pick-up and drop).</p>
+                                <strong>{{$value->name}}</strong>
+                                <p>{{$value->description}}</p>
                             </li>
-                            <li>
-                                <strong>International Flights</strong>
-                                <p>Airfare to and from Kathmandu.</p>
-                            </li>
-                            <li>
-                                <strong>Visa Fees</strong>
-                                <p>Nepal entry visa costs (available on arrival).</p>
-                            </li>
-                            <li>
-                                <strong>Personal Expenses</strong>
-                                <p>Alcoholic and non-alcoholic beverages.
-                                    Snacks, souvenirs, and hot showers during the trek.
-                                    Tips for guides and porters (appreciated but not mandatory).</p>
-                            </li>
-                            <li>
-                                <strong>Travel Insurance</strong>
-                                <p>Insurance covering cancellation, medical expenses, helicopter evacuation, and
-                                    emergency repatriation.</p>
-
-                            </li>
-                            <li>
-                                <strong>Additional Meals</strong>
-                                <p>Meals in Kathmandu (unless specified in the itinerary).</p>
-                            </li>
-                            <li>
-                                <strong>Optional Activities</strong>
-                                <p>Trip extensions (e.g., Island Peak climbing, Chitwan safari, cultural tours, rafting,
-                                    or
-                                    Pokhara trip).</p>
-                            </li>
-                            <li>
-                                <strong>Rescue/Evacuation Costs</strong>
-                                <p>Helicopter evacuation in case of emergencies (must be covered by your insurance).</p>
-                            </li>
-                            <li>
-                                <strong>Equipment</strong>
-                                <p>Personal trekking gear (e.g., walking boots, sleeping bag, waterproof jacket, etc.).
-                                </p>
-                            </li>
-                            <li>
-                                <strong>Unforeseen Costs</strong>
-                                <p>Additional expenses due to itinerary changes, delays, or cancellations caused by
-                                    factors
-                                    beyond control (e.g., weather, strikes, government regulations).</p>
-                            </li>
+                            @endforeach
+<!--                             
                             <li class="seeall">
                                 <a href="#">Hide</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

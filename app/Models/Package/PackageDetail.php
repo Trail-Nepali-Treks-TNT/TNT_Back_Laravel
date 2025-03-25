@@ -21,6 +21,7 @@ class PackageDetail extends AuditableModel
         'old_price',
         'duration',
         'walking_per_day',
+        'group_size',
         'starting_point',
         'availability',
         'total_distance',

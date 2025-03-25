@@ -9,6 +9,7 @@ use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\DifficultyLevelController;
 use App\Http\Controllers\Web\PackageDetailController;
 use App\Http\Controllers\Web\PackageFaqController;
+use App\Http\Controllers\Web\PackageInclusionController;
 use App\Http\Controllers\Web\PackageItineraryController;
 use App\Http\Controllers\Web\RolesController;
 use App\Http\Controllers\Web\ServiceRegionController;
@@ -137,6 +138,13 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
         Route::post('/', [PackageFaqController::class, 'store'])->name('store');
         Route::put('/{faq}', [PackageFaqController::class, 'update'])->name('update');
         Route::get('/faqForm/{faq?}', [PackageFaqController::class, 'faqForm'])->name('faqForm');
+    });
+    
+    Route::prefix('{package_id}/inclusion')->name('inclusion.')->group(function () {
+        Route::get('/', [PackageInclusionController::class, 'index'])->name('index');
+        Route::post('/', [PackageInclusionController::class, 'store'])->name('store');
+        Route::put('/{id}', [PackageInclusionController::class, 'update'])->name('update');
+        Route::get('/inclusionForm/{id?}', [PackageInclusionController::class, 'inclusionForm'])->name('inclusionForm');
     });
 });
 

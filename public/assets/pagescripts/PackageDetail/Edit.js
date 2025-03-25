@@ -245,6 +245,76 @@ var EditPackageDetail = function () {
         });
     };
 
+
+    handleInclusionFormSubmit = function () {
+        $("#submitInclusionForm").on("click", function (e) {
+            e.preventDefault();
+            var id = $("#inclusionAddUpdateForm #id").val();
+            var actionUrl = `/PackageDetail/${me.packageDetailId}/inclusion`;
+            var requestType = "POST";
+            if (id !== "0") {
+                actionUrl = `/PackageDetail/${me.packageDetailId}/inclusion/${id}`;
+                requestType = "PUT";  // Use PUT for updating
+            }
+            var form = $("#inclusionAddUpdateForm")[0];
+            var data = $(form).serialize();
+            ajaxCall({
+                url: actionUrl,
+                type: requestType,
+                data: data,
+                dataType: "json",
+                success: function (html) {
+                    populatePackageInclusionView();
+                },
+                error: function (xhr) {
+                    if (xhr.status === 422) {
+                        var errors = xhr.responseJSON.errors;
+                        $(".error-message").text("");
+                        $.each(errors, function (field, messages) {
+                            $("#" + field + "-error").text(messages[0]); // Assuming error elements follow the `id` pattern: field-error
+                        });
+                    } else {
+                        alert("An error occurred. Please try again.");
+                    }
+                },
+            });
+        });
+    };
+
+    populatePackageInclusionView= function(){
+        ajaxCall({
+            type: "GET",
+            url: `/PackageDetail/${me.packageDetailId}/inclusion`,
+            dataType: "html",
+            success: function (data) {
+                $("#inclusionSection").html(data);
+                handleInclusionFormSubmit();
+            },
+        });
+    }
+
+    getInclusionForm = function (id) {
+        var actionUrl = `/PackageDetail/${me.packageDetailId}/inclusion/inclusionForm`;
+        if (id) actionUrl = actionUrl + `/${id}`;
+        ajaxCall({
+            url: actionUrl,
+            type: "GET",
+            success: function (html) {
+                $("#inclusion_form_container").html(html);
+                handleInclusionFormSubmit();
+            },
+        });
+    };
+
+    initInclusionSection = function(){
+        $("#pills-inclusion-tab").on("click", function (e) {
+            e.preventDefault();
+            if ($("#inclusionSection").children().length == 0) {
+                populatePackageInclusionView();
+            }
+        }); 
+    }
+
     this.init = function () {
         me.packageDetailId = $("#packageDetailId").val();
         $("#package_accommodation").select2({
@@ -254,5 +324,6 @@ var EditPackageDetail = function () {
         initItinerarySection();
         initImageSection();
         initFAQSection();
+        initInclusionSection();
     };
 };

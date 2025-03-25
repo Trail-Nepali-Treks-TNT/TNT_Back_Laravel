@@ -160,6 +160,14 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                            </div><div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="group_size">Group size</label>
+                                    <input type="text" name="group_size" class="form-control" required>
+                                    @error('group_size')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group mb-3">

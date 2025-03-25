@@ -35,6 +35,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" id="pills-inclusion-tab" data-bs-toggle="pill" href="#inclusionSection" role="tab" aria-controls="pills-inclusion" aria-selected="false">
+                            Inclusion
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" id="pills-image-tab" data-bs-toggle="pill" href="#packageImageSection" role="tab" aria-controls="pills-image" aria-selected="false">
                             Image
                         </a>
@@ -186,6 +191,14 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
+                                            <label for="group_size">Group size</label>
+                                            <input type="text" name="group_size" class="form-control" value="{{ old('group_size', $packageDetail->group_size) }}" required>
+                                            <div class="text-danger error-message" id="group_size-error"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group mb-3">
                                             <label for="total_distance">Total Distance</label>
                                             <input type="text" name="total_distance" class="form-control" value="{{ old('total_distance', $packageDetail->total_distance) }}" required>
                                             <div class="text-danger error-message" id="total_distance-error"></div>
@@ -226,6 +239,10 @@
                     </div>
 
                     <div class="tab-pane fade" id="itinerarySection" role="tabpanel" aria-labelledby="pills-itinerary-tab">
+
+                    </div>
+                    
+                    <div class="tab-pane fade" id="inclusionSection" role="tabpanel" aria-labelledby="pills-inclusion-tab">
 
                     </div>
                     <div class="tab-pane fade" id="packageImageSection" role="tabpanel" aria-labelledby="pills-image-tab">
