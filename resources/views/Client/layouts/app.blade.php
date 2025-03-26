@@ -55,7 +55,7 @@
     </header>
     @endif
     <!-- Navigation -->
-    @include('Client.layouts.navbar.nav', ['navclass' => $heroContainerClassName])
+    @include('Client.layouts.navbar.nav', ['isHomePage' => $isHomePage ?? false])
 
     <!-- Page Content -->
     <main>

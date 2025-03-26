@@ -1,18 +1,22 @@
 <link rel="stylesheet" href="{{ asset('assets/css/client-styles/nav.css') }}">
+@php
+$isHomePage = $isHomePage ?? false;
+@endphp
+<div class="{{ $isHomePage ?'home-hero-container':"" }}">
 
-@if(isset($navclass))
-<div class="{{ $navclass }}">
+    @if(isset($isHomePage) && $isHomePage)
     <div class="hero-overlay">
         <div class="hero-overlay-bg"></div>
     </div>
-    @else
-    <div class="navigation-wrapper">
-        @endif
-        @include("Client.layouts.navbar.topnavbar")
+    @endif
+    <div class="{{$isHomePage ?'home-nav-wrapper':'navigation-wrapper'}} ">
+        @include("Client.layouts.navbar.topnavbar", ['isHomePage' => $isHomePage])
         @include("Client.layouts.navbar.navheader")
+
         <div class="alert alert-offer w-100 text-center rounded-0" role="alert">
             EARLY BIRD OFFER - Book now &amp; save up to 20%
         </div>
+        @if(isset($isHomePage) && $isHomePage)
         <div class="hero-section">
             <div
                 class="d-flex flex-column justify-content-between justify-content-sm-around flex-nowrap align-items-center flex-fill hero-section-container">
@@ -32,6 +36,7 @@
                         SEARCH
                     </button>
                 </div>
+
                 <div class="discover-button">
                     <a href="#package-target-id" class="d-flex flex-column gap-1 align-items-center justify-content-center">
                         <div class="text-white text-decoration-underline mb-2 discover-button-text">Discover more</div>
@@ -45,4 +50,6 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
+</div>
