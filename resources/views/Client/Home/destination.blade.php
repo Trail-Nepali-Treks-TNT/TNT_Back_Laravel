@@ -16,70 +16,68 @@
         </p>
     </div>
     <div class="destination-collection">
+        @foreach(collect($regionPackageItems)->chunk(3) as $index => $regionPackageRow)
         <div>
-            <div class="destination-flex-container">
+            <div class="{{ $index % 2 === 0 ? 'destination-flex-container' : 'destination-flex-container-reverse' }}">
+                @if ($index % 2 === 0)
+                {{-- Regular Layout: Two on Left, One on Right --}}
                 <div class="destination-column">
+                    @foreach($regionPackageRow->take(2) as $regionPackage)
                     <a href="#" class="destination-card">
-                        <img alt="Everest Region" src="https://images.unsplash.com/photo-1571401847270-78ab5f316800?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyZGl8ZW58MHx8MHx8fDA%3D">
+                        <img alt="{{ $regionPackage->region_name }}" src="{{ $regionPackage->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
                         <div class="destination-text-container">
-                            <h2>Everest Region</h2>
-                            <p>9 tours</p>
+                            <h2>{{ $regionPackage->region_name }}</h2>
+                            <p>{{ $regionPackage->package_count }} tours</p>
                         </div>
                     </a>
-                    <a href="#" class="destination-card">
-                        <img alt="Langtang Region" src="https://images.unsplash.com/photo-1538321833141-b175d44fd264?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QW5uYXB1cm5hJTIwQ2lyY3VpdHxlbnwwfHwwfHx8MA%3D%3D">
-                        <div class="destination-overlay"></div>
-                        <div class="destination-text-container">
-                            <h2>Langtang Region</h2>
-                            <p>9 tours</p>
-                        </div>
-                    </a>
+                    @endforeach
                 </div>
+                @if ($regionPackageRow->count() === 3)
                 <a href="#" class="destination-half-width">
                     <div class="destination-card">
-                        <img alt="Annapurna Region" src="https://images.unsplash.com/photo-1571401847270-78ab5f316800?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyZGl8ZW58MHx8MHx8fDA%3D">
+                        <img alt="{{ $regionPackageRow[2]->region_name }}" src="{{ $regionPackageRow[2]->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
                         <div class="destination-text-container">
-                            <h2>Annapurna Region</h2>
-                            <p>9 tours</p>
+                            <h2>{{ $regionPackageRow[2]->region_name }}</h2>
+                            <p>{{ $regionPackageRow[2]->package_count }} tours</p>
                         </div>
                     </div>
                 </a>
-            </div>
-        </div>
-        <div>
-            <div class="destination-flex-container-reverse">
-                <div class="destination-column">
-                    <a href="#" class="destination-card">
-                        <img alt="Mustang Region (Upper and Lower Mustang)" src="https://images.unsplash.com/photo-1538321833141-b175d44fd264?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QW5uYXB1cm5hJTIwQ2lyY3VpdHxlbnwwfHwwfHx8MA%3D%3D">
-                        <div class="destination-overlay"></div>
-                        <div class="destination-text-container">
-                            <h2>Mustang Region (Upper and Lower Mustang)</h2>
-                            <p>9 tours</p>
-                        </div>
-                    </a>
-                    <a href="#" class="destination-card">
-                        <img alt="Manaslu Region" src="https://images.unsplash.com/photo-1678501218653-d3b60b2e4136?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFubmFwdXJuYSUyMGJhc2UlMjBjYW1wfGVufDB8fDB8fHww&quot;">
-                        <div class="destination-overlay"></div>
-                        <div class="destination-text-container">
-                            <h2>Manaslu Region</h2>
-                            <p>9 tours</p>
-                        </div>
-                    </a>
-                </div>
+                @endif
+                @else
+
+                {{-- Reverse Layout: One on Left, Two on Right --}}
+
+                @if ($regionPackageRow->count() === 3)
                 <a href="#" class="destination-half-width">
                     <div class="destination-card">
-                        <img alt="Kanchenjunga Region" src="https://images.unsplash.com/photo-1600786428316-0d6cc71d5181?q=80&amp;w=1964&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <img alt="{{ $regionPackageRow[0]->region_name }}" src="{{ $regionPackageRow[0]->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
                         <div class="destination-text-container">
-                            <h2>Kanchenjunga Region</h2>
-                            <p>9 tours</p>
+                            <h2>{{ $regionPackageRow[0]->region_name }}</h2>
+                            <p>{{ $regionPackageRow[0]->package_count }} tours</p>
                         </div>
                     </div>
                 </a>
+                @endif
+                <div class="destination-column">
+                    @foreach($regionPackageRow->skip(1)->take(2) as $regionPackage)
+                    <a href="#" class="destination-card">
+                        <img alt="{{ $regionPackage->region_name }}" src="{{ $regionPackage->dashboard_file_path }}">
+                        <div class="destination-overlay"></div>
+                        <div class="destination-text-container">
+                            <h2>{{ $regionPackage->region_name }}</h2>
+                            <p>{{ $regionPackage->package_count }} tours</p>
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
+                @endif
             </div>
         </div>
+        @endforeach
     </div>
+
     <x-news-letter></x-news-letter>
 </section>

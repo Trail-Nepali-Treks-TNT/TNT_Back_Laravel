@@ -6,20 +6,16 @@
                 <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body side-nav-modal-body region-side-nav-modal-body">
-                @php
-                    // Load JSON file directly in the view
-                    $jsonPath = resource_path('views/Client/data/data.json');
-                    $jsonData = json_decode(file_get_contents($jsonPath), true);
-                    $regions = $jsonData['region'] ?? []; // Get the "region" array
-                @endphp
-                @foreach($regions as $region)
-                    <a href="/" class="text-decoration-none sidebar-region-card">
-                        <img class="region-img" alt="{{ $region['name'] }}" src="{{ $region['img'] }}" />
-                        <span class="font-playfair text-white text-decoration-none region-card-title">
-                            {{ $region['name'] }}
-                        </span>
-                    </a>
+                
+                @foreach ($navigationItems as $nav)
+                <a href="/" class="text-decoration-none sidebar-region-card">
+                    <img class="region-img" alt="{{ $nav->region_name }}" src="{{ $nav->dashboard_file_path }}" />
+                    <span class="font-playfair text-white text-decoration-none region-card-title">
+                        {{ $nav->region_name }}
+                    </span>
+                </a>
                 @endforeach
+                
             </div>
         </div>
     </div>
