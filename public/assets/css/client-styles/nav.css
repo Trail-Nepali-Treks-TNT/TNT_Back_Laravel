@@ -521,3 +521,6 @@
 .navigation-wrapper .nav-bottom-search input {
     border: 1px solid var(--grey-700);
 }
+.home-nav-wrapper {
+    z-index: 10;
+}
