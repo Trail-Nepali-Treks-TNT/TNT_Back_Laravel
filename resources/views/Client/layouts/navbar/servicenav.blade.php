@@ -19,23 +19,22 @@
                 </div>
                 <div class="nav-servicelist">
                     @php
-                        // Load JSON file directly in the view
-                        $jsonPath = resource_path('views/Client/data/data.json');
-                        $jsonData = json_decode(file_get_contents($jsonPath), true);
-                        $services = $jsonData['services'] ?? []; // Get the "region" array
+                    $groupedNavigation = collect($navigationItems)->groupBy('category');
+                    $loopIndex = 0;
                     @endphp
-                    @foreach ($services as $service)
-                        <div class="service-category">
-                            <h5>{{ $service['category'] }}</h5>
-                            <ul>
-                                @foreach ($service['items'] as $item)
-                                    <li>
-                                        <a href="{{ url($item['link']) }}"
-                                            class="text-white text-decoration-none">{{ $item['name'] }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    @foreach($groupedNavigation as $category => $regions)
+                    <div class="service-category">
+                        <h5> {{ $category }}
+                        </h5>
+                        <ul>
+                            @foreach($regions as $region)
+                            <li>
+                                <a href="/client/detail/{{$region->region_id}}"
+                                    class="text-white text-decoration-none">{{ $region->region_name }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endforeach
                 </div>
             </div>

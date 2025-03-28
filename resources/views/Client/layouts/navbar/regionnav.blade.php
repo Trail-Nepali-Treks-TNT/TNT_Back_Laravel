@@ -20,18 +20,12 @@
                 <div class="region-card-container">
                     <div class="swiper region-nav-swiper">
                         <div class="swiper-wrapper">
-                            @php
-                            $jsonPath = resource_path('views/Client/data/data.json');
-                            $jsonData = json_decode(file_get_contents($jsonPath), true);
-                            $regions = $jsonData['region'] ?? []; // Get the "region" array
-                            @endphp
-
-                            @foreach($regions as $region)
+                            @foreach ($navigationItems as $nav)
                             <div class="swiper-slide">
                                 <a href="/" class="text-decoration-none region-card">
-                                    <img class="region-img" alt="{{ $region['name'] }}" src="{{ $region['img'] }}" />
+                                    <img class="region-img" alt="{{ $nav->region_name }}" src="{{ $nav->dashboard_file_path }}" />
                                     <span class="font-playfair text-white text-decoration-none region-card-title">
-                                        {{ $region['name'] }}
+                                        {{ $nav->region_name }}
                                     </span>
                                 </a>
                             </div>

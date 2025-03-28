@@ -7,36 +7,37 @@
             </div>
             <div class="modal-body side-nav-modal-body service-side-nav-modal-body">
                 @php
-                    // Load JSON file directly in the view
-                    $jsonPath = resource_path('views/Client/data/data.json');
-                    $jsonData = json_decode(file_get_contents($jsonPath), true);
-                    $services = $jsonData['services'] ?? []; // Get the "region" array
+                $groupedNavigation = collect($navigationItems)->groupBy('category');
+                $loopIndex = 0;
                 @endphp
                 <div class="accordion" id="servicesAccordion">
-                    @foreach ($services as $index => $service)
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading{{ $index }}">
-                                <button class="accordion-button {{ $index === 0 ? '' : 'collapsed' }}" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}"
-                                    aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
-                                    aria-controls="collapse{{ $index }}">
-                                    {{ $service['category'] }}
-                                </button>
-                            </h2>
-                            <div id="collapse{{ $index }}" class="accordion-collapse collapse "
-                                aria-labelledby="heading{{ $index }}" data-bs-parent="#servicesAccordion">
-                                <div class="accordion-body">
-                                    <ul class="list-group">
-                                        @foreach ($service['items'] as $item)
-                                            <li class="list-group-item">
-                                                <a class="text-white text-decoration-none" href="{{ $item['link'] }}"
-                                                    class="text-decoration-none">{{ $item['name'] }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                    @foreach($groupedNavigation as $category => $regions)
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{ $loopIndex }}">
+                            <button class="accordion-button {{ $loopIndex === 0 ? '' : 'collapsed' }}" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse{{ $loopIndex }}"
+                                aria-expanded="{{ $loopIndex === 0 ? 'true' : 'false' }}"
+                                aria-controls="collapse{{ $loopIndex }}">
+                                {{ $category }}
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $loopIndex }}" class="accordion-collapse collapse "
+                            aria-labelledby="heading{{ $loopIndex }}" data-bs-parent="#servicesAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    @foreach($regions as $region)
+                                    <li class="list-group-item">
+                                        <a class="text-white text-decoration-none" href="/client/detail/{{$region->region_id}}"
+                                            class="text-decoration-none"> {{ $region->region_name }}
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                    @php $loopIndex++; @endphp
+
                     @endforeach
                 </div>
             </div>

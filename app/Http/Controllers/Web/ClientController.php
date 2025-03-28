@@ -15,6 +15,11 @@ class ClientController extends Controller
         $this->packageDetailRepository = $packageDetailRepository;
     }
 
+    public function index()
+    {
+        return view("client.home.index", compact('packageDetail'));
+    }
+
     public function detail($id)
     {
         $packageDetail = $this->packageDetailRepository->packageDetail($id);
