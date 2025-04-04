@@ -50,16 +50,19 @@
                 {{-- Reverse Layout: One on Left, Two on Right --}}
 
                 @if ($regionPackageRow->count() === 3)
+                @foreach($regionPackageRow->take(1) as $regionPackage)
                 <a href="#" class="destination-half-width">
                     <div class="destination-card">
-                        <img alt="{{ $regionPackageRow[0]->region_name }}" src="{{ $regionPackageRow[0]->dashboard_file_path }}">
+                        <img alt="{{ $regionPackage->region_name }}" src="{{ $regionPackage->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
                         <div class="destination-text-container">
-                            <h2>{{ $regionPackageRow[0]->region_name }}</h2>
-                            <p>{{ $regionPackageRow[0]->package_count }} tours</p>
+                            <h2>{{ $regionPackage->region_name }}</h2>
+                            <p>{{ $regionPackage->package_count }} tours</p>
                         </div>
                     </div>
                 </a>
+                @endforeach
+
                 @endif
                 <div class="destination-column">
                     @foreach($regionPackageRow->skip(1)->take(2) as $regionPackage)

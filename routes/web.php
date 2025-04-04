@@ -24,9 +24,8 @@ Route::prefix('client')
     });
 
 //Client Routes
-Route::get('/', action: function () {
-    return view('client.home.index');
-});
+Route::get('/', [ClientController::class, 'index']);
+
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 
