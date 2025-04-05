@@ -320,8 +320,61 @@
                 </div>
             </div>
         </div>
-        <div class="package-map-container">
-            Package Map
+    </div>
+    <div class="package-map-container">
+        Package Map
+    </div>
+    @include("Client.Detail.package-include")
+
+    <div class="package-faq tnt-container d-flex align-items-center flex-column">
+        @php
+            $faqList = [
+                [
+                    'question' => 'What is the best time to trek in the Annapurna Region?',
+                    'answer' => 'The best time to trek in the Annapurna Region is during spring (March to May) and autumn (September to November). These seasons offer clear skies, stable weather, and breathtaking views of the mountains, along with blooming rhododendrons in spring.',
+                ],
+                [
+                    'question' => 'How difficult are treks in the Annapurna Region?',
+                    'answer' => 'Trek difficulty varies. Short treks like Ghorepani Poon Hill are moderate, while Annapurna Circuit and Base Camp treks are more challenging due to longer durations and high altitude.',
+                ],
+                [
+                    'question' => 'Do I need permits for trekking in the Annapurna Region?',
+                    'answer' => 'Yes, you need an Annapurna Conservation Area Permit (ACAP) and a Trekkers’ Information Management System (TIMS) card. Solo trekkers may have additional restrictions.',
+                ],
+                [
+                    'question' => 'What is the average cost of trekking in the Annapurna Region?',
+                    'answer' => 'Costs vary but range from $25–$50 per day, depending on accommodation, food, and guide/porter services. A full trek can cost $300–$1,500.',
+                ],
+                [
+                    'question' => 'How long do treks in the Annapurna Region take?',
+                    'answer' => 'It depends on the route. Short treks (like Poon Hill) take 3–5 days, Annapurna Base Camp takes 7–12 days, and the Annapurna Circuit takes 12–21 days.',
+                ],
+                [
+                    'question' => 'Is altitude sickness a concern in the Annapurna Region?',
+                    'answer' => 'Yes, especially above 3,000m (Annapurna Base Camp, Thorong La Pass). Proper acclimatization and hydration are essential to prevent AMS.',
+                ],
+                [
+                    'question' => 'What should I pack for trekking in this region?',
+                    'answer' => 'Essentials include layered clothing, sturdy boots, sleeping bag, trekking poles, rain gear, first aid kit, water purification tablets, and snacks.',
+                ],
+                [
+                    'question' => 'Are guides and porters necessary for trekking in the Annapurna Region?',
+                    'answer' => 'Not mandatory, but highly recommended, especially for beginners. Some areas now require at least a guide for solo trekkers.',
+                ],
+                [
+                    'question' => 'Can beginners trek in the Annapurna Region?',
+                    'answer' => 'Yes, beginner-friendly treks include Ghorepani Poon Hill and Mardi Himal. Longer treks require good fitness and preparation.',
+                ],
+                [
+                    'question' => 'Is Wi-Fi or mobile network available on the trekking trails?',
+                    'answer' => 'Available in most villages but patchy and slow. Wi-Fi may cost extra. Ncell and NTC networks work in some areas, but coverage is inconsistent.',
+                ],
+            ];
+
+        @endphp
+
+        <div class="package-faq-container d-flex align-items-center flex-column">
+            <x-faq :faqs="$faqList" />
         </div>
     </div>
     <div class="detail-newsletter-container tnt-container">
