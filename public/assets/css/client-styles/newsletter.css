@@ -1,5 +1,5 @@
 .newsletter-container {
-    margin-top: 3.5rem;
+    padding-top: 3.5rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem; /* optional spacing between the items */
