@@ -62,8 +62,127 @@
             View all (7) pages
         </button>
     </div>
+    <div class="package-intro ">
+        <div class="package-into-desc-container">
+            <p class="font-playfair package-highlight">"Embark on a thrilling Everest Base Camp trek, a moderate to
+                challenging adventure through the high Himalayas, featuring Sherpa culture, cozy tea house
+                stays, and breathtaking views.</p>
+            <div class="package-description">
+                <p>
+                    The <strong>Everest Base Camp Trek</strong> is one of the most iconic and rewarding journeys
+                    in the world, taking you deep into the heart of the high Himalayas. This trek offers a
+                    unique blend of natural beauty, cultural richness, and physical challenge, making it a dream
+                    destination for adventurers and nature enthusiasts alike.
+                </p>
 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error facere a placeat eum, unde, assumenda maiores enim ducimus sequi velit iste hic! Itaque excepturi, aliquam recusandae laboriosam voluptates sunt animi, consequuntur consequatur, quam fugiat illo cum praesentium dolore? Deserunt hic tenetur, vitae at debitis sed voluptatum porro voluptatem eaque doloribus sapiente dolores fuga officia repellat voluptatibus sint nisi exercitationem cumque. Magni velit incidunt illum nam! Dolorum quaerat accusantium dolorem quam voluptates aliquid optio, magnam architecto voluptatibus dolores iusto, a aliquam odio saepe tempore corrupti aut? Dicta hic tenetur odio quam at quisquam aspernatur, doloremque vel voluptate. Aliquid dicta explicabo provident?
+                <h5>What to Expect</h5>
+                <ul>
+                    <li>
+                        <strong>Scenic Beauty</strong>: Trek through lush valleys, glacial rivers, and rugged
+                        trails while enjoying breathtaking views of some of the world’s highest peaks, including
+                        <strong>Mount Everest</strong>, <strong>Lhotse</strong>, <strong>Nuptse</strong>, and
+                        <strong>Ama Dablam</strong>.
+                    </li>
+                    <li>
+                        <strong>Sherpa Culture</strong>: Immerse yourself in the rich traditions of the Sherpa
+                        people, who have called the Khumbu region home for centuries. Visit ancient monasteries,
+                        prayer-flag-adorned villages, and learn about Tibetan Buddhism.
+                    </li>
+                    <li>
+                        <strong>Tea House Experience</strong>: Stay in cozy tea houses and lodges along the
+                        trail, where you’ll enjoy warm hospitality, hearty meals, and a chance to connect with
+                        fellow trekkers from around the world.
+                    </li>
+                    <li>
+                        <strong>Physical Challenge</strong>: This trek is graded as <strong>moderate to fairly
+                            challenging</strong>, requiring a good level of fitness. You’ll walk 6-8 hours daily
+                        on rocky terrain and high-altitude trails, but the effort is rewarded with unforgettable
+                        experiences.
+                    </li>
+                </ul>
+
+                <h5>Why Choose This Trek?</h5>
+                <ul>
+                    <li>
+                        <strong>Accessible Adventure</strong>: No prior trekking experience is required, making
+                        it suitable for first-time trekkers with a passion for adventure.
+                    </li>
+                    <li>
+                        <strong>Cultural Immersion</strong>: Witness vibrant Sherpa festivals like
+                        <strong>Losar</strong> (Tibetan New Year) and <strong>Mani Rimdu</strong>, and explore
+                        historic monasteries such as <strong>Tengboche</strong>.
+                    </li>
+                    <li>
+                        <strong>Eco-Friendly Travel</strong>: The trek promotes responsible tourism, with a
+                        focus on minimizing environmental impact and supporting local communities.
+                    </li>
+                </ul>
+
+                <h5>Best Time to Go</h5>
+                <p>
+                    The ideal seasons for the Everest Base Camp Trek are:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Spring (March to May)</strong>: Clear skies, blooming rhododendrons, and
+                        moderate temperatures.
+                    </li>
+                    <li>
+                        <strong>Autumn (September to November)</strong>: Stable weather, excellent visibility,
+                        and vibrant landscapes.
+                    </li>
+                </ul>
+
+                <h5>Who Can Do This Trek?</h5>
+                <ul>
+                    <li>
+                        <strong>Fitness Level</strong>: You should be moderately fit, enjoy walking, and be
+                        prepared for high-altitude conditions. Regular exercise before the trek is recommended.
+                    </li>
+                    <li>
+                        <strong>Age</strong>: There’s no age limit—adventurers of all ages can undertake this
+                        journey with proper preparation and determination.
+                    </li>
+                </ul>
+
+                <h5>A Journey of a Lifetime</h5>
+                <p>
+                    The Everest Base Camp Trek is more than just a physical challenge—it’s a journey that tests
+                    your limits, rewards your spirit, and leaves you with memories to last a lifetime. From the
+                    bustling streets of <strong>Kathmandu</strong> to the serene beauty of the Himalayas, every
+                    step of this adventure is filled with wonder and discovery.
+                </p>
+                <button class="readmore">Read more</button>
+            </div>
+        </div>
+        <div class="package-intor-booknow-container relative">
+            <div class="sticky-top">
+                <div class="package-price">
+                    <div class="package-actual-price">
+                        <span class="text-decoration-line-through">$1060</span>
+                        <span class="package-saved">Save 15%</span>
+                    </div>
+                    <div class="package-current-price">
+                        From $1,200.00
+                        <span>/person</span>
+                    </div>
+                </div>
+                <div class="book-package">
+                    <button class="book-package-btn">Book Now</button>
+                    <ul class="book-package-terms">
+                        <li class="d-flex gap-1 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Flexible Cancellation</li>
+                        <li class="d-flex gap-1 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            No Booking Fees</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
