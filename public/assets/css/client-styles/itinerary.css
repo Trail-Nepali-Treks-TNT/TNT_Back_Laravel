@@ -1,0 +1,82 @@
+.package-itinerary {
+    background-color: var(--grey-100);
+    margin-top: 3rem;
+}
+
+.package-itinerary .itinerary {
+    display: flex;
+    justify-content: center;
+    max-height: 80vh;
+    overflow: overlay;
+    padding-bottom: 2rem;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--grey-200) transparent;
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+.package-itinerary .itinerary::-webkit-scrollbar {
+    width: 6px;
+}
+
+.package-itinerary .itinerary::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.package-itinerary .itinerary::-webkit-scrollbar-thumb {
+    background-color: var(--grey-200);
+    border-radius: 4px;
+}
+
+.itinerary-container {
+    padding: 2.25rem 0;
+    max-width: 45rem;
+}
+
+.itinerary-title {
+    font-size: 2rem;
+    color: var(--grey-600);
+    margin-bottom: 0;
+    padding: 0 1.75rem;
+    padding-bottom: .75rem;
+}
+
+.itinerary-title small {
+    font-family: "Inter", serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--grey-400);
+    display: block;
+}
+
+.itinerary-day {
+    border-bottom: 1px solid #C0C3C3;
+    padding: 1.625rem;
+}
+
+.itinerary-day:last-child {
+    border-bottom: 0;
+}
+
+.itinerary-number {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.itinerary-activity {
+   font-size: 0.9375rem;
+    line-height: 1.25rem ;
+    font-weight: 400;
+    color: var(--grey-400);
+}
+.itinerary-readmore{
+    color: var(--grey-500);
+    border: none;
+    outline: none;
+    background: transparent;
+    text-decoration: underline;
+    transition: background-color 0.3s ease;
+    padding: 6px 0;
+    font-size: 0.9rem;margin-top: 2px;
+
+}
