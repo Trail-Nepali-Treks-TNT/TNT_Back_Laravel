@@ -321,11 +321,80 @@
             </div>
         </div>
     </div>
-    <div class="package-map-container">
-        Package Map
-    </div>
-    @include("Client.Detail.package-include")
+    <!-- Tour Itinerary -->
+    @php
+        $description = 'Annapurna Circuit Trek & Tilicho Lake';
+        $itinerary = [
+            [
+                'number' => 'Day 1: Arrival in Kathmandu (1,400m)',
+                'activity' => "Arrive in Nepal’s bustling capital, Kathmandu. Spend the day exploring historic sites like Swayambhunath and Durbar Square. Prepare for the trek with a briefing and gear check. ",
+            ],
+            [
+                'number' => 'Day 2: Drive to Besisahar and then to Chame (2,710m)',
+                'activity' => "A scenic drive from Kathmandu to Besisahar, followed by a jeep ride to Chame. Enjoy the lush valleys, terraced fields, and distant views of the Annapurna range.",
+            ],
+            [
+                'number' => 'Day 3: Trek to Pisang (3,300m)',
+                'activity' => "Start the trek with a gradual climb through pine forests, crossing suspension bridges over roaring rivers. Reach Pisang, offering breathtaking views of Annapurna II and IV.",
+            ],
+            [
+                'number' => 'Day 4: Trek to Manang (3,540m)',
+                'activity' => "Follow the trail along the Marsyangdi River, passing villages like Ghyaru and Ngawal. Enjoy panoramic mountain views and acclimatize at the culturally rich village of Manang.",
+            ],
+            [
+                'number' => 'Day 5: Acclimatization in Manang',
+                'activity' => "A rest day to adapt to the altitude. Explore the town, visit the Gangapurna Lake, or hike to a nearby ridge for amazing vistas.",
+            ],
+            [
+                'number' => 'Day 6: Trek to Siri Kharka (4,060m)',
+                'activity' => "Leave the main Annapurna Circuit trail and head toward Tilicho Lake. Ascend through rugged terrain and witness spectacular landscapes.",
+            ],
+            [
+                'number' => 'Day 7: Trek to Tilicho Base Camp (4,200m)',
+                'activity' => "A short yet challenging trek along steep trails and narrow ridges. Arrive at Tilicho Base Camp, surrounded by towering peaks.",
+            ],
+            [
+                'number' => 'Day 8: Visit Tilicho Lake (5,416m) and return to Siri Kharka',
+                'activity' => "Hike to Tilicho Lake, one of the world’s highest lakes, reflecting the majestic Annapurna range. Descend back to Siri Kharka after soaking in the stunning views.",
+            ],
+            [
+                'number' => 'Day 9: Trek to Yak Kharka (4,050m)',
+                'activity' => "Reconnect with the Annapurna Circuit trail and head to Yak Kharka. Walk through alpine meadows and watch for grazing yaks.",
+            ],
+            [
+                'number' => 'Day 10: Trek to Thorong Phedi (4,525m)',
+                'activity' => "A gradual ascent to Thorong Phedi, the last stop before the Thorong La Pass. Rest and prepare for the challenging pass crossing.",
+            ],
+            [
+                'number' => 'Day 11: Cross Thorong La Pass (5,416m) and descend to Muktinath (3,800m)',
+                'activity' => "The most strenuous yet rewarding day. Cross Thorong La Pass for breathtaking views. Descend to Muktinath, a sacred pilgrimage site for Hindus and Buddhists.",
+            ],
+            [
+                'number' => 'Day 12: Trek to Jomsom (2,720m)',
+                'activity' => "Trek downhill to Jomsom through Kagbeni, a charming village with Tibetan influences. Enjoy the windy trails of the Kali Gandaki valley.",
+            ],
+            [
+                'number' => 'Day 13: Fly to Pokhara (827m)',
+                'activity' => "Take a short flight to Pokhara, Nepal’s adventure capital. Relax by Phewa Lake or explore the city’s vibrant cafés and markets.",
+            ],
+            [
+                'number' => 'Day 14: Drive back to Kathmandu',
+                'activity' => "Return to Kathmandu via a scenic drive. Spend the evening shopping for souvenirs or reflecting on your trek’s unforgettable memories.",
+            ],
+            [
+                'number' => 'Day 15: Departure',
+                'activity' => "Your journey concludes. Depart from Kathmandu with incredible experiences and cherished memories of the Annapurna Circuit and Tilicho Lake.",
+            ],
+        ];
 
+    @endphp
+    <div class="tnt-container package-itinerary">
+        <x-tour-itinerary :description="$description" :itinerary="$itinerary" />
+    </div>
+
+    <!-- Package include/exclude -->
+    @include("Client.Detail.package-include")
+    <!-- Package FAQ` -->
     <div class="package-faq tnt-container d-flex align-items-center flex-column">
         @php
             $faqList = [
