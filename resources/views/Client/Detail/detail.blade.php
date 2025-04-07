@@ -393,7 +393,91 @@
     </div>
 
     <!-- Package include/exclude -->
-    @include("Client.Detail.package-include")
+    <div class="package-include-container tnt-container">
+        <x-included-excluded-section :excludes="[
+            [
+                'title' => 'Airport pick-up & drop',
+                'description' => 'Airport to hotel transfer and return (pick-up and drop).',
+            ],
+            [
+                'title' => 'International Flights',
+                'description' => 'Airfare to and from Kathmandu.',
+            ],
+            [
+                'title' => 'Visa Fees',
+                'description' => 'Nepal entry visa costs (available on arrival).',
+            ],
+            [
+                'title' => 'Personal Expenses',
+                'description' => 'Alcoholic and non-alcoholic beverages. Snacks, souvenirs, and hot showers during the trek. Tips for guides and porters (appreciated but not mandatory).',
+            ],
+            [
+                'title' => 'Travel Insurance',
+                'description' => 'Insurance covering cancellation, medical expenses, helicopter evacuation, and emergency repatriation.',
+            ],
+            [
+                'title' => 'Additional Meals',
+                'description' => 'Meals in Kathmandu (unless specified in the itinerary).',
+            ],
+            [
+                'title' => 'Optional Activities',
+                'description' => 'Trip extensions (e.g., Island Peak climbing, Chitwan safari, cultural tours, rafting, or Pokhara trip).',
+            ],
+            [
+                'title' => 'Rescue/Evacuation Costs',
+                'description' => 'Helicopter evacuation in case of emergencies (must be covered by your insurance).',
+            ],
+            [
+                'title' => 'Equipment',
+                'description' => 'Personal trekking gear (e.g., walking boots, sleeping bag, waterproof jacket, etc.).',
+            ],
+            [
+                'title' => 'Unforeseen Costs',
+                'description' => 'Additional expenses due to itinerary changes, delays, or cancellations caused by factors beyond control (e.g., weather, strikes, government regulations).',
+            ],
+        ]" :includes="[
+            [
+                'title' => 'Airport pick-up & drop',
+                'description' => 'Airport to hotel transfer and return (pick-up and drop).',
+            ],
+            [
+                'title' => 'International Flights',
+                'description' => 'Airfare to and from Kathmandu.',
+            ],
+            [
+                'title' => 'Visa Fees',
+                'description' => 'Nepal entry visa costs (available on arrival).',
+            ],
+            [
+                'title' => 'Personal Expenses',
+                'description' => 'Alcoholic and non-alcoholic beverages. Snacks, souvenirs, and hot showers during the trek. Tips for guides and porters (appreciated but not mandatory).',
+            ],
+            [
+                'title' => 'Travel Insurance',
+                'description' => 'Insurance covering cancellation, medical expenses, helicopter evacuation, and emergency repatriation.',
+            ],
+            [
+                'title' => 'Additional Meals',
+                'description' => 'Meals in Kathmandu (unless specified in the itinerary).',
+            ],
+            [
+                'title' => 'Optional Activities',
+                'description' => 'Trip extensions (e.g., Island Peak climbing, Chitwan safari, cultural tours, rafting, or Pokhara trip).',
+            ],
+            [
+                'title' => 'Rescue/Evacuation Costs',
+                'description' => 'Helicopter evacuation in case of emergencies (must be covered by your insurance).',
+            ],
+            [
+                'title' => 'Equipment',
+                'description' => 'Personal trekking gear (e.g., walking boots, sleeping bag, waterproof jacket, etc.).',
+            ],
+            [
+                'title' => 'Unforeseen Costs',
+                'description' => 'Additional expenses due to itinerary changes, delays, or cancellations caused by factors beyond control (e.g., weather, strikes, government regulations).',
+            ],
+        ]" />
+    </div>
     <!-- Package FAQ` -->
     <div class="package-faq tnt-container d-flex align-items-center flex-column">
         @php
