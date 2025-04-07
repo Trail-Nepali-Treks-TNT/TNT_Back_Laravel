@@ -1,0 +1,66 @@
+.included-excluded {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    color: #fff;
+}
+
+@media screen and (min-width: 640px) {
+    .included-excluded {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .included-excluded {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .included-excluded {
+        gap: 8rem;
+    }
+
+}
+
+.included-excluded .section-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.included-excluded .section-description {
+    font-size: .9rem;
+    line-height: 1.5rem;
+}
+
+.included-excluded .item-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.included-excluded .list-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.included-excluded .item-list .item-title {
+    font-weight: 400;
+}
+
+.included-excluded .item-list .include-item::before {
+    content: "✅";
+}
+
+.included-excluded .item-list .exclude-item::before {
+    content: "❌";
+    font-size: 12px;
+}
+
+.included-excluded .item-list .item-description {
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
