@@ -448,3 +448,16 @@
         padding-top: 3rem;
     }
 }
+
+/* Package include/exclude */
+.package-include-container {
+    background-color: var(--primary-600);
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .package-include-container {
+        padding-bottom: 8rem;
+    }
+}
