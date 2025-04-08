@@ -303,7 +303,8 @@
                         </div>
                     </div>
                     <div class="book-package">
-                        <button class="book-package-btn">Book Now</button>
+                        <button class="book-package-btn" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bookNowFormModal">Book Now</button>
                         <ul class="book-package-terms">
                             <li class="d-flex gap-1 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -321,6 +322,7 @@
             </div>
         </div>
     </div>
+    <x-book-now-form :tourPackageName="'Langtang'" />
     <!-- Tour Itinerary -->
     @php
         $description = 'Annapurna Circuit Trek & Tilicho Lake';
