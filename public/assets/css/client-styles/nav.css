@@ -37,6 +37,7 @@
         height: calc(100vh + 50px);
     }
 }
+
 .nav-top {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 10;
@@ -69,7 +70,7 @@
     z-index: 10;
 }
 .nav-bottom-links li a {
-    font-weight: 300;
+    font-weight: 500;
     transition: 0.5s;
     padding: 5px 14px;
     cursor: pointer;
@@ -511,4 +512,15 @@
 }
 .region-side-nav-modal-body .region-card-title {
     font-size: 14px;
+}
+/* //Navbar color */
+
+.navigation-wrapper a {
+    color: var(--grey-700) !important;
+}
+.navigation-wrapper .nav-bottom-search input {
+    border: 1px solid var(--grey-700);
+}
+.home-nav-wrapper {
+    z-index: 10;
 }

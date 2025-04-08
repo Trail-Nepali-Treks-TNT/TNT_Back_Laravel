@@ -17,16 +17,13 @@ use App\Http\Controllers\Web\ServiceTypeController;
 use App\Http\Controllers\Web\UserController;
 
 
-Route::prefix('client')
-    ->name('client.')
-    ->group(function () {
-        Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
-    });
+
 
 //Client Routes
 Route::get('/', [ClientController::class, 'index']);
+Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('client.detail');
 
-
+//Dashboard Routes
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 
 Route::group(['prefix' => 'account'], function () {
@@ -138,7 +135,7 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
         Route::put('/{faq}', [PackageFaqController::class, 'update'])->name('update');
         Route::get('/faqForm/{faq?}', [PackageFaqController::class, 'faqForm'])->name('faqForm');
     });
-    
+
     Route::prefix('{package_id}/inclusion')->name('inclusion.')->group(function () {
         Route::get('/', [PackageInclusionController::class, 'index'])->name('index');
         Route::post('/', [PackageInclusionController::class, 'store'])->name('store');
@@ -146,5 +143,3 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
         Route::get('/inclusionForm/{id?}', [PackageInclusionController::class, 'inclusionForm'])->name('inclusionForm');
     });
 });
-
-
