@@ -30,12 +30,13 @@
     <div style="overflow: hidden;">
         <div class="position-relative earlyCardSwiper swiper" id="earlyPackage">
             <div class="swiper-wrapper">
-                @foreach ($packages as $index => $package)
+                @foreach($packageList as $package)
                 <div class="swiper-slide">
-                    <x-package-card :images="$package['images']" title="{{$package['packageName']}}"
-                        description="{{ $package['shortDescription'] }}" expiryDate="{{ $package['expiryDate'] }}"
-                        price="{{ $package['price'] }}" discountedPrice="{{ $package['discountedPricePerPerson'] }}"
-                        discountPercentage="15" bestSeller="{{ $package['isBestSeller'] }}" popular="{{ $package['isPopular']}}" link="{{ $package['link'] }}" />
+                    <x-package-card :images="$package->images" title="{{$package->name}}"
+                        description="{{ $package->short_description }}" expiryDate="2025-05-06"
+                        price="{{ $package->price}}" discountedPrice="{{ $package->old_price }}"
+                        discountPercentage="15" bestSeller="true"
+                        popular="true" link="#" />
                 </div>
                 @endforeach
             </div>
@@ -58,6 +59,7 @@
         </div>
     </div>
 </section>
+
 <!-- Highlighted Hero Package -->
 <section class="package-highlight">
     <div class="package-highlight-image">
@@ -78,9 +80,8 @@
     </div>
 </section>
 @include("Client.Home.destination")
+
 <script src="{{ asset('assets/js/client-scripts/home.js') }}"></script>
-
-
 @endsection
 
 @php

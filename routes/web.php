@@ -20,13 +20,10 @@ use App\Http\Controllers\Web\UserController;
 
 
 //Client Routes
-Route::get('/', action: function () {
-    return view('client.home.index');
-});
+Route::get('/', [ClientController::class, 'index']);
 Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('client.detail');
 
 //Dashboard Routes
-
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 
 Route::group(['prefix' => 'account'], function () {
