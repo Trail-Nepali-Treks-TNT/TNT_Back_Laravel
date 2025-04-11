@@ -53,7 +53,7 @@ $footerLinks = [
                 <div class="position-relative col-sm-12 col-md-4 col-lg-4">
                     <div class="footer-logo-container">
                         <a href="/">
-                            <img src="./assets/images/tnt-logo-footer.svg" alt="Trail Nepal Treks" class="img-fluid">
+                            <img src={{ asset('assets/images/tnt-logo-footer.svg') }} alt="Trail Nepal Treks" class="img-fluid">
                         </a>
                         <p class="slogan">
                             Your gateway to Himalayas
@@ -109,26 +109,26 @@ $footerLinks = [
                         <div class="mt-2 d-flex align-items-center gap-2">
                             <a href="https://www.nepal.gov.np/" target="_blank"
                                 class="footer-register-link d-flex align-items-center justify-content-center rounded bg-white p-1">
-                                <img src="./assets/images/gov_of_Nepal.svg"
+                                <img src={{ asset('assets/images/gov_of_Nepal.svg') }}
                                     alt="Trail Nepal Treks - Government of Nepal">
                             </a>
                             <a href="https://ntb.gov.np/" target="_blank"
                                 class="footer-register-link d-flex align-items-center justify-content-center rounded bg-white p-1">
-                                <img src="./assets/images/ntb_logo.jpg" alt="Trail Nepal Treks - Nepal tourism board">
+                                <img src={{ asset('assets/images/ntb_logo.jpg') }} alt="Trail Nepal Treks - Nepal tourism board">
                             </a>
                             <a href="https://www.taan.org.np/" target="_blank"
                                 class="footer-register-link d-flex align-items-center justify-content-center rounded bg-white p-1">
-                                <img src="./assets/images/taan-logo.jpg"
+                                <img src={{ asset('assets/images/taan-logo.jpg') }}
                                     alt="Trail Nepal Treks - Trekking Agencies Association of Nepal">
                             </a>
                             <a href="https://www.nepalmountaineering.org/" target="_blank"
                                 class="footer-register-link d-flex align-items-center justify-content-center rounded bg-white p-1">
-                                <img src="./assets/images/NMA-Logo.png"
+                                <img src={{ asset('assets/images/NMA-Logo.png') }}
                                     alt="Trail Nepal Treks - Nepal Mountaineering Association">
                             </a>
                             <a href="https://www.himalayanrescue.org/" target="_blank"
                                 class="footer-register-link d-flex align-items-center justify-content-center rounded bg-white p-1">
-                                <img src="./assets/images/hra-logo.png"
+                                <img src={{ asset('assets/images/hra-logo.png') }}
                                     alt="Trail Nepal Treks - Himalayan Rescue Association Nepal">
                             </a>
                         </div>
