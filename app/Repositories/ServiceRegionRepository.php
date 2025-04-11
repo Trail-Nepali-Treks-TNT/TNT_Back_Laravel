@@ -48,4 +48,20 @@ class ServiceRegionRepository extends BaseRepository implements IServiceRegionRe
                                 GROUP BY sr.Id, sr.name, bfd.file_url, dfd.file_url;");
         });
     }
+    public function RegionDetail($id)
+    {
+        $region = DB::selectOne("
+                    SELECT sr.id,sr.name,sr.description,sr.reason, fd.file_url AS dashboard_file_url 
+                    FROM service_regions sr JOIN file_details fd ON sr.dahboard_file_detail_id = fd.id
+                    WHERE sr.id = ?
+                    LIMIT 1
+                ", [$id]);
+        if (!$region) {
+            return null;
+        }
+        $region = (array) $region;
+        $region['faqs'] = DB::select("SELECT question,answer 
+                                FROM service_region_faq WHERE is_deleted = 0 AND is_active = 1 AND service_region_id = {$id}");
+        return $region;
+    }
 }

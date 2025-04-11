@@ -21,6 +21,8 @@ Route::prefix('client')
     ->name('client.')
     ->group(function () {
         Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
+        Route::get('/search/{id}', [ClientController::class, 'search'])->name('search');
+        Route::get('/searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
     });
 
 //Client Routes

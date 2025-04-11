@@ -99,7 +99,7 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
 
     public function packageList()
     {
-        $packages = DB::select("   SELECT * 
+        $packages = DB::select("SELECT * 
         FROM package_details WHERE is_deleted = 0 AND is_active = 1 LIMIT 8;");
         $packageIds = collect($packages)->pluck('id')->toArray();
         $images = DB::select("
@@ -126,6 +126,68 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
             $package->images = $imagesGrouped[$package->id] ?? [];
             return $package;
         });
+        return $packagesWithImages;
+    }
+
+    public function searchList($id, $filters = [])
+    {
+        $query = "
+            SELECT 
+                package_details.* 
+            FROM package_details
+            INNER JOIN category ON package_details.category_id = category.id
+            INNER JOIN difficulty_levels ON package_details.difficulty_level_id = difficulty_levels.id
+            INNER JOIN service_regions ON package_details.service_region_id = service_regions.id
+            WHERE package_details.is_deleted = 0 AND package_details.is_active = 1";
+
+        $query .= " AND package_details.service_region_id = $id";
+        
+        if (!empty($filters['search'])) {
+            $search = addslashes($filters['search']);
+            $query .= " AND package_details.name LIKE '%$search%'";
+        }
+
+
+        if (!empty($filters['category'])) {
+            $categoryId = (int) $filters['category'];
+            $query .= " AND package_details.category_id = $categoryId";
+        }
+
+        // Add accommodation filter if present
+        if (!empty($filters['accommodations'])) {
+            $accommodationIds = implode(',', array_map('intval', $filters['accommodations']));
+            $query .= " AND EXISTS (
+                SELECT 1 
+                FROM package_accomodations pa 
+                WHERE pa.package_details_id = package_details.id 
+                AND pa.accomodation_id IN ($accommodationIds))";
+        }
+
+        $packages = DB::select($query);
+        $packageIds = collect($packages)->pluck('id')->toArray();
+
+        // Fetch and group images
+        $images = DB::select("
+            SELECT 
+                file_mapping.target_id AS package_id,
+                file_details.file_url
+            FROM file_mapping
+            INNER JOIN file_details ON file_mapping.file_details_id = file_details.id
+            WHERE file_mapping.is_deleted = 0 
+                AND file_mapping.is_active = 1
+                AND file_details.is_deleted = 0 
+                AND file_details.is_active = 1 
+                AND file_mapping.table = 'Package'
+                AND file_mapping.target_id IN (" . implode(',', $packageIds) . ")");
+
+        $imagesGrouped = collect($images)->groupBy('package_id')->map(fn($group) => $group->pluck('file_url')->values());
+
+        // Combine images into the result
+        $packagesWithImages = collect($packages)->map(function ($package) use ($imagesGrouped) {
+            $package->images = $imagesGrouped[$package->id] ?? [];
+            return $package;
+        });
+
         return $packagesWithImages;
     }
 }
