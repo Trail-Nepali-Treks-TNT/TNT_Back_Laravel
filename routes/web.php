@@ -17,17 +17,16 @@ use App\Http\Controllers\Web\ServiceTypeController;
 use App\Http\Controllers\Web\UserController;
 
 
-Route::prefix('client')
-    ->name('client.')
+Route::prefix('/')
+    ->name('/.')
     ->group(function () {
-        Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('detail');
-        Route::get('/search/{id}', [ClientController::class, 'search'])->name('search');
-        Route::get('/searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
+        Route::get('detail/{id}', [ClientController::class, 'detail'])->name('detail');
+        Route::get('search/{id}', [ClientController::class, 'search'])->name('search');
+        Route::get('searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
     });
 
 //Client Routes
 Route::get('/', [ClientController::class, 'index']);
-Route::get('/detail/{id}', [ClientController::class, 'detail'])->name('client.detail');
 
 //Dashboard Routes
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');

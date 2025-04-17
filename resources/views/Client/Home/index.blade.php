@@ -36,7 +36,7 @@
                         description="{{ $package->short_description }}" expiryDate="2025-05-06"
                         price="{{ $package->price}}" discountedPrice="{{ $package->old_price }}"
                         discountPercentage="15" bestSeller="true"
-                        popular="true" link="#" />
+                        popular="true" link="/detail/{{$package->id}}" />
                 </div>
                 @endforeach
             </div>

@@ -82,10 +82,10 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
             $package['faqs'] = DB::select("SELECT question,answer 
                                 FROM package_faqs WHERE is_deleted = 0 AND is_active = 1 AND package_details_id = {$id}");
 
-            $package['included'] = DB::select("SELECT name,description 
+            $package['included'] = DB::select("SELECT name as title,description 
                                 FROM package_inclusions WHERE is_included = 1 AND is_deleted = 0 AND is_active = 1 AND package_details_id = {$id}");
 
-            $package['not_included'] = DB::select("SELECT name,description 
+            $package['not_included'] = DB::select("SELECT name as title,description 
                                 FROM package_inclusions WHERE is_included = 0 AND is_deleted = 0 AND is_active = 1 AND package_details_id = {$id}");
 
             $package['images'] = DB::select("SELECT file_details.file_url,file_details.content_type,file_details.original_name FROM file_mapping 
