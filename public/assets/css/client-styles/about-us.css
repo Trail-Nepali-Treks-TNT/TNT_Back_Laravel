@@ -1,0 +1,67 @@
+.aboutus-page {
+    margin-top: 2rem;
+}
+.aboutus-title {
+    line-height: 100%;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 1.5rem /* 24px */;
+    line-height: 2rem /* 32px */;
+}
+.aboutus-desc {
+    font-size: 1rem /* 16px */;
+    line-height: 1.5rem /* 24px */;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+.aboutus-cover {
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+.aboutus-info-container {
+    margin-top: 2rem;
+}
+.aboutus-subheading {
+    font-size: 1.375rem /* 20px */;
+    line-height: 1.75rem;
+    font-weight: 500;
+}
+.aboutus-info-container p {
+    font-size: 1.125rem;
+    /* font-weight: 300;/ */
+    line-height: 1.875rem;
+    margin: 1.375rem 0;
+}
+.aboutus-info-container ul li {
+    font-size: 1rem;
+    /* font-weight: 300; */
+    line-height: 1.875rem;
+}
+@media (min-width: 640px) {
+    .aboutus-title {
+        font-size: 1.875rem /* 30px */;
+        line-height: 2.25rem /* 36px */;
+    }
+}
+
+@media (min-width: 768px) {
+    .aboutus-title {
+        font-size: 3rem /* 48px */;
+        line-height: 1;
+    }
+    .aboutus-desc {
+        width: 60%;
+    }
+}
+.aboutus-newsletter-container {
+    background-color: var(--grey-100);
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .aboutus-newsletter-container {
+        padding-bottom: 6rem;
+    }
+}
