@@ -26,6 +26,9 @@ class PackageDetail extends AuditableModel
         'availability',
         'total_distance',
         'max_elevation',
+        'best_seller',
+        'popular',
+        'slugURL',
         'category_id', // Adventure,Tours and others
         'difficulty_level_id', // Moderate and oters
         'service_region_id', //Regions or others

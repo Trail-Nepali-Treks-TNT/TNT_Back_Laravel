@@ -160,7 +160,8 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                            </div><div class="col-md-2">
+                            </div>
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label for="group_size">Group size</label>
                                     <input type="text" name="group_size" class="form-control" required>
@@ -178,6 +179,9 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label for="max_elevation">Max Elevation</label>
@@ -187,8 +191,26 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="mb-2 col-md-2 mt-4">
+                                <label for="best_seller" class="form-label">Best Seller?</label>
+                                <input type="hidden" name="best_seller" value="0">
+                                <input type="checkbox" class="form-check-input" name="best_seller" id="best_seller" value="1">
+                            </div>
+                            <div class="mb-2 col-md-2 mt-4">
+                                <label for="popular" class="form-label">Popular?</label>
+                                <input type="hidden" name="popular" value="0">
+                                <input type="checkbox" class="form-check-input" name="popular" id="popular" value="1">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="slugURL">Slug URL</label>
+                                    <input type="text" name="slugURL" class="form-control" required>
+                                    @error('slugURL')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
-
                         <!-- Short Description Field -->
                         <div class="form-group mb-3">
                             <label for="short_description">Short Description</label>

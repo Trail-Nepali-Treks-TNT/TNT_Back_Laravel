@@ -72,7 +72,7 @@ class PackageDetailController extends Controller
             'old_price'             => 'required|numeric|min:0',
             'duration'              => 'required|integer|min:1',
             'walking_per_day'       => 'required|string',
-            'group_size'       => 'required|string',
+            'group_size'            => 'required|string',
             'starting_point'        => 'required|string|max:255',
             'availability'          => 'required|string|max:255',
             'total_distance'        => 'required|string|max:255',
@@ -81,7 +81,10 @@ class PackageDetailController extends Controller
             'difficulty_level_id'   => 'required|exists:difficulty_levels,id',
             'service_region_id'     => 'required|exists:service_regions,id',
             'package_accommodation' => 'required|array',
-            'package_accommodation.*' => 'exists:accomodation,id'
+            'package_accommodation.*' => 'exists:accomodation,id',
+            'best_seller'           => 'boolean',
+            'popular'               => 'boolean',
+            'slugURL'               => 'required|string',
         ]);
 
         $entity = [
@@ -92,14 +95,17 @@ class PackageDetailController extends Controller
             'old_price'           => $data['old_price'],
             'duration'            => $data['duration'],
             'walking_per_day'     => $data['walking_per_day'],
-            'group_size'     => $data['group_size'],
+            'group_size'          => $data['group_size'],
             'starting_point'      => $data['starting_point'],
             'availability'        => $data['availability'],
             'total_distance'      => $data['total_distance'],
             'max_elevation'       => $data['max_elevation'],
             'category_id'         => $data['category_id'],
             'difficulty_level_id' => $data['difficulty_level_id'],
-            'service_region_id'   => $data['service_region_id']
+            'service_region_id'   => $data['service_region_id'],
+            'best_seller'         => $data['best_seller'],
+            'popular'             => $data['popular'],
+            'slugURL'             => $data['slugURL']
         ];
 
         $package = $this->packageDetailRepository->create($entity);
@@ -130,7 +136,7 @@ class PackageDetailController extends Controller
             'old_price'             => 'required|numeric|min:0',
             'duration'              => 'required|integer|min:1',
             'walking_per_day'       => 'required|string',
-            'group_size'       => 'required|string',
+            'group_size'            => 'required|string',
             'starting_point'        => 'required|string|max:255',
             'availability'          => 'required|string|max:255',
             'total_distance'        => 'required|string|max:255',
@@ -139,7 +145,10 @@ class PackageDetailController extends Controller
             'difficulty_level_id'   => 'required|exists:difficulty_levels,id',
             'service_region_id'     => 'required|exists:service_regions,id',
             'package_accommodation' => 'required|array',
-            'package_accommodation.*' => 'exists:accomodation,id'
+            'package_accommodation.*' => 'exists:accomodation,id',
+            'best_seller'           => 'boolean',
+            'popular'               => 'boolean',
+            'slugURL'               => 'required|string',
         ]);
 
         $entity = [
@@ -157,7 +166,10 @@ class PackageDetailController extends Controller
             'max_elevation'       => $data['max_elevation'],
             'category_id'         => $data['category_id'],
             'difficulty_level_id' => $data['difficulty_level_id'],
-            'service_region_id'   => $data['service_region_id']
+            'service_region_id'   => $data['service_region_id'],
+            'best_seller'         => $data['best_seller'],
+            'popular'             => $data['popular'],
+            'slugURL'             => $data['slugURL']
         ];
         $this->packageDetailRepository->update($id, $entity);
         if (!empty($data['package_accommodation'])) {
@@ -199,6 +211,5 @@ class PackageDetailController extends Controller
         // }
 
         return ApiResponseHelper::success(null, "Images updated successfully.");
-
     }
 }

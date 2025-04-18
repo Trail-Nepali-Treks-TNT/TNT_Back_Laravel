@@ -20,7 +20,7 @@ use App\Http\Controllers\Web\UserController;
 Route::prefix('/')
     ->name('/.')
     ->group(function () {
-        Route::get('detail/{id}', [ClientController::class, 'detail'])->name('detail');
+        Route::get('detail/{slugURL}', [ClientController::class, 'detail'])->name('detail');
         Route::get('search/{id}', [ClientController::class, 'search'])->name('search');
         Route::get('searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
     });

@@ -30,6 +30,9 @@ return new class extends Migration
 
         Schema::table('package_details', function (Blueprint $table) {
             $table->string('group_size')->after('walking_per_day'); // Add new column
+            $table->boolean('best_seller')->after('group_size'); 
+            $table->boolean('popular')->after('best_seller'); 
+            $table->text('slugURL'); 
         });
     }
 

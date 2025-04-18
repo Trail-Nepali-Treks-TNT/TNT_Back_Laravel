@@ -29,46 +29,53 @@
         'activity' => $item->description,
         ];
         })->toArray();
-        @endphp
+        $oldPrice = $packageDetail['old_price'];
+        $currentPrice = $packageDetail['price'];
+        $percentageSaved = 0;
 
-        @if(isset($images[0]))
-        <div class="left-item">
+        if ($oldPrice > 0 && $currentPrice < $oldPrice) {
+            $percentageSaved=round((($oldPrice - $currentPrice) / $oldPrice) * 100);
+            }
+            @endphp
+
+            @if(isset($images[0]))
+            <div class="left-item">
             <a data-fancybox="gallery" href="{{ $images[0]->file_url }}">
                 <img src="{{ $images[0]->file_url }}" alt="Image" />
             </a>
-        </div>
-        @endif
+    </div>
+    @endif
 
-        <div class="right-grid">
-            @foreach($images as $key => $image)
-            @if($key > 0 && $key <= 4)
-                <div class="grid-item">
-                <a data-fancybox="gallery" href="{{ $image->file_url }}">
-                    <img src="{{ $image->file_url }}" alt="Image {{ $key+1 }}" />
-                </a>
-        </div>
-
-        @endif
-        @endforeach
+    <div class="right-grid">
+        @foreach($images as $key => $image)
+        @if($key > 0 && $key <= 4)
+            <div class="grid-item">
+            <a data-fancybox="gallery" href="{{ $image->file_url }}">
+                <img src="{{ $image->file_url }}" alt="Image {{ $key+1 }}" />
+            </a>
     </div>
 
-    {{-- Hidden Images --}}
-    @foreach($images as $key => $image)
-    @if($key > 4)
-    <a class="d-none" data-fancybox="gallery" href="{{ $image->file_url }}">
-        <img src="{{ $image->file_url }}" alt="Image {{ $key+1 }}" />
-    </a>
     @endif
     @endforeach
+</div>
 
-    {{-- View All Button --}}
-    @if(count($images) > 5)
-    <button class="view-all-button" aria-haspopup="dialog" aria-expanded="false"
-        aria-controls="hs-custom-backdrop-modal" data-hs-overlay="#hs-custom-backdrop-modal" type="button"
-        id="showMoreBtn">
-        View all ({{ count($images) }}) images
-    </button>
-    @endif
+{{-- Hidden Images --}}
+@foreach($images as $key => $image)
+@if($key > 4)
+<a class="d-none" data-fancybox="gallery" href="{{ $image->file_url }}">
+    <img src="{{ $image->file_url }}" alt="Image {{ $key+1 }}" />
+</a>
+@endif
+@endforeach
+
+{{-- View All Button --}}
+@if(count($images) > 5)
+<button class="view-all-button" aria-haspopup="dialog" aria-expanded="false"
+    aria-controls="hs-custom-backdrop-modal" data-hs-overlay="#hs-custom-backdrop-modal" type="button"
+    id="showMoreBtn">
+    View all ({{ count($images) }}) images
+</button>
+@endif
 </div>
 
 <div class="package-intro ">
@@ -77,84 +84,6 @@
         <div class="package-description">
             {{ $packageDetail['description'] }}
 
-            <h5>What to Expect</h5>
-            <ul>
-                <li>
-                    <strong>Scenic Beauty</strong>: Trek through lush valleys, glacial rivers, and rugged
-                    trails while enjoying breathtaking views of some of the world’s highest peaks, including
-                    <strong>Mount Everest</strong>, <strong>Lhotse</strong>, <strong>Nuptse</strong>, and
-                    <strong>Ama Dablam</strong>.
-                </li>
-                <li>
-                    <strong>Sherpa Culture</strong>: Immerse yourself in the rich traditions of the Sherpa
-                    people, who have called the Khumbu region home for centuries. Visit ancient monasteries,
-                    prayer-flag-adorned villages, and learn about Tibetan Buddhism.
-                </li>
-                <li>
-                    <strong>Tea House Experience</strong>: Stay in cozy tea houses and lodges along the
-                    trail, where you’ll enjoy warm hospitality, hearty meals, and a chance to connect with
-                    fellow trekkers from around the world.
-                </li>
-                <li>
-                    <strong>Physical Challenge</strong>: This trek is graded as <strong>moderate to fairly
-                        challenging</strong>, requiring a good level of fitness. You’ll walk 6-8 hours daily
-                    on rocky terrain and high-altitude trails, but the effort is rewarded with unforgettable
-                    experiences.
-                </li>
-            </ul>
-
-            <h5>Why Choose This Trek?</h5>
-            <ul>
-                <li>
-                    <strong>Accessible Adventure</strong>: No prior trekking experience is required, making
-                    it suitable for first-time trekkers with a passion for adventure.
-                </li>
-                <li>
-                    <strong>Cultural Immersion</strong>: Witness vibrant Sherpa festivals like
-                    <strong>Losar</strong> (Tibetan New Year) and <strong>Mani Rimdu</strong>, and explore
-                    historic monasteries such as <strong>Tengboche</strong>.
-                </li>
-                <li>
-                    <strong>Eco-Friendly Travel</strong>: The trek promotes responsible tourism, with a
-                    focus on minimizing environmental impact and supporting local communities.
-                </li>
-            </ul>
-
-            <h5>Best Time to Go</h5>
-            <p>
-                The ideal seasons for the Everest Base Camp Trek are:
-            </p>
-            <ul>
-                <li>
-                    <strong>Spring (March to May)</strong>: Clear skies, blooming rhododendrons, and
-                    moderate temperatures.
-                </li>
-                <li>
-                    <strong>Autumn (September to November)</strong>: Stable weather, excellent visibility,
-                    and vibrant landscapes.
-                </li>
-            </ul>
-
-            <h5>Who Can Do This Trek?</h5>
-            <ul>
-                <li>
-                    <strong>Fitness Level</strong>: You should be moderately fit, enjoy walking, and be
-                    prepared for high-altitude conditions. Regular exercise before the trek is recommended.
-                </li>
-                <li>
-                    <strong>Age</strong>: There’s no age limit—adventurers of all ages can undertake this
-                    journey with proper preparation and determination.
-                </li>
-            </ul>
-
-            <h5>A Journey of a Lifetime</h5>
-            <p>
-                The Everest Base Camp Trek is more than just a physical challenge—it’s a journey that tests
-                your limits, rewards your spirit, and leaves you with memories to last a lifetime. From the
-                bustling streets of <strong>Kathmandu</strong> to the serene beauty of the Himalayas, every
-                step of this adventure is filled with wonder and discovery.
-            </p>
-            <button class="readmore">Read more</button>
         </div>
         <div class="package-info">
             <div class="package-info-box d-flex gap-2 align-items-start">
@@ -167,7 +96,7 @@
                 </div>
                 <div class="package-info-box-text d-flex gap-1 flex-column">
                     <strong>Group size</strong>
-                    <span>Max 12 pax</span>
+                    <span> {{ $packageDetail['group_size'] }} </span>
                 </div>
             </div>
             <div class="package-info-box d-flex gap-2 align-items-start">
@@ -195,7 +124,7 @@
                 </div>
                 <div class="package-info-box-text d-flex gap-1 flex-column">
                     <strong>Duration</strong>
-                    <span>{{ $packageDetail['duration'] }}</span>
+                    <span>{{ $packageDetail['duration'] }} days</span>
                 </div>
             </div>
             <div class="package-info-box d-flex gap-2 align-items-start">
@@ -288,11 +217,13 @@
         <div class="sticky-top">
             <div class="package-price">
                 <div class="package-actual-price">
-                    <span class="text-decoration-line-through">$1060</span>
-                    <span class="package-saved">Save 15%</span>
+                    <span class="text-decoration-line-through">${{ number_format($packageDetail['old_price'], 2) }}</span>
+                    @if($percentageSaved > 0)
+                    <span class="package-saved">Save {{ $percentageSaved }}%</span>
+                    @endif
                 </div>
                 <div class="package-current-price">
-                    From $1,200.00
+                    From ${{ number_format($packageDetail['price'], 2) }}
                     <span>/person</span>
                 </div>
             </div>

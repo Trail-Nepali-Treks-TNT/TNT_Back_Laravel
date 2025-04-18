@@ -21,12 +21,6 @@
 </section>
 <!-- Packages -->
 <section class="tnt-container">
-    @php
-    // Load JSON file directly in the view
-    $jsonPath = resource_path('views/Client/data/data.json');
-    $jsonData = json_decode(file_get_contents($jsonPath), true);
-    $packages = $jsonData['earlyPackage'] ?? []; // Get the "region" array
-    @endphp
     <div style="overflow: hidden;">
         <div class="position-relative earlyCardSwiper swiper" id="earlyPackage">
             <div class="swiper-wrapper">
@@ -34,9 +28,9 @@
                 <div class="swiper-slide">
                     <x-package-card :images="$package->images" title="{{$package->name}}"
                         description="{{ $package->short_description }}" expiryDate="2025-05-06"
-                        price="{{ $package->price}}" discountedPrice="{{ $package->old_price }}"
-                        discountPercentage="15" bestSeller="true"
-                        popular="true" link="/detail/{{$package->id}}" />
+                        price="{{ $package->old_price }}" discountedPrice="{{ $package->price }}"
+                        discountPercentage="15" bestSeller="{{ $package->best_seller }}"
+                        popular="{{ $package->popular }}" link="/detail/{{$package->slugURL}}" />
                 </div>
                 @endforeach
             </div>

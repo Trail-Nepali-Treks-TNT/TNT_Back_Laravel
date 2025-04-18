@@ -72,8 +72,7 @@ $duration = $currentDate->diffInDays($expiry);
     </div>
     <div class="package-card-price d-flex flex-column gap-1">
         <div class="actual-price d-flex align-items-end gap-2">
-            ${{ number_format($price, 2) }}
-
+            <span class="text-decoration-line-through">${{ number_format($price, 2) }}</span>
             @if($discountedPrice && $price > 0)
             @php
             $calculatedDiscount = round((($price - $discountedPrice) / $price) * 100);

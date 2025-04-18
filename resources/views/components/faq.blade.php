@@ -13,12 +13,12 @@
                             data-bs-toggle="collapse" data-bs-target="#{{ $id }}"
                             aria-expanded="{{ $isFirst ? 'true' : 'false' }}" aria-controls="{{ $id }}">
                             <span class="numbering">{{ str_pad($index + 1, 3, '0', STR_PAD_LEFT) }} </span>
-                            {{ $faq['question'] }}
+                            {{ $faq->question }}
                         </button>
                     </h2>
                     <div id="{{ $id }}" class="accordion-collapse collapse {{ $isFirst ? 'show' : '' }}">
                         <div class="accordion-body">
-                            {{ $faq['answer'] }}
+                            {{ $faq->answer }}
                         </div>
                     </div>
                 </div>

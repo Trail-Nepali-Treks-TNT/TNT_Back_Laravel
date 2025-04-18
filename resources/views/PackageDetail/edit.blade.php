@@ -43,7 +43,7 @@
                         <a class="nav-link" id="pills-image-tab" data-bs-toggle="pill" href="#packageImageSection" role="tab" aria-controls="pills-image" aria-selected="false">
                             Image
                         </a>
-                    </li>                    
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" id="pills-package-faq-tab" data-bs-toggle="pill" href="#faqSection" role="tab" aria-controls="pills-package-faq" aria-selected="false">
                             FAQs
@@ -194,7 +194,6 @@
                                             <label for="group_size">Group size</label>
                                             <input type="text" name="group_size" class="form-control" value="{{ old('group_size', $packageDetail->group_size) }}" required>
                                             <div class="text-danger error-message" id="group_size-error"></div>
-
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -205,11 +204,33 @@
 
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="row">
                                     <div class="col-md-2">
                                         <div class="form-group mb-3">
                                             <label for="max_elevation">Max Elevation</label>
                                             <input type="text" name="max_elevation" class="form-control" value="{{ old('max_elevation', $packageDetail->max_elevation) }}" required>
                                             <div class="text-danger error-message" id="max_elevation-error"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 col-md-2 mt-4">
+                                        <label for="best_seller" class="form-label">Best Seller?</label>
+                                        <input type="hidden" name="best_seller" value="0">
+                                        <input type="checkbox" class="form-check-input" name="best_seller" id="best_seller" value="1"
+                                            {{ old('best_seller', $packageDetail->best_seller ?? false) ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="mb-3 col-md-2 mt-4">
+                                        <label for="popular" class="form-label">Popular?</label>
+                                        <input type="hidden" name="popular" value="0">
+                                        <input type="checkbox" class="form-check-input" name="popular" id="popular" value="1"
+                                            {{ old('popular', $packageDetail->popular ?? false) ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <label for="slugURL">Slug URL</label>
+                                            <input type="text" name="slugURL" class="form-control" value="{{ old('slugURL', $packageDetail->slugURL) }}" required>
+                                            <div class="text-danger error-message" id="slugURL-error"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -241,14 +262,14 @@
                     <div class="tab-pane fade" id="itinerarySection" role="tabpanel" aria-labelledby="pills-itinerary-tab">
 
                     </div>
-                    
+
                     <div class="tab-pane fade" id="inclusionSection" role="tabpanel" aria-labelledby="pills-inclusion-tab">
 
                     </div>
                     <div class="tab-pane fade" id="packageImageSection" role="tabpanel" aria-labelledby="pills-image-tab">
 
-                    </div>                    
-                    
+                    </div>
+
                     <div class="tab-pane fade" id="faqSection" role="tabpanel" aria-labelledby="pills-package-faq-tab">
 
                     </div>

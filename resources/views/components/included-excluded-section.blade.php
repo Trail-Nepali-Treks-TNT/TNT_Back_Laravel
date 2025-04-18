@@ -32,8 +32,8 @@
             <ul class="item-list">
                 @foreach ($includes as $item)
                     <li class="include-item">
-                        <strong class="item-title">{{ $item['title'] }}</strong>
-                        <p class="item-description">{{ $item['description'] }}</p>
+                        <strong class="item-title">{{ $item->title }}</strong>
+                        <p class="item-description">{{ $item->description }}</p>
                     </li>
                 @endforeach
 
@@ -47,8 +47,8 @@
             <ul class="item-list">
                 @foreach ($excludes as $item)
                     <li class="item exclude-item">
-                        <strong class="item-title">{{ $item['title'] }}</strong>
-                        <p class="item-description">{{ $item['description'] }}</p>
+                        <strong class="item-title">{{ $item->title }}</strong>
+                        <p class="item-description">{{ $item->description }}</p>
                     </li>
                 @endforeach
             </ul>

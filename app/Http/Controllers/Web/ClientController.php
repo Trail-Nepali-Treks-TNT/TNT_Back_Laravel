@@ -49,9 +49,9 @@ class ClientController extends Controller
         return view("Client.Home.search", compact('packageList'));
     }
 
-    public function detail($id)
+    public function detail($slugURL)
     {
-        $packageDetail = $this->packageDetailRepository->packageDetail($id);
+        $packageDetail = $this->packageDetailRepository->packageDetailBySlug($slugURL);
         return view("client.Detail.detail", compact('packageDetail'));
     }
 }
