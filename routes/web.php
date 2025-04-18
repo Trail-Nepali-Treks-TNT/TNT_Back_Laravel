@@ -27,6 +27,8 @@ Route::prefix('/')
 
 //Client Routes
 Route::get('/', [ClientController::class, 'index']);
+Route::get('about-us', [ClientController::class, 'aboutUs']);
+
 
 //Dashboard Routes
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');

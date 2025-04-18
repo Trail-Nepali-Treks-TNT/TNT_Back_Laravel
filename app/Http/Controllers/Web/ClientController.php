@@ -54,4 +54,9 @@ class ClientController extends Controller
         $packageDetail = $this->packageDetailRepository->packageDetailBySlug($slugURL);
         return view("client.Detail.detail", compact('packageDetail'));
     }
+    public function aboutUs()
+    {
+        $packageList = $this->packageDetailRepository->packageList();
+        return view("Client.About.index");
+    }
 }
