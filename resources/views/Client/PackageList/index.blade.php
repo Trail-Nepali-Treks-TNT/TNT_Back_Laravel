@@ -18,6 +18,24 @@
             alt="Annapurna Region" class="package-list-cover" />
 
         <!-- Package lists -->
+        <section class="package-list">
+            <h2 class="package-list-subtitle font-playfair">All Annapurna Region</h2>
+            @php
+                // Load JSON file directly in the view
+                $jsonPath = resource_path('views/Client/data/data.json');
+                $jsonData = json_decode(file_get_contents($jsonPath), true);
+                $packages = $jsonData['earlyPackage'] ?? []; // Get the "region" array
+            @endphp
+            <div class="package-list-container">
+                @foreach ($packages as $index => $package)
+                    <x-package-card :images="$package['images']" title="{{$package['packageName']}}"
+                        description="{{ $package['shortDescription'] }}" expiryDate="{{ $package['expiryDate'] }}"
+                        price="{{ $package['price'] }}" discountedPrice="{{ $package['discountedPricePerPerson'] }}"
+                        discountPercentage="15" bestSeller="{{ $package['isBestSeller'] }}" popular="{{ $package['isPopular']}}"
+                        link="{{ $package['link'] }}" />
+                @endforeach
+            </div>
+        </section>
     </div>
 @endsection
 @php
