@@ -1,0 +1,101 @@
+.package-list-page {
+    margin-top: 2.5rem;
+}
+.package-list-title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-weight: 500;
+    color: var(--primary-500);
+}
+.package-list-desc {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-500);
+}
+
+@media (min-width: 768px) {
+    .package-list-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .package-list-desc {
+        width: 60%;
+    }
+}
+@media (min-width: 1024px) {
+    .package-list-title {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+}
+.package-list-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    max-height: 28rem;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+    padding: 0;
+}
+.package-list {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.package-list-subtitle {
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    color: var(--primary-500);
+}
+.package-list-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+.about-package {
+    margin-top: 2.5rem;
+}
+.about-package-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--primary-500);
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .about-package-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+.about-package-desc {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: var(--grey-700);
+    font-weight: 500;
+}
+.package-list-faq {
+    margin-top: 2.5rem;
+}
+@media (min-width: 640px) {
+    .package-list-faq {
+        margin-top: 5rem;
+    }
+}
+.package-list-newsletter-container {
+    background-color: var(--grey-100);
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .package-list-newsletter-container {
+        padding-bottom: 6rem;
+    }
+}
