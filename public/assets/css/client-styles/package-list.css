@@ -60,3 +60,24 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1rem;
 }
+.about-package {
+    margin-top: 2.5rem;
+}
+.about-package-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--primary-500);
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .about-package-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+.about-package-desc {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: var(--grey-700);
+    font-weight: 500;
+}

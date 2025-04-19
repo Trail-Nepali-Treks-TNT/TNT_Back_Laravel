@@ -36,6 +36,17 @@
                 @endforeach
             </div>
         </section>
+        <section class="about-package offset-0 offset-xl-2 col-xl-7 offset-xl-4 col-xxl-5">
+            <h2 class="about-package-title text-xl md:text-5xl">Why choose Annapurna Region</h2>
+            <p class="about-package-desc">The Annapurna Region is a top trekking destination in Nepal, known for its
+                stunning landscapes
+                and rich cultural experiences. From lush forests to glaciers, it offers diverse scenery
+                alongside the warm hospitality of local communities.</p>
+            <p class="about-package-desc">With well-maintained trails and varied accommodations, the region is accessible to
+                trekkers of
+                all levels. Its proximity to Pokhara and unique highlights like hot springs and panoramic
+                viewpoints make it unforgettable.</p>
+        </section>
     </div>
 @endsection
 @php
