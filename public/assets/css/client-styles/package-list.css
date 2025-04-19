@@ -89,3 +89,13 @@
         margin-top: 5rem;
     }
 }
+.package-list-newsletter-container {
+    background-color: var(--grey-100);
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .package-list-newsletter-container {
+        padding-bottom: 6rem;
+    }
+}

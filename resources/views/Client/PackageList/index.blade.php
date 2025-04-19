@@ -82,6 +82,10 @@
             </div>
         </section>
     </div>
+    <!-- Package list newsletter -->
+    <section class="package-list-newsletter-container tnt-container">
+        <x-news-letter></x-news-letter>
+    </section>
 @endsection
 @php
     // Set SEO variables
