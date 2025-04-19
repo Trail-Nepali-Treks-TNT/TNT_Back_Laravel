@@ -36,6 +36,7 @@
                 @endforeach
             </div>
         </section>
+        <!-- Package list why choose section -->
         <section class="about-package offset-0 offset-xl-2 col-xl-7 offset-xl-4 col-xxl-5">
             <h2 class="about-package-title text-xl md:text-5xl">Why choose Annapurna Region</h2>
             <p class="about-package-desc">The Annapurna Region is a top trekking destination in Nepal, known for its
@@ -46,6 +47,39 @@
                 trekkers of
                 all levels. Its proximity to Pokhara and unique highlights like hot springs and panoramic
                 viewpoints make it unforgettable.</p>
+        </section>
+        <!-- Package list FAQ Section -->
+        <!-- Package FAQ` -->
+        <section class="package-list-faq">
+            @php
+                $faqs = [
+                    (object) [
+                        'question' => 'What is Trail Nepal Treks?',
+                        'answer' => 'Trail Nepal Treks is a government-authorized travel and tour company offering authentic experiences across Nepal.'
+                    ],
+                    (object) [
+                        'question' => 'Do I need a visa to visit Nepal?',
+                        'answer' => 'Yes, most travelers need a visa to enter Nepal. Tourist visas are available on arrival at Tribhuvan International Airport and land border crossings.'
+                    ],
+                    (object) [
+                        'question' => 'What is the best time to visit Nepal?',
+                        'answer' => 'The best time to visit Nepal is during spring (March to May) and autumn (September to November) when the weather is clear and pleasant for trekking and sightseeing.'
+                    ],
+                    (object) [
+                        'question' => 'Are your tour guides licensed?',
+                        'answer' => 'Yes, all our guides are licensed by the Nepal Tourism Board and trained in first aid and responsible tourism.'
+                    ],
+                    (object) [
+                        'question' => 'Can you arrange custom itineraries?',
+                        'answer' => 'Absolutely! We specialize in creating tailor-made itineraries to suit your interests, timeframe, and budget.'
+                    ],
+                ];
+
+            @endphp
+
+            <div class="offset-0 offset-xl-2 col-xl-7 offset-xl-4 col-xxl-5">
+                <x-faq :faqs="$faqs" />
+            </div>
         </section>
     </div>
 @endsection
