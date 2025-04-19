@@ -1,0 +1,10 @@
+.breadcrumb-item a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary-500);
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-600);
+}
