@@ -2,15 +2,20 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         @foreach ($items as $index => $item)
-            @if ($loop->last)
-                <li class="breadcrumb-item active" aria-current="page">
-                    <a href="{{ $item['path'] ?? '#' }}">{{ $item['name'] }}</a>
+                @php
+                    $isLast = $loop->last;
+                    $hasPath = isset($item['path']) && !empty($item['path']);
+                @endphp
+
+                <li class="breadcrumb-item {{ $isLast ? 'active' : '' }}" {{ $isLast ? 'aria-current=page' : '' }}>
+                    @if ($hasPath)
+                        <a href="{{ $item['path'] }}">{{ $item['name'] }}</a>
+                    @else
+                        <span>
+                            {{ $item['name'] }}
+                        </span>
+                    @endif
                 </li>
-            @else
-                <li class="breadcrumb-item">
-                    <a href="{{ $item['path'] ?? '#' }}">{{ $item['name'] }}</a>
-                </li>
-            @endif
         @endforeach
     </ol>
 </nav>
