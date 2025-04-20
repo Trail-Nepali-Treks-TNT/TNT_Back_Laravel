@@ -56,13 +56,11 @@ class ClientController extends Controller
     }
     public function aboutUs()
     {
-        $packageList = $this->packageDetailRepository->packageList();
         return view("Client.About.index");
     }
     //TODO: Pass package region slug to view list based on slug eg: /package-list/{slug}
     public function packageList()
     {
-        $packageList = $this->packageDetailRepository->packageList();
         return view("Client.PackageList.index");
     }
 }
