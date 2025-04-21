@@ -23,6 +23,7 @@
         @php
         $images = $packageDetail['images'];
         $packageName = $packageDetail['name'];
+        $packageId = $packageDetail['id'];
         $itinerary = collect($packageDetail['itineraries'])->map(function ($item) {
         return [
         'number' => 'Day ' . $item->day . ': ' . $item->name,
@@ -249,7 +250,7 @@
 </div>
 
 
-<x-book-now-form :tourPackageName="'$packageName'" />
+<x-book-now-form :tourPackageName="$packageName" :tourPackageId="$packageId"/>
 <!-- Tour Itinerary -->
 
 <div class="tnt-container package-itinerary">

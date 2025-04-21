@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Web\AccomodationController;
+use App\Http\Controllers\Web\BookingController;
 use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\DifficultyLevelController;
@@ -18,9 +19,10 @@ use App\Http\Controllers\Web\UserController;
 
 
 Route::prefix('/')
-    ->name('/.')
+    ->name('')
     ->group(function () {
         Route::get('detail/{slugURL}', [ClientController::class, 'detail'])->name('detail');
+        Route::post('book', [ClientController::class, 'store'])->name('book.store');
         Route::get('search/{id}', [ClientController::class, 'search'])->name('search');
         Route::get('searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
     });
@@ -149,4 +151,8 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
         Route::put('/{id}', [PackageInclusionController::class, 'update'])->name('update');
         Route::get('/inclusionForm/{id?}', [PackageInclusionController::class, 'inclusionForm'])->name('inclusionForm');
     });
+});
+
+Route::prefix('Booking')->name('Booking.')->group(function () {
+    Route::get('/', [BookingController::class, 'index'])->name('index');
 });

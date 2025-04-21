@@ -123,6 +123,12 @@
           </a>
         </li>
         <li class="sidebar-item">
+          <a class="sidebar-link waves-dark" href="{{route('Booking.index')}}" aria-expanded="false">
+            <i class="mdi mdi-account-multiple"></i>
+            <span>Booking</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
           <a class="sidebar-link waves-dark" href="/roles" aria-expanded="false">
             <i class="mdi mdi-account-multiple"></i>
             <span>Role List</span>
@@ -135,7 +141,7 @@
             href="{{route('account.logout')}}"
             aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Log Out</span></a>
         </li>
-        
+
       </ul>
     </nav>
     <!-- End Sidebar navigation -->
