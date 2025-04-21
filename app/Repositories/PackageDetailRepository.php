@@ -184,7 +184,7 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
             INNER JOIN service_regions ON package_details.service_region_id = service_regions.id
             WHERE package_details.is_deleted = 0 AND package_details.is_active = 1";
 
-        $query .= " AND package_details.service_region_id = $id";
+        $query .= " AND service_regions.id = $id";
 
         if (!empty($filters['search'])) {
             $search = addslashes($filters['search']);

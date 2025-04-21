@@ -27,7 +27,7 @@
                                 <ul class="list-group">
                                     @foreach($regions as $region)
                                     <li class="list-group-item">
-                                        <a class="text-white text-decoration-none" href="/client/detail/{{$region->region_id}}"
+                                        <a class="text-white text-decoration-none" href="/service-region/{{ $region->slugURL }}"
                                             class="text-decoration-none"> {{ $region->region_name }}
                                         </a>
                                     </li>

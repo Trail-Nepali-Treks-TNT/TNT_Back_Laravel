@@ -31,7 +31,7 @@ class ClientController extends Controller
         return view("Client.Home.index", compact('packageList'));
     }
 
-    public function search($id, Request $request)
+    public function search($slugUrl, Request $request)
     {
         $filters = $request->only([
             'search',
@@ -39,9 +39,9 @@ class ClientController extends Controller
             'difficulty_level',
             'accommodations'
         ]);
-        $regionDetailWithPackage = $this->serviceRegionRepository->RegionDetail($id);
-        $regionDetailWithPackage['packageList'] = $this->packageDetailRepository->searchList($id, $filters);
-        return view("Client.Search.index", compact('regionDetailWithPackage'));
+        $regionDetailWithPackage = $this->serviceRegionRepository->RegionDetail($slugUrl);
+        $regionDetailWithPackage['packageList'] = $this->packageDetailRepository->searchList($regionDetailWithPackage['id'], $filters);
+        return view("Client.PackageList.index", compact('regionDetailWithPackage'));
     }
 
     public function searchAjax($id, Request $request)
@@ -95,10 +95,10 @@ class ClientController extends Controller
         $this->bookingRepository->create($entity);
         return ApiResponseHelper::success(null, "Booking placed successfully.");
     }
-    
-    //TODO: Pass package region slug to view list based on slug eg: /package-list/{slug}
-    public function packageList()
-    {
-        return view("Client.PackageList.index");
-    }
+
+    // //TODO: Pass package region slug to view list based on slug eg: /package-list/{slug}
+    // public function packageList()
+    // {
+    //     return view("Client.PackageList.index");
+    // }
 }

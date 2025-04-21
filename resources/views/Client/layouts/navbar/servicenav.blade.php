@@ -29,7 +29,7 @@
                         <ul>
                             @foreach($regions as $region)
                             <li>
-                                <a href="/client/detail/{{$region->region_id}}"
+                                <a href="/service-region/{{ $region->slugURL }}"
                                     class="text-white text-decoration-none">{{ $region->region_name }}</a>
                             </li>
                             @endforeach

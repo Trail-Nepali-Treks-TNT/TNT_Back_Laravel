@@ -93,5 +93,4 @@
     $title = 'Package List - Trail Nepal Treks';
     $description = 'Explore our diverse trekking packages in Nepal, including Everest Base Camp, Annapurna Circuit, and Langtang Valley. Join us for an unforgettable adventure!';
     $keywords = 'Trekking packages, Nepal trekking, Everest Base Camp, Annapurna Circuit, Langtang Valley, trekking tours, adventure travel, Trail Nepal Treks';
-
 @endphp

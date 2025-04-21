@@ -22,7 +22,7 @@
                         <div class="swiper-wrapper">
                             @foreach ($navigationItems as $nav)
                             <div class="swiper-slide">
-                                <a href="/" class="text-decoration-none region-card">
+                                <a href="/service-region/{{ $nav->slugURL }}" class="text-decoration-none region-card">
                                     <img class="region-img" alt="{{ $nav->region_name }}" src="{{ $nav->dashboard_file_path }}" />
                                     <span class="font-playfair text-white text-decoration-none region-card-title">
                                         {{ $nav->region_name }}

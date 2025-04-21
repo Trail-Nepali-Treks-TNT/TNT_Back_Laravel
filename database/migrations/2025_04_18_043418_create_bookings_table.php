@@ -31,6 +31,10 @@ return new class extends Migration
             $table->foreign('created_by')->references('id')->on('users')->nullOnDelete();
             $table->foreign('updated_by')->references('id')->on('users')->nullOnDelete();
         });
+
+        Schema::table('service_regions', function (Blueprint $table) {
+            $table->text('slugURL'); 
+        });
     }
 
     /**
@@ -39,5 +43,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('bookings');
+        Schema::table('service_regions', function (Blueprint $table) {
+            $table->dropColumn('slugURL'); // Rollback the change
+        });
     }
 };

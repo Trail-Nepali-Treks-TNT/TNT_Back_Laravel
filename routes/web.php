@@ -23,13 +23,13 @@ Route::prefix('/')
     ->group(function () {
         Route::get('detail/{slugURL}', [ClientController::class, 'detail'])->name('detail');
         Route::post('book', [ClientController::class, 'store'])->name('book.store');
-        Route::get('search/{id}', [ClientController::class, 'search'])->name('search');
-        Route::get('searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
+        Route::get('/service-region/{slugURL}', [ClientController::class, 'search']);
+        Route::get('searchAjax/{slugURL}', [ClientController::class, 'searchAjax']);
     });
 
 //Client Routes
 Route::get('/', [ClientController::class, 'index']);
-Route::get('package-list', [ClientController::class, 'packageList']);
+// Route::get('/service-region/{slugURL}', [ClientController::class, 'packageList']);
 
 //TODO: Update url based on slug of package/service region eg: /package-list/{slug}
 Route::get('about-us', [ClientController::class, 'aboutUs']);

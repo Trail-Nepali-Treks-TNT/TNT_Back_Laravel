@@ -47,6 +47,7 @@ class ServiceRegionController extends Controller
             'name'            => 'required|string',
             'description'     => 'required|string',
             'reason'          => 'required|string',
+            'slugURL'          => 'required|string',
             'service_type_id' => 'required|exists:service_types,id',
             'banner_file'     => 'required|file|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
             'dashboard_file'  => 'required|file|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
@@ -56,13 +57,14 @@ class ServiceRegionController extends Controller
             'name' => $data['name'],
             'description' => $data['description'],
             'reason' => $data['reason'],
+            'slugURL' => $data['slugURL'],
             'service_type_id' => $data['service_type_id'],
         ];
         $response = $this->serviceRegionRepository->create($entity)->toArray();
         $service_region_id = $response['id'];
 
-        $response['banner_file_detail_id'] = $this->mediaRepository->storeSingle($data['banner_file'], 'ServiceRegion/{$service_region_id}');
-        $response['dahboard_file_detail_id'] = $this->mediaRepository->storeSingle($data['dashboard_file'], 'ServiceRegion/{$service_region_id}');
+        $response['banner_file_detail_id'] = $this->mediaRepository->storeSingle($data['banner_file'], "ServiceRegion/{$service_region_id}");
+        $response['dahboard_file_detail_id'] = $this->mediaRepository->storeSingle($data['dashboard_file'], "ServiceRegion/{$service_region_id}");
 
         $this->serviceRegionRepository->update($service_region_id, $response);
 
@@ -82,9 +84,10 @@ class ServiceRegionController extends Controller
             'name'            => 'required|string',
             'description'     => 'required|string',
             'reason'          => 'required|string',
-            'service_type_id' => 'required|exists:service_types,id',
-            'banner_file_detail_id' => 'required|id',
-            'dahboard_file_detail_id' => 'required|id',
+            'slugURL'          => 'required|string',
+            'service_type_id' => 'required|int',
+            'banner_file_detail_id' => 'required|int',
+            'dahboard_file_detail_id' => 'required|int',
             'banner_file'     => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
             'dashboard_file'  => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
         ]);
@@ -92,18 +95,19 @@ class ServiceRegionController extends Controller
             'name' => $data['name'],
             'description' => $data['description'],
             'reason' => $data['reason'],
+            'slugURL' => $data['slugURL'],
             'service_type_id' => $data['service_type_id'],
-            'banner_file_detail_id' => $data['service_type_id'],
-            'dahboard_file_detail_id' => $data['service_type_id'],
+            'banner_file_detail_id' => $data['banner_file_detail_id'],
+            'dahboard_file_detail_id' => $data['dahboard_file_detail_id'],
         ];
         if ($request->hasFile('banner_file')) {
-            $entity['banner_file_detail_id'] = $this->mediaRepository->storeSingle($data['banner_file'], 'ServiceRegion/{$id}');
+            $entity['banner_file_detail_id'] = $this->mediaRepository->storeSingle($data['banner_file'], "ServiceRegion/{$id}");
         }
         if ($request->hasFile('dashboard_file')) {
-            $entity['dahboard_file_detail_id'] = $this->mediaRepository->storeSingle($data['dashboard_file'], 'ServiceRegion/{$id}');
+            $entity['dahboard_file_detail_id'] = $this->mediaRepository->storeSingle($data['dashboard_file'], "ServiceRegion/{$id}");
         }
-        $this->serviceTypeRepository->update($id, $entity);
-        return redirect()->route('ServiceType.index')->with('success', 'Service Type updated successfully.');
+        $this->serviceRegionRepository->update($id, $entity);
+        return redirect()->route('ServiceRegion.index')->with('success', 'Service Region updated successfully.');
     }
 
     public function delete($id)

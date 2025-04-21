@@ -10,7 +10,7 @@
                     <a href="javascript:void(0)">Home</a>
                 </li>
                 <li class="breadcrumb-item active">
-                <a href="{{ route('ServiceRegion.index') }}">Service Region</a>
+                    <a href="{{ route('ServiceRegion.index') }}">Service Region</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a href="javascript:void(0)">Create</a>
@@ -46,6 +46,15 @@
                                 <div class="form-group mb-3">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="slugURL">Slug URL</label>
+                                    <input type="text" name="slugURL" class="form-control" required>
                                 </div>
                             </div>
                         </div>

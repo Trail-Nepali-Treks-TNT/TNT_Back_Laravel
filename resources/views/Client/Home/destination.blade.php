@@ -23,7 +23,7 @@
                 {{-- Regular Layout: Two on Left, One on Right --}}
                 <div class="destination-column">
                     @foreach($regionPackageRow->take(2) as $regionPackage)
-                    <a href="#" class="destination-card">
+                    <a href="/service-region/{{ $regionPackage->slugURL }}" class="destination-card">
                         <img alt="{{ $regionPackage->region_name }}" src="{{ $regionPackage->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
                         <div class="destination-text-container">
@@ -34,7 +34,7 @@
                     @endforeach
                 </div>
                 @if ($regionPackageRow->count() === 3)
-                <a href="#" class="destination-half-width">
+                <a href="/service-region/{{ $regionPackage->slugURL }}" class="destination-half-width">
                     <div class="destination-card">
                         <img alt="{{ $regionPackageRow[2]->region_name }}" src="{{ $regionPackageRow[2]->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
@@ -51,7 +51,7 @@
 
                 @if ($regionPackageRow->count() === 3)
                 @foreach($regionPackageRow->take(1) as $regionPackage)
-                <a href="#" class="destination-half-width">
+                <a href="/service-region/{{ $regionPackage->slugURL }}" class="destination-half-width">
                     <div class="destination-card">
                         <img alt="{{ $regionPackage->region_name }}" src="{{ $regionPackage->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
@@ -66,7 +66,7 @@
                 @endif
                 <div class="destination-column">
                     @foreach($regionPackageRow->skip(1)->take(2) as $regionPackage)
-                    <a href="#" class="destination-card">
+                    <a href="/service-region/{{ $regionPackage->slugURL }}" class="destination-card">
                         <img alt="{{ $regionPackage->region_name }}" src="{{ $regionPackage->dashboard_file_path }}">
                         <div class="destination-overlay"></div>
                         <div class="destination-text-container">

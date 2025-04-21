@@ -45,6 +45,9 @@ return new class extends Migration
 
         Schema::table('package_details', function (Blueprint $table) {
             $table->dropColumn('group_size'); // Rollback the change
+            $table->dropColumn('best_seller'); // Rollback the change
+            $table->dropColumn('popular'); // Rollback the change
+            $table->dropColumn('slugURL'); // Rollback the change
         });
     }
 };
