@@ -29,6 +29,9 @@ Route::prefix('/')
 
 //Client Routes
 Route::get('/', [ClientController::class, 'index']);
+Route::get('package-list', [ClientController::class, 'packageList']);
+
+//TODO: Update url based on slug of package/service region eg: /package-list/{slug}
 Route::get('about-us', [ClientController::class, 'aboutUs']);
 
 

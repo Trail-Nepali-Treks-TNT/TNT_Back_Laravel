@@ -63,7 +63,6 @@ class ClientController extends Controller
     }
     public function aboutUs()
     {
-        $packageList = $this->packageDetailRepository->packageList();
         return view("Client.About.index");
     }
 
@@ -84,7 +83,7 @@ class ClientController extends Controller
         // Save to database
         $entity = [
             'package_id'    => $validated['package_id'] ?? 0,
-            'full_name'     => $validated['full_name'],  
+            'full_name'     => $validated['full_name'],
             'email'         => $validated['email'],
             'phone'         => $validated['phone'],
             'travel_date'   => $validated['travel_date'],
@@ -95,5 +94,11 @@ class ClientController extends Controller
 
         $this->bookingRepository->create($entity);
         return ApiResponseHelper::success(null, "Booking placed successfully.");
+    }
+    
+    //TODO: Pass package region slug to view list based on slug eg: /package-list/{slug}
+    public function packageList()
+    {
+        return view("Client.PackageList.index");
     }
 }
