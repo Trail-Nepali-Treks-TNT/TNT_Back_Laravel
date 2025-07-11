@@ -214,7 +214,7 @@
                         <!-- Short Description Field -->
                         <div class="form-group mb-3">
                             <label for="short_description">Short Description</label>
-                            <textarea name="short_description" rows="3" class="form-control" required></textarea>
+                            <textarea id="short_description" name="short_description" rows="3" class="form-control" required></textarea>
                             @error('short_description')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -223,7 +223,7 @@
                         <!-- Description Field -->
                         <div class="form-group mb-3">
                             <label for="description">Description</label>
-                            <textarea name="description" rows="3" class="form-control" required></textarea>
+                            <textarea id="description" name="description" rows="3" class="form-control" required></textarea>
                             @error('description')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -242,6 +242,8 @@
         $('#package_accommodation').select2({
             placeholder: "Select Accommodations",
         });
+        initHtmlEditor('#description');
+        initHtmlEditor('#short_description');
     });
 </script>
 @endsection

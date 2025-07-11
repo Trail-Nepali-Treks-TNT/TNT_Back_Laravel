@@ -62,13 +62,13 @@
                         <!-- Description Field -->
                         <div class="form-group mb-3">
                             <label for="description">Description</label>
-                            <textarea name="description" rows="3" class="form-control"></textarea>
+                            <textarea id="description" name="description" rows="3" class="form-control"></textarea>
                         </div>
 
                         <!-- Reason Field -->
                         <div class="form-group mb-3">
                             <label for="reason">Reason</label>
-                            <textarea name="reason" rows="3" class="form-control"></textarea>
+                            <textarea id="reason" name="reason" rows="3" class="form-control"></textarea>
                         </div>
 
                         <!-- Banner File Upload -->
@@ -92,4 +92,10 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        initHtmlEditor('#description');
+        initHtmlEditor('#reason');
+    });
+</script>
 @endsection
