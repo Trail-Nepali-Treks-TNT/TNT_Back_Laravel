@@ -17,6 +17,7 @@ class ServiceRegion extends AuditableModel
         'name',
         'description',
         'reason',
+        'slugURL',
         'service_type_id',
         'banner_file_detail_id',
         'dahboard_file_detail_id',

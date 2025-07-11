@@ -8,7 +8,7 @@
             <div class="modal-body side-nav-modal-body region-side-nav-modal-body">
                 
                 @foreach ($navigationItems as $nav)
-                <a href="/" class="text-decoration-none sidebar-region-card">
+                <a href="/service-region/{{ $nav->slugURL }}" class="text-decoration-none sidebar-region-card">
                     <img class="region-img" alt="{{ $nav->region_name }}" src="{{ $nav->dashboard_file_path }}" />
                     <span class="font-playfair text-white text-decoration-none region-card-title">
                         {{ $nav->region_name }}

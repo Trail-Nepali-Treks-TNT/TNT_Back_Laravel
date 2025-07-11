@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->id()->primary();
+            $table->unsignedBigInteger('package_id')->nullable()->default(0);
+            $table->string('full_name');
+            $table->string('email');
+            $table->string('phone')->nullable();
+            $table->date('travel_date');
+            $table->integer('guests');
+            $table->text('message')->nullable();
+            $table->string('package_name')->nullable();
+            
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_deleted')->default(false);
+            $table->timestamps();
+
+            $table->foreign('created_by')->references('id')->on('users')->nullOnDelete();
+            $table->foreign('updated_by')->references('id')->on('users')->nullOnDelete();
+        });
+
+        Schema::table('service_regions', function (Blueprint $table) {
+            $table->text('slugURL'); 
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('bookings');
+        Schema::table('service_regions', function (Blueprint $table) {
+            $table->dropColumn('slugURL'); // Rollback the change
+        });
+    }
+};

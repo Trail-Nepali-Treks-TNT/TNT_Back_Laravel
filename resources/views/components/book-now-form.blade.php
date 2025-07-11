@@ -11,10 +11,9 @@
             <div class="modal-body">
                 <div class="book-now-form-container p-2">
                     <form id="book-now-form" class="needs-validation d-flex flex-column gap-2 align-items-start"
-                        novalidate>
+                        novalidate method="POST" action="{{ route('book.store') }}">
                         @csrf
-
-                        <div class="w-100">
+                        <div class=" w-100">
                             <label for="full_name" class="form-label">Full Name *</label>
                             <input type="text" class="form-control" id="full_name" name="full_name"
                                 placeholder="Enter full name" required pattern="^[A-Za-z\s]{2,}$">
@@ -65,12 +64,13 @@
                                 placeholder="Enter message"></textarea>
                         </div>
 
-                        <input type="hidden" name="tour_package" value="{{ $tourPackageName ?? 'Generic Inquiry' }}">
+                        <input type="hidden" name="package_name" value="{{ $tourPackageName ?? 'Generic Inquiry' }}">
+                        <input type="hidden" name="package_id" value="{{ $tourPackageId }}">
 
                         <div class=" form-check">
                             <input type="checkbox" class="form-check-input" id="consent" name="consent" required>
-                            <label class="form-check-label" for="consent">I agree to be contacted about this
-                                inquiry.</label>
+                            <label class="form-check-label" for="consent">
+                                I agree to be contacted about this inquiry.</label>
                             <div class="invalid-feedback">
                                 You must agree before submitting.
                             </div>
@@ -107,31 +107,63 @@
         });
     })();
 
-    bookNowForm.addEventListener('submit', function (e) {
+    bookNowForm.addEventListener('submit', function(e) {
         e.preventDefault();
         sentBtn.value = 'Sending...';
         sentBtn.disabled = true;
         const serviceID = 'default_service';
         const templateID = 'template_few7k68';
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
+
+        const formData = new FormData(this);
+        if (!bookNowForm.checkValidity()){
+            sentBtn.value = 'Book Now';
+            sentBtn.disabled = false;
+            return;
+        } 
+        fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                return emailjs.sendForm(serviceID, templateID, bookNowForm);
+            }).then(() => {
                 sentBtn.value = 'Book Now';
-                showToast('Trip booked successfully', 'success')
-                bookNowFormModal.hide();
+                showToast('Trip booked successfully', 'success');
+                const bsModal = bootstrap.Modal.getInstance(bookNowFormModal);
+                bsModal.hide();
                 bookNowForm.reset();
                 bookNowForm.classList.remove('was-validated');
-            }, (err) => {
-                sentBtn.value = 'Book Now'
-                alert(JSON.stringify(err));
-                const errorMessage = JSON.stringify(err) ?? 'Something went wrong. Pleae try again later';
-                showToast(errorMessage, 'error')
+            })
+            .catch((err) => {
+                sentBtn.value = 'Book Now';
+                console.error(err);
+                const errorMessage = err.message || 'Something went wrong. Please try again.';
+                showToast(errorMessage, 'error');
             });
     });
+
+    // emailjs.sendForm(serviceID, templateID, this)
+    //     .then(() => {
+    //         sentBtn.value = 'Book Now';
+    //         showToast('Trip booked successfully', 'success')
+    //         bookNowFormModal.hide();
+    //         bookNowForm.reset();
+    //         bookNowForm.classList.remove('was-validated');
+    //     }, (err) => {
+    //         sentBtn.value = 'Book Now'
+    //         alert(JSON.stringify(err));
+    //         const errorMessage = JSON.stringify(err) ?? 'Something went wrong. Pleae try again later';
+    //         showToast(errorMessage, 'error')
+    //     });
+    // });
     //Reset form data on modal close
-    bookNowFormModal.addEventListener('hidden.bs.modal', function () {
+
+    bookNowFormModal.addEventListener('hidden.bs.modal', function() {
         bookNowForm.reset();
         bookNowForm.classList.remove('was-validated');
     });
-
-
 </script>

@@ -38,6 +38,7 @@ var EditPackageDetail = function () {
             type: "GET",
             success: function (html) {
                 $("#itinerarySection").html(html);
+                initHtmlEditor('#itinerarySection #description');
                 handleItineraryFormSubmit();
             },
         });
@@ -325,5 +326,7 @@ var EditPackageDetail = function () {
         initImageSection();
         initFAQSection();
         initInclusionSection();
+        initHtmlEditor('#description');
+        initHtmlEditor('#short_description');
     };
 };

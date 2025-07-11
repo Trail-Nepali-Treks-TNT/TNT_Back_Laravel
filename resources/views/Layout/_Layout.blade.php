@@ -18,7 +18,7 @@
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/background/logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+
   <!-- Custom CSS -->
   <link href="/assets/css/style.min.css" rel="stylesheet" />
   <link href="/assets/css/custom.css" rel="stylesheet" />
@@ -59,10 +59,13 @@
   <!--Menu sidebar -->
   <script src="/assets/js/sidebarmenu.js"></script>
   <script src="/assets/js/dropzone.js"></script>
+  <!-- Tinymce -->
+  <script src="/assets/lib/tinymce/tinymce.min.js"></script>
+  <script src="/assets/lib/tinymce/jquery.tinymce.min.js"></script>
   <!--Custom JavaScript -->
   <script src="/assets/js/feather.min.js"></script>
   <script src="/assets/js/custom.min.js"></script>
-  <script src="/assets/pagescripts/sharedMain.js"></script>  
+  <script src="/assets/pagescripts/sharedMain.js"></script>
 
   <script>
     $(".preloader").fadeOut();

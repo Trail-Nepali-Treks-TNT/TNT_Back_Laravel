@@ -238,7 +238,7 @@
                                 <!-- Short Description Field -->
                                 <div class="form-group mb-3">
                                     <label for="short_description">Short Description</label>
-                                    <textarea name="short_description" rows="3" class="form-control" required>
+                                    <textarea id="short_description" name="short_description" rows="3" class="form-control" required>
                                     {{ old('short_description', $packageDetail->short_description) }}
                                     </textarea>
                                     <div class="text-danger error-message" id="short_description-error"></div>
@@ -248,7 +248,7 @@
                                 <!-- Description Field -->
                                 <div class="form-group mb-3">
                                     <label for="description">Description</label>
-                                    <textarea name="description" rows="3" class="form-control" required>
+                                    <textarea id="description" name="description" rows="3" class="form-control" required>
                                     {{ old('description', $packageDetail->description) }}
                                     </textarea>
                                     <div class="text-danger error-message" id="description-error"></div>

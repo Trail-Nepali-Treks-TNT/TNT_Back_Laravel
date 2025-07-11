@@ -66,3 +66,34 @@ var loadDropzoneWithCropper = function (containerId, paramName, PostUrl) {
         },
     });
 }
+
+
+function initHtmlEditor(selector, invalidEle) {
+    tinymce.remove(selector);
+    tinymce.init({
+        selector: selector,
+        invalid_elements: invalidEle,
+        height: 300,
+        browser_spellcheck: true,
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        setup: function (editor) {
+            editor.on('focus', function () {
+                $(document).trigger('focusin');
+            });
+            editor.on('change', function () {
+                tinymce.triggerSave();
+                editor.save();
+                $('form').validate().element(editor.getElement());
+            });
+            editor.on('input', function () {
+                tinymce.triggerSave();
+                $('form').validate().element(editor.getElement());
+            });
+        }
+    });
+}

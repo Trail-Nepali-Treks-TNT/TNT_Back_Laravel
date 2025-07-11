@@ -36,11 +36,12 @@
                     <div class="tab-pane fade active show" id="content" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <div class="card card-body card-body--alternate mb-0">
                             <h1 class="text-2xl font-bold mb-4">Edit Service Region</h1>
-                            <form action="{{ route('ServiceRegion.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('ServiceRegion.update', $serviceRegion->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" id="serviceRegionId" value="{{ $serviceRegion->id }}">
-                                <input type="hidden" id="banner_file_detail_id" value="{{ $serviceRegion->banner_file_detail_id }}">
-                                <input type="hidden" id="dahboard_file_detail_id" value="{{ $serviceRegion->dahboard_file_detail_id }}">
+                                @method('PUT')
+
+                                <input type="hidden" name="banner_file_detail_id" value="{{ $serviceRegion->banner_file_detail_id }}">
+                                <input type="hidden" name="dahboard_file_detail_id" value="{{ $serviceRegion->dahboard_file_detail_id }}">
                                 <div class="row">
                                     <!-- Service Type Field -->
                                     <div class="col-md-6">
@@ -68,7 +69,17 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-3">
+                                            <label for="slugURL">Slug URL</label>
+                                            <input type="text" name="slugURL" class="form-control" value="{{ old('slugURL', $serviceRegion->slugURL) }}" required>
+                                            @error('slugURL')
+                                            <div class="text-red-500">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Description Field -->
                                 <div class="form-group mb-3">
                                     <label for="description">Description</label>
@@ -103,7 +114,7 @@
                                     <input type="file" name="dashboard_file" class="form-control">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>
                     </div>

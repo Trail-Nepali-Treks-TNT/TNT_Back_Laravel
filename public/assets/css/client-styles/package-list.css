@@ -34,16 +34,19 @@
     }
 }
 .package-list-cover {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 10px;
-    max-height: 28rem;
-    height: auto;
+    height: 20rem;
     object-fit: cover;
     width: 100%;
     padding: 0;
+    display: inline-block;
 }
+@media (min-width: 768px) {
+    .package-list-cover{
+        height: 28rem;
+    }
+}
+
 .package-list {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -59,6 +62,23 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1rem;
+}
+@media (max-width: 480px) {
+    .package-list-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .package-list-container .package-card{
+        max-width: 100% !important;
+    }
+    .package-list-container .package-card .cover{
+        width: 100% !important;
+    }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+    .package-list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 .about-package {
     margin-top: 2.5rem;

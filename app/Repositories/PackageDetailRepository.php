@@ -184,7 +184,7 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
             INNER JOIN service_regions ON package_details.service_region_id = service_regions.id
             WHERE package_details.is_deleted = 0 AND package_details.is_active = 1";
 
-        $query .= " AND package_details.service_region_id = $id";
+        $query .= " AND service_regions.id = $id";
 
         if (!empty($filters['search'])) {
             $search = addslashes($filters['search']);
@@ -209,9 +209,9 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
 
         $packages = DB::select($query);
         $packageIds = collect($packages)->pluck('id')->toArray();
-
-        // Fetch and group images
-        $images = DB::select("
+        if ($packageIds) {
+            // Fetch and group images
+            $images = DB::select("
             SELECT 
                 file_mapping.target_id AS package_id,
                 file_details.file_url
@@ -224,14 +224,15 @@ class PackageDetailRepository extends BaseRepository implements IPackageDetailRe
                 AND file_mapping.table = 'Package'
                 AND file_mapping.target_id IN (" . implode(',', $packageIds) . ")");
 
-        $imagesGrouped = collect($images)->groupBy('package_id')->map(fn($group) => $group->pluck('file_url')->values());
+            $imagesGrouped = collect($images)->groupBy('package_id')->map(fn($group) => $group->pluck('file_url')->values());
 
-        // Combine images into the result
-        $packagesWithImages = collect($packages)->map(function ($package) use ($imagesGrouped) {
-            $package->images = $imagesGrouped[$package->id] ?? [];
-            return $package;
-        });
-
-        return $packagesWithImages;
+            // Combine images into the result
+            $packagesWithImages = collect($packages)->map(function ($package) use ($imagesGrouped) {
+                $package->images = $imagesGrouped[$package->id] ?? [];
+                return $package;
+            });
+            return $packagesWithImages;
+        }
+        return $packages;
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Web\AccomodationController;
+use App\Http\Controllers\Web\BookingController;
 use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\DifficultyLevelController;
@@ -18,15 +19,17 @@ use App\Http\Controllers\Web\UserController;
 
 
 Route::prefix('/')
-    ->name('/.')
+    ->name('')
     ->group(function () {
         Route::get('detail/{slugURL}', [ClientController::class, 'detail'])->name('detail');
-        Route::get('search/{id}', [ClientController::class, 'search'])->name('search');
-        Route::get('searchAjax/{id}', [ClientController::class, 'searchAjax'])->name('searchAjax');
+        Route::post('book', [ClientController::class, 'store'])->name('book.store');
+        Route::get('/service-region/{slugURL}', [ClientController::class, 'search']);
+        Route::get('searchAjax/{slugURL}', [ClientController::class, 'searchAjax']);
     });
 
 //Client Routes
 Route::get('/', [ClientController::class, 'index']);
+// Route::get('/service-region/{slugURL}', [ClientController::class, 'packageList']);
 
 //TODO: Update url based on slug of package/service region eg: /package-list/{slug}
 Route::get('package-list', [ClientController::class, 'packageList']);
@@ -153,4 +156,8 @@ Route::prefix('PackageDetail')->name('PackageDetail.')->group(function () {
         Route::put('/{id}', [PackageInclusionController::class, 'update'])->name('update');
         Route::get('/inclusionForm/{id?}', [PackageInclusionController::class, 'inclusionForm'])->name('inclusionForm');
     });
+});
+
+Route::prefix('Booking')->name('Booking.')->group(function () {
+    Route::get('/', [BookingController::class, 'index'])->name('index');
 });
