@@ -65,4 +65,9 @@ class ClientController extends Controller
         $packageList = $this->packageDetailRepository->packageList();
         return view("Client.PackageList.index");
     }
+    public function privacyPolicy()
+    {
+        return view("Client.PrivacyPolicy.index");
+    }
+
 }
