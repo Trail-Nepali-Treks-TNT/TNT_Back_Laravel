@@ -74,9 +74,9 @@
 
 <div class="package-intro ">
     <div class="package-into-desc-container">
-        <p class="font-playfair package-highlight">{{ $packageDetail['short_description'] }}</p>
-        <div class="package-description">
-            {{ $packageDetail['description'] }}
+        <p class="font-playfair package-highlight">{!! $packageDetail['short_description'] !!}</p>
+        <div class="package-description" style="text-align: justify;">
+            {!!$packageDetail['description']!!}
 
         </div>
         <div class="package-info">
@@ -243,12 +243,13 @@
 </div>
 </div>
 
-
+<x-book-now-form :tourPackageName="$packageName" :tourPackageId="$packageId" />
 <x-book-now-form :tourPackageName="$packageName" :tourPackageId="$packageId" />
 <!-- Tour Itinerary -->
 
 <div class="tnt-container package-itinerary">
     <x-tour-itinerary :description="$packageName" :itinerary="$itinerary" />
+
 </div>
 
 <!-- Package include/exclude -->
