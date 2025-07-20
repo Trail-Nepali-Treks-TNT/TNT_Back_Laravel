@@ -46,7 +46,8 @@
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $pkg->name }}</td>
-                            <td>{{ $pkg->short_description }}</td>
+                            <!-- <td>{{ $pkg->short_description }}</td> -->
+                             <td>{!! $pkg->short_description !!}</td>
                             <td>
                                 <a href="{{ route('PackageDetail.edit', $pkg->id) }}"
                                     style="background-color:#6610f2; border-radius: .3rem; padding: .13rem .6rem; margin-right: .4rem;">

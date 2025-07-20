@@ -17,12 +17,12 @@
                 $images = $packageDetail['images'];
                 $packageName = $packageDetail['name'];
                 $packageId = $packageDetail['id'];
-                $itinerary = collect(value: $packageDetail['itineraries'])->map(function ($item) {
+                $itinerary = collect($packageDetail['itineraries'])->map(function ($item) {
                     return [
                         'number' => 'Day ' . $item->day . ': ' . $item->name,
                         'activity' => $item->description,
                         'longitude' => $item->longitude,
-                        'latitude' => $item->latitude
+                        'latitude' => $item->latitude,
                     ];
                 })->toArray();
                 $oldPrice = $packageDetail['old_price'];
@@ -76,9 +76,9 @@
 
         <div class="package-intro ">
             <div class="package-into-desc-container">
-                <p class="font-playfair package-highlight">{{ $packageDetail['short_description'] }}</p>
-                <div class="package-description">
-                    {{ $packageDetail['description'] }}
+                <p class="font-playfair package-highlight">{!! $packageDetail['short_description'] !!}</p>
+                <div class="package-description" style="text-align: justify;">
+                    {!!$packageDetail['description']!!}
 
                 </div>
                 <div class="package-info">
@@ -245,12 +245,13 @@
         </div>
     </div>
 
-
+    <x-book-now-form :tourPackageName="$packageName" :tourPackageId="$packageId" />
     <x-book-now-form :tourPackageName="$packageName" :tourPackageId="$packageId" />
     <!-- Tour Itinerary -->
 
     <div class="tnt-container package-itinerary">
         <x-tour-itinerary :description="$packageName" :itinerary="$itinerary" />
+
     </div>
 
     <!-- Package include/exclude -->
@@ -283,8 +284,8 @@
 @endsection
 @php
     // Set SEO variables
-    $title = 'Trail Nepal Treks';
-    $description = 'Discover your gateway to the Himalayas with seamless Nepal adventure planning. From trekking and expert guides to transport and tours, customize and book your unforgettable journey today!';
+    $title = $packageName . ' - Trail Nepal Treks';
+    $description = $packageDetail['short_description'];
 
     //Hero section
     //$heroContainerClassName = "detail-hero-container"
